@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hibernate | Tongx</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称 3. 配置实体类id和表id对应hibernate要求实体类有一个属性唯一值 hibernate要求表有字段作为唯一值 id标签：     name属性：实体类中id属性名称     column属性：生成的表字段名称 4. 设置数据库表id增长策略：gener">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hibernate">
+<meta property="og:url" content="https://tongxinmian.github.io/2017/06/01/Hibernate/index.html">
+<meta property="og:site_name" content="Tongx">
+<meta property="og:description" content="映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称 3. 配置实体类id和表id对应hibernate要求实体类有一个属性唯一值 hibernate要求表有字段作为唯一值 id标签：     name属性：实体类中id属性名称     column属性：生成的表字段名称 4. 设置数据库表id增长策略：gener">
+<meta property="og:updated_time" content="2017-06-01T06:14:35.586Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hibernate">
+<meta name="twitter:description" content="映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称 3. 配置实体类id和表id对应hibernate要求实体类有一个属性唯一值 hibernate要求表有字段作为唯一值 id标签：     name属性：实体类中id属性名称     column属性：生成的表字段名称 4. 设置数据库表id增长策略：gener">
+  
+    <link rel="alternate" href="/atom.xml" title="Tongx" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Tongx</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Welcome to my Blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tongxinmian.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Hibernate" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/01/Hibernate/" class="article-date">
+  <time datetime="2017-06-01T03:11:41.000Z" itemprop="datePublished">2017-06-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hibernate
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="映射配置文件"><a href="#映射配置文件" class="headerlink" title="映射配置文件"></a>映射配置文件</h1><h3 id="1-引入约束"><a href="#1-引入约束" class="headerlink" title="1. 引入约束"></a>1. 引入约束</h3><h3 id="2-配置类和表对应"><a href="#2-配置类和表对应" class="headerlink" title="2. 配置类和表对应"></a>2. 配置类和表对应</h3><pre><code>class标签：
+    name属性：实体类全路径
+    table属性：数据库表名称
+</code></pre><h3 id="3-配置实体类id和表id对应"><a href="#3-配置实体类id和表id对应" class="headerlink" title="3. 配置实体类id和表id对应"></a>3. 配置实体类id和表id对应</h3><pre><code>hibernate要求实体类有一个属性唯一值
+hibernate要求表有字段作为唯一值
+id标签：
+    name属性：实体类中id属性名称
+    column属性：生成的表字段名称
+</code></pre><h3 id="4-设置数据库表id增长策略："><a href="#4-设置数据库表id增长策略：" class="headerlink" title="4. 设置数据库表id增长策略："></a>4. 设置数据库表id增长策略：</h3><pre><code>generator标签：
+    class属性：native生成的表id值是逐渐自动增长
+</code></pre><h3 id="5-配置其他属性和表字段对应"><a href="#5-配置其他属性和表字段对应" class="headerlink" title="5. 配置其他属性和表字段对应"></a>5. 配置其他属性和表字段对应</h3><pre><code>property标签：
+    name属性：实体类属性名称
+    column属性：生成表字段名称
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tongxinmian.github.io/2017/06/01/Hibernate/" data-id="cj3e7phwj00000cv85y11ej42" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/06/01/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/01/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/01/Hibernate/">Hibernate</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Tongx<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
