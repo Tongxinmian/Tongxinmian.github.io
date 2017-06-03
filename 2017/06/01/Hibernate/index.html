@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/01/Hibernate/index.html">
 <meta property="og:site_name" content="Tongx">
 <meta property="og:description" content="映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称 3. 配置实体类id和表id对应hibernate要求实体类有一个属性唯一值 hibernate要求表有字段作为唯一值 id标签：     name属性：实体类中id属性名称     column属性：生成的表字段名称 4. 设置数据库表id增长策略：gener">
-<meta property="og:updated_time" content="2017-06-03T07:26:55.075Z">
+<meta property="og:updated_time" content="2017-06-03T07:29:55.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate">
 <meta name="twitter:description" content="映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称 3. 配置实体类id和表id对应hibernate要求实体类有一个属性唯一值 hibernate要求表有字段作为唯一值 id标签：     name属性：实体类中id属性名称     column属性：生成的表字段名称 4. 设置数据库表id增长策略：gener">
@@ -107,21 +107,17 @@ id标签：
 &lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:mysql:///数据库名?characterEncoding=utf-8&lt;/property&gt;
 &lt;property name=&quot;hibernate.connection.username&quot;&gt;username&lt;/property&gt;
 &lt;property name=&quot;hibernate.connection.password&quot;&gt;password&lt;/property&gt;
-</code></pre><h3 id="2-配置hibernate信息"><a href="#2-配置hibernate信息" class="headerlink" title="2. 配置hibernate信息"></a>2. 配置hibernate信息</h3><pre><code>##### 输出底层sql语句：
-&lt;property name=&quot;hibernate.show_sql&quot;&gt;true&lt;/property&gt;
-##### 对底层生气了、语句格式化：
-&lt;property name=&quot;hibernate.format_sql&quot;&gt;true&lt;/property&gt;
-##### hibernate帮创建表：
-&lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/property&gt;
+</code></pre><h3 id="2-配置hibernate信息"><a href="#2-配置hibernate信息" class="headerlink" title="2. 配置hibernate信息"></a>2. 配置hibernate信息</h3><h5 id="输出底层sql语句："><a href="#输出底层sql语句：" class="headerlink" title="输出底层sql语句："></a>输出底层sql语句：</h5><pre><code>&lt;property name=&quot;hibernate.show_sql&quot;&gt;true&lt;/property&gt;
+</code></pre><h5 id="对底层生气了、语句格式化："><a href="#对底层生气了、语句格式化：" class="headerlink" title="对底层生气了、语句格式化："></a>对底层生气了、语句格式化：</h5><pre><code>&lt;property name=&quot;hibernate.format_sql&quot;&gt;true&lt;/property&gt;
+</code></pre><h5 id="hibernate帮创建表："><a href="#hibernate帮创建表：" class="headerlink" title="hibernate帮创建表："></a>hibernate帮创建表：</h5><pre><code>&lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/property&gt;
 update:若有表，更新；若无表，创建
-##### 让hibernate框架识别不同数据库自己特有的语句：
-&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;
+</code></pre><h5 id="让hibernate框架识别不同数据库自己特有的语句："><a href="#让hibernate框架识别不同数据库自己特有的语句：" class="headerlink" title="让hibernate框架识别不同数据库自己特有的语句："></a>让hibernate框架识别不同数据库自己特有的语句：</h5><pre><code>&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;
 </code></pre><h3 id="3-把映射文件放入核心配置文件中"><a href="#3-把映射文件放入核心配置文件中" class="headerlink" title="3. 把映射文件放入核心配置文件中"></a>3. 把映射文件放入核心配置文件中</h3><pre><code>&lt;mapping resource=&quot;映射配置文件路径&quot;/&gt;
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tongxinmian.github.io/2017/06/01/Hibernate/" data-id="cj3gyj5bu000050v8x5csugmo" class="article-share-link">Share</a>
+      <a data-url="https://tongxinmian.github.io/2017/06/01/Hibernate/" data-id="cj3gykwez0000j8v8tvmtbz83" class="article-share-link">Share</a>
       
       
     </footer>
