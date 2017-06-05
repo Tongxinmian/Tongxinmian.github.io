@@ -225,11 +225,8 @@
       
         <h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><pre><code>负责在Hibernate初始化时加载默认文件下的配置文件信息到计算机内存，并通过他的对象加载指定的映射文件到内存。
 最后创建一个SessionFactory对象，把读入的配置信息拷贝到SessionFactory对象的缓存中
-</code></pre><h1 id="SessionFactory"><a href="#SessionFactory" class="headerlink" title="SessionFactory"></a>SessionFactory</h1><pre><code>负责创建Session实例，每个SessionFactory类的实例对应一个数据库
-</code></pre><h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><pre><code>Session是Hibernate持久化操作的基础，负责管理所有与持久化相关的操作
-</code></pre><h1 id="Transaction"><a href="#Transaction" class="headerlink" title="Transaction"></a>Transaction</h1><pre><code>负责Hibernate的数据库事务
-</code></pre><h1 id="Query和Criteria"><a href="#Query和Criteria" class="headerlink" title="Query和Criteria"></a>Query和Criteria</h1><pre><code>负责Hibernate的查询操作
 </code></pre>
+        
       
 
       
@@ -279,28 +276,8 @@
         <h1 id="一、映射配置文件"><a href="#一、映射配置文件" class="headerlink" title="一、映射配置文件"></a>一、映射配置文件</h1><h3 id="1-引入约束"><a href="#1-引入约束" class="headerlink" title="1. 引入约束"></a>1. 引入约束</h3><h3 id="2-配置类和表对应"><a href="#2-配置类和表对应" class="headerlink" title="2. 配置类和表对应"></a>2. 配置类和表对应</h3><pre><code>class标签：
     name属性：实体类全路径
     table属性：数据库表名称
-</code></pre><h3 id="3-配置实体类id和表id对应"><a href="#3-配置实体类id和表id对应" class="headerlink" title="3. 配置实体类id和表id对应"></a>3. 配置实体类id和表id对应</h3><pre><code>hibernate要求实体类有一个属性唯一值
-hibernate要求表有字段作为唯一值
-id标签：
-    name属性：实体类中id属性名称
-    column属性：生成的表字段名称
-</code></pre><h3 id="4-设置数据库表id增长策略："><a href="#4-设置数据库表id增长策略：" class="headerlink" title="4. 设置数据库表id增长策略："></a>4. 设置数据库表id增长策略：</h3><pre><code>generator标签：
-    class属性：native生成的表id值是逐渐自动增长
-</code></pre><h3 id="5-配置其他属性和表字段对应"><a href="#5-配置其他属性和表字段对应" class="headerlink" title="5. 配置其他属性和表字段对应"></a>5. 配置其他属性和表字段对应</h3><pre><code>property标签：
-    name属性：实体类属性名称
-    column属性：生成表字段名称
-</code></pre><h1 id="二、创建hibernate核心配置文件"><a href="#二、创建hibernate核心配置文件" class="headerlink" title="二、创建hibernate核心配置文件"></a>二、创建hibernate核心配置文件</h1><pre><code>名称位置固定：在src下面，hibernate.cfg.xml
-</code></pre><h3 id="1-配置数据库信息"><a href="#1-配置数据库信息" class="headerlink" title="1. 配置数据库信息"></a>1. 配置数据库信息</h3><pre><code>&lt;property name=&quot;hibernate.connection.driver_class&quot;&gt;com.mysql.jdbc.Driver&lt;/property&gt;
-&lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:mysql:///数据库名?characterEncoding=utf-8&lt;/property&gt;
-&lt;property name=&quot;hibernate.connection.username&quot;&gt;username&lt;/property&gt;
-&lt;property name=&quot;hibernate.connection.password&quot;&gt;password&lt;/property&gt;
-</code></pre><h3 id="2-配置hibernate信息"><a href="#2-配置hibernate信息" class="headerlink" title="2. 配置hibernate信息"></a>2. 配置hibernate信息</h3><h5 id="输出底层sql语句："><a href="#输出底层sql语句：" class="headerlink" title="输出底层sql语句："></a>输出底层sql语句：</h5><pre><code>&lt;property name=&quot;hibernate.show_sql&quot;&gt;true&lt;/property&gt;
-</code></pre><h5 id="对底层sql语句格式化："><a href="#对底层sql语句格式化：" class="headerlink" title="对底层sql语句格式化："></a>对底层sql语句格式化：</h5><pre><code>&lt;property name=&quot;hibernate.format_sql&quot;&gt;true&lt;/property&gt;
-</code></pre><h5 id="hibernate帮创建表："><a href="#hibernate帮创建表：" class="headerlink" title="hibernate帮创建表："></a>hibernate帮创建表：</h5><pre><code>&lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/property&gt;
-update:若有表，更新；若无表，创建
-</code></pre><h5 id="让hibernate框架识别不同数据库自己特有的语句："><a href="#让hibernate框架识别不同数据库自己特有的语句：" class="headerlink" title="让hibernate框架识别不同数据库自己特有的语句："></a>让hibernate框架识别不同数据库自己特有的语句：</h5><pre><code>&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;
-</code></pre><h3 id="3-把映射文件放入核心配置文件中"><a href="#3-把映射文件放入核心配置文件中" class="headerlink" title="3. 把映射文件放入核心配置文件中"></a>3. 把映射文件放入核心配置文件中</h3><pre><code>&lt;mapping resource=&quot;映射配置文件路径&quot;/&gt;
 </code></pre>
+        
       
 
       
