@@ -175,17 +175,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="一、加载hibernate核心配置文件"><a href="#一、加载hibernate核心配置文件" class="headerlink" title="一、加载hibernate核心配置文件"></a>一、加载hibernate核心配置文件</h1><h3 id="1-到src下面找到名称是hibernate-cfg-xml的配置文件"><a href="#1-到src下面找到名称是hibernate-cfg-xml的配置文件" class="headerlink" title="1. 到src下面找到名称是hibernate.cfg.xml的配置文件"></a>1. 到src下面找到名称是hibernate.cfg.xml的配置文件</h3><h3 id="2-在hibernate里面封装对象"><a href="#2-在hibernate里面封装对象" class="headerlink" title="2. 在hibernate里面封装对象"></a>2. 在hibernate里面封装对象</h3><pre><code>Configuration config = new Configuration().configure();
-</code></pre><h1 id="二、创建SessionFactory对象"><a href="#二、创建SessionFactory对象" class="headerlink" title="二、创建SessionFactory对象"></a>二、创建SessionFactory对象</h1><h3 id="1-读取hibernate核心配置文件内容，创建SessionFactory"><a href="#1-读取hibernate核心配置文件内容，创建SessionFactory" class="headerlink" title="1. 读取hibernate核心配置文件内容，创建SessionFactory"></a>1. 读取hibernate核心配置文件内容，创建SessionFactory</h3><h3 id="2-在过程中，根据映射关系，在配置数据库中将表创建"><a href="#2-在过程中，根据映射关系，在配置数据库中将表创建" class="headerlink" title="2. 在过程中，根据映射关系，在配置数据库中将表创建"></a>2. 在过程中，根据映射关系，在配置数据库中将表创建</h3><pre><code>SessionFactory sessionFactory = config.buildSessionFactory();
-</code></pre><h1 id="三、使用SessionFactory创建Session对象"><a href="#三、使用SessionFactory创建Session对象" class="headerlink" title="三、使用SessionFactory创建Session对象"></a>三、使用SessionFactory创建Session对象</h1><h3 id="类似于本地连接"><a href="#类似于本地连接" class="headerlink" title="类似于本地连接"></a>类似于本地连接</h3><pre><code>Session session = sessionFactory.openSession();
-</code></pre><h1 id="四、开启事务"><a href="#四、开启事务" class="headerlink" title="四、开启事务"></a>四、开启事务</h1><pre><code>Transaction tx = session.beginTransaction();
-</code></pre><h1 id="五、写具体的curd操作"><a href="#五、写具体的curd操作" class="headerlink" title="五、写具体的curd操作"></a>五、写具体的curd操作</h1><pre><code>User user = new User();
-user.setName(&quot;&quot;);
-user.setPassword(&quot;&quot;);
-</code></pre><h3 id="调用session的方法实现添加"><a href="#调用session的方法实现添加" class="headerlink" title="调用session的方法实现添加"></a>调用session的方法实现添加</h3><pre><code>session.save(user);
-</code></pre><h1 id="六、提交事务"><a href="#六、提交事务" class="headerlink" title="六、提交事务"></a>六、提交事务</h1><pre><code>tx.commit();
-</code></pre><h1 id="七、关闭资源"><a href="#七、关闭资源" class="headerlink" title="七、关闭资源"></a>七、关闭资源</h1><pre><code>session.close();
-sessionFactory.close();
 </code></pre>
+        
       
 
       
