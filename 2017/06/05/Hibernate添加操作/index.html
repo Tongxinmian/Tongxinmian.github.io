@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hibernate添加操作 | Tongx</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、加载hibernate核心配置文件1. 到src下面找到名称是hibernate.cfg.xml的配置文件2. 在hibernate里面封装对象Configuration config = new Configuration().configure(); 二、创建SessionFactory对象1. 读取hibernate核心配置文件内容，创建SessionFactory2. 在过程中，根据映">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hibernate添加操作">
+<meta property="og:url" content="https://tongxinmian.github.io/2017/06/05/Hibernate添加操作/index.html">
+<meta property="og:site_name" content="Tongx">
+<meta property="og:description" content="一、加载hibernate核心配置文件1. 到src下面找到名称是hibernate.cfg.xml的配置文件2. 在hibernate里面封装对象Configuration config = new Configuration().configure(); 二、创建SessionFactory对象1. 读取hibernate核心配置文件内容，创建SessionFactory2. 在过程中，根据映">
+<meta property="og:updated_time" content="2017-06-05T02:18:02.467Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hibernate添加操作">
+<meta name="twitter:description" content="一、加载hibernate核心配置文件1. 到src下面找到名称是hibernate.cfg.xml的配置文件2. 在hibernate里面封装对象Configuration config = new Configuration().configure(); 二、创建SessionFactory对象1. 读取hibernate核心配置文件内容，创建SessionFactory2. 在过程中，根据映">
+  
+    <link rel="alternate" href="/atom.xml" title="Tongx" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Tongx</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Welcome to my Blog</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://tongxinmian.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Hibernate添加操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/05/Hibernate添加操作/" class="article-date">
+  <time datetime="2017-06-05T02:02:06.000Z" itemprop="datePublished">2017-06-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hibernate添加操作
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、加载hibernate核心配置文件"><a href="#一、加载hibernate核心配置文件" class="headerlink" title="一、加载hibernate核心配置文件"></a>一、加载hibernate核心配置文件</h1><h3 id="1-到src下面找到名称是hibernate-cfg-xml的配置文件"><a href="#1-到src下面找到名称是hibernate-cfg-xml的配置文件" class="headerlink" title="1. 到src下面找到名称是hibernate.cfg.xml的配置文件"></a>1. 到src下面找到名称是hibernate.cfg.xml的配置文件</h3><h3 id="2-在hibernate里面封装对象"><a href="#2-在hibernate里面封装对象" class="headerlink" title="2. 在hibernate里面封装对象"></a>2. 在hibernate里面封装对象</h3><pre><code>Configuration config = new Configuration().configure();
+</code></pre><h1 id="二、创建SessionFactory对象"><a href="#二、创建SessionFactory对象" class="headerlink" title="二、创建SessionFactory对象"></a>二、创建SessionFactory对象</h1><h3 id="1-读取hibernate核心配置文件内容，创建SessionFactory"><a href="#1-读取hibernate核心配置文件内容，创建SessionFactory" class="headerlink" title="1. 读取hibernate核心配置文件内容，创建SessionFactory"></a>1. 读取hibernate核心配置文件内容，创建SessionFactory</h3><h3 id="2-在过程中，根据映射关系，在配置数据库中将表创建"><a href="#2-在过程中，根据映射关系，在配置数据库中将表创建" class="headerlink" title="2. 在过程中，根据映射关系，在配置数据库中将表创建"></a>2. 在过程中，根据映射关系，在配置数据库中将表创建</h3><pre><code>SessionFactory sessionFactory = config.buildSessionFactory();
+</code></pre><h1 id="三、使用SessionFactory创建Session对象"><a href="#三、使用SessionFactory创建Session对象" class="headerlink" title="三、使用SessionFactory创建Session对象"></a>三、使用SessionFactory创建Session对象</h1><h3 id="类似于本地连接"><a href="#类似于本地连接" class="headerlink" title="类似于本地连接"></a>类似于本地连接</h3><pre><code>Session session = sessionFactory.openSession();
+</code></pre><h1 id="四、开启事务"><a href="#四、开启事务" class="headerlink" title="四、开启事务"></a>四、开启事务</h1><pre><code>Transaction tx = session.beginTransaction();
+</code></pre><h1 id="五、写具体的curd操作"><a href="#五、写具体的curd操作" class="headerlink" title="五、写具体的curd操作"></a>五、写具体的curd操作</h1><p>User user = new User();<br>    user.setName(“”);<br>    user.setPassword(“”);</p>
+<h3 id="调用session的方法实现添加"><a href="#调用session的方法实现添加" class="headerlink" title="调用session的方法实现添加"></a>调用session的方法实现添加</h3><pre><code>session.save(user);
+</code></pre><h1 id="六、提交事务"><a href="#六、提交事务" class="headerlink" title="六、提交事务"></a>六、提交事务</h1><pre><code>tx.commit();
+</code></pre><h1 id="七、关闭资源"><a href="#七、关闭资源" class="headerlink" title="七、关闭资源"></a>七、关闭资源</h1><pre><code>session.close();
+sessionFactory.close();
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tongxinmian.github.io/2017/06/05/Hibernate添加操作/" data-id="cj3jibi2f0001nsftu2hgjgco" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/03/hibernate核心接口/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hibernate核心接口</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/05/Hibernate添加操作/">Hibernate添加操作</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/03/hibernate核心接口/">hibernate核心接口</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/01/Hibernate/">Hibernate配置</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Tongx<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
