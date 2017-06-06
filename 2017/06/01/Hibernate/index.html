@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/01/Hibernate/index.html">
 <meta property="og:site_name" content="Tongx">
 <meta property="og:description" content="一、映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称">
-<meta property="og:updated_time" content="2017-06-06T12:40:32.938Z">
+<meta property="og:updated_time" content="2017-06-06T12:42:11.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate配置">
 <meta name="twitter:description" content="一、映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称">
@@ -192,11 +192,11 @@ id标签：
 &lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:mysql:///数据库名?characterEncoding=utf-8&lt;/property&gt;
 &lt;property name=&quot;hibernate.connection.username&quot;&gt;username&lt;/property&gt;
 &lt;property name=&quot;hibernate.connection.password&quot;&gt;password&lt;/property&gt;
-</code></pre><h3 id="2-配置hibernate信息"><a href="#2-配置hibernate信息" class="headerlink" title="2. 配置hibernate信息"></a>2. 配置hibernate信息</h3><h5 id="A-输出底层sql语句："><a href="#A-输出底层sql语句：" class="headerlink" title="A.输出底层sql语句："></a>A.输出底层sql语句：</h5><pre><code>&lt;property name=&quot;hibernate.show_sql&quot;&gt;true&lt;/property&gt;
-</code></pre><h5 id="B-对底层sql语句格式化："><a href="#B-对底层sql语句格式化：" class="headerlink" title="B.对底层sql语句格式化："></a>B.对底层sql语句格式化：</h5><pre><code>&lt;property name=&quot;hibernate.format_sql&quot;&gt;true&lt;/property&gt;
-</code></pre><h5 id="C-hibernate帮创建表："><a href="#C-hibernate帮创建表：" class="headerlink" title="C.hibernate帮创建表："></a>C.hibernate帮创建表：</h5><pre><code>&lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/property&gt;
+</code></pre><h3 id="2-配置hibernate信息"><a href="#2-配置hibernate信息" class="headerlink" title="2. 配置hibernate信息"></a>2. 配置hibernate信息</h3><h5 id="A-输出底层sql语句："><a href="#A-输出底层sql语句：" class="headerlink" title="A. 输出底层sql语句："></a>A. 输出底层sql语句：</h5><pre><code>&lt;property name=&quot;hibernate.show_sql&quot;&gt;true&lt;/property&gt;
+</code></pre><h5 id="B-对底层sql语句格式化："><a href="#B-对底层sql语句格式化：" class="headerlink" title="B. 对底层sql语句格式化："></a>B. 对底层sql语句格式化：</h5><pre><code>&lt;property name=&quot;hibernate.format_sql&quot;&gt;true&lt;/property&gt;
+</code></pre><h5 id="C-hibernate帮创建表："><a href="#C-hibernate帮创建表：" class="headerlink" title="C. hibernate帮创建表："></a>C. hibernate帮创建表：</h5><pre><code>&lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/property&gt;
 update:若有表，更新；若无表，创建
-</code></pre><h5 id="D-让hibernate框架识别不同数据库自己特有的语句："><a href="#D-让hibernate框架识别不同数据库自己特有的语句：" class="headerlink" title="D.让hibernate框架识别不同数据库自己特有的语句："></a>D.让hibernate框架识别不同数据库自己特有的语句：</h5><pre><code>&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;
+</code></pre><h5 id="D-让hibernate框架识别不同数据库自己特有的语句："><a href="#D-让hibernate框架识别不同数据库自己特有的语句：" class="headerlink" title="D. 让hibernate框架识别不同数据库自己特有的语句："></a>D. 让hibernate框架识别不同数据库自己特有的语句：</h5><pre><code>&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;
 </code></pre><h3 id="3-把映射文件放入核心配置文件中"><a href="#3-把映射文件放入核心配置文件中" class="headerlink" title="3. 把映射文件放入核心配置文件中"></a>3. 把映射文件放入核心配置文件中</h3><pre><code>&lt;mapping resource=&quot;映射配置文件路径&quot;/&gt;
 </code></pre><h1 id="三、-一对多映射配置"><a href="#三、-一对多映射配置" class="headerlink" title="三、 一对多映射配置"></a>三、 一对多映射配置</h1><pre><code>Hibernate机制：双向维护外键
 </code></pre><h3 id="1-在客户映射文件中，表示所有联系人。使用set标签表示所有联系人："><a href="#1-在客户映射文件中，表示所有联系人。使用set标签表示所有联系人：" class="headerlink" title="1. 在客户映射文件中，表示所有联系人。使用set标签表示所有联系人："></a>1. 在客户映射文件中，表示所有联系人。使用set标签表示所有联系人：</h3><pre><code>cascade:级联保存，修改，删除
