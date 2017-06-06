@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
-  <title>Hibernate绑定Session及API的使用 | Tongx</title>
+  <title>Hibernate查询方式 | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、Hibernate绑定本地SessionSession类似于jdbc的connection帮实现与本地线程绑定Session获取与本地线程绑定的session">
-<meta name="keywords" content="2">
+  <meta name="description" content="Just for learn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hibernate绑定Session及API的使用">
-<meta property="og:url" content="https://tongxinmian.github.io/2017/06/06/Hibernate绑定Session及API的使用/index.html">
+<meta property="og:title" content="Hibernate查询方式">
+<meta property="og:url" content="https://tongxinmian.github.io/2017/06/06/Hibernate查询方式/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="一、Hibernate绑定本地SessionSession类似于jdbc的connection帮实现与本地线程绑定Session获取与本地线程绑定的session">
-<meta property="og:updated_time" content="2017-06-06T13:10:52.349Z">
+<meta property="og:description" content="Just for learn">
+<meta property="og:updated_time" content="2017-06-06T13:10:46.444Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hibernate绑定Session及API的使用">
-<meta name="twitter:description" content="一、Hibernate绑定本地SessionSession类似于jdbc的connection帮实现与本地线程绑定Session获取与本地线程绑定的session">
+<meta name="twitter:title" content="Hibernate查询方式">
+<meta name="twitter:description" content="Just for learn">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -154,52 +153,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hibernate绑定Session及API的使用" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Hibernate查询方式" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hibernate绑定Session及API的使用
+      Hibernate查询方式
     </h1>
   
 
         
-        <a href="/2017/06/06/Hibernate绑定Session及API的使用/" class="archive-article-date">
-  	<time datetime="2017-06-06T01:59:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
+        <a href="/2017/06/06/Hibernate查询方式/" class="archive-article-date">
+  	<time datetime="2017-06-06T12:42:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、Hibernate绑定本地Session"><a href="#一、Hibernate绑定本地Session" class="headerlink" title="一、Hibernate绑定本地Session"></a>一、Hibernate绑定本地Session</h1><h2 id="Session类似于jdbc的connection"><a href="#Session类似于jdbc的connection" class="headerlink" title="Session类似于jdbc的connection"></a>Session类似于jdbc的connection</h2><h2 id="帮实现与本地线程绑定Session"><a href="#帮实现与本地线程绑定Session" class="headerlink" title="帮实现与本地线程绑定Session"></a>帮实现与本地线程绑定Session</h2><h2 id="获取与本地线程绑定的session"><a href="#获取与本地线程绑定的session" class="headerlink" title="获取与本地线程绑定的session"></a>获取与本地线程绑定的session</h2><a id="more"></a>
-<h5 id="1-在hibernate核心配置文件中配置"><a href="#1-在hibernate核心配置文件中配置" class="headerlink" title="1. 在hibernate核心配置文件中配置"></a>1. 在hibernate核心配置文件中配置</h5><pre><code>&lt;property name=&quot;hibernate.current_session_context_class&quot;&gt;Thsread&lt;/property&gt;
-</code></pre><h5 id="2-调用SessionFactory里面的方法得到"><a href="#2-调用SessionFactory里面的方法得到" class="headerlink" title="2. 调用SessionFactory里面的方法得到"></a>2. 调用SessionFactory里面的方法得到</h5><pre><code>//提供返回与本地线程绑定的Session方法
-public static Session getSessionObject(){
-    return sessionFactory.getCurrentSession();
-}
-</code></pre><h2 id="获取与本地线程绑定Session时候，不需要手动关闭session"><a href="#获取与本地线程绑定Session时候，不需要手动关闭session" class="headerlink" title="获取与本地线程绑定Session时候，不需要手动关闭session"></a>获取与本地线程绑定Session时候，不需要手动关闭session</h2><h1 id="二、Hibernate的API使用"><a href="#二、Hibernate的API使用" class="headerlink" title="二、Hibernate的API使用"></a>二、Hibernate的API使用</h1><h2 id="Query对象"><a href="#Query对象" class="headerlink" title="Query对象"></a>Query对象</h2><h5 id="1-使用Query对象，不需要写sql语句，但要写hql语句"><a href="#1-使用Query对象，不需要写sql语句，但要写hql语句" class="headerlink" title="1. 使用Query对象，不需要写sql语句，但要写hql语句"></a>1. 使用Query对象，不需要写sql语句，但要写hql语句</h5><pre><code>hql：hibernate query language hibernate提供的查询语句，与sql相似
-区别：使用sql操作表和字段
-     使用hql操作实体类和属性
-</code></pre><h5 id="2-查询所有hql语句"><a href="#2-查询所有hql语句" class="headerlink" title="2. 查询所有hql语句"></a>2. 查询所有hql语句</h5><pre><code>from 实体类名称
-</code></pre><h5 id="3-Query对象的使用"><a href="#3-Query对象的使用" class="headerlink" title="3. Query对象的使用"></a>3. Query对象的使用</h5><pre><code>创建Query对象：
-    Query query = session.createQuery(&quot;from 实体类&quot;);
-调用Query对象里面的方法得到结果
-    List&lt;实体类&gt; list = query.list();
-</code></pre><h2 id="Criteria对象"><a href="#Criteria对象" class="headerlink" title="Criteria对象"></a>Criteria对象</h2><h5 id="1-使用该对象查询操作，不需要写语句，直接调用方法实现"><a href="#1-使用该对象查询操作，不需要写语句，直接调用方法实现" class="headerlink" title="1. 使用该对象查询操作，不需要写语句，直接调用方法实现"></a>1. 使用该对象查询操作，不需要写语句，直接调用方法实现</h5><h5 id="2-过程"><a href="#2-过程" class="headerlink" title="2. 过程"></a>2. 过程</h5><pre><code>创建Criteria对象
-    Criteria criteria = session.createCriteria(实体类.class);
-调用方法得到结果
-    List&lt;实体类&gt; list = criteria.list();
-</code></pre><h2 id="SQLQuery对象"><a href="#SQLQuery对象" class="headerlink" title="SQLQuery对象"></a>SQLQuery对象</h2><h5 id="1-使用SQLQuery时，调用底层sql语句"><a href="#1-使用SQLQuery时，调用底层sql语句" class="headerlink" title="1. 使用SQLQuery时，调用底层sql语句"></a>1. 使用SQLQuery时，调用底层sql语句</h5><h5 id="2-实现过程"><a href="#2-实现过程" class="headerlink" title="2. 实现过程"></a>2. 实现过程</h5><pre><code>创建对象
-    SQLQuery sqlQuery = session.createSQLQuery(&quot;select * from 表名&quot;);
-返回的List默认是数组结构
-    List&lt;Object[]&gt; list = sqlQuery.list();
-调用方法是List每部分都是对象
-    sqlQuery.addEntity(实体类.class);
-    List&lt;实体类&gt; list = sqlQuery.list();
-</code></pre>
+        
       
 
       
@@ -238,17 +212,6 @@ public static Session getSessionObject(){
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">2</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -299,7 +262,7 @@ public static Session getSessionObject(){
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://tongxinmian.github.io/2017/06/06/Hibernate绑定Session及API的使用/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://tongxinmian.github.io/2017/06/06/Hibernate查询方式/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -313,18 +276,9 @@ public static Session getSessionObject(){
   
 <nav id="article-nav">
   
-    <a href="/2017/06/06/Hibernate查询方式/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hibernate查询方式
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/06/05/Hibernate添加操作/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hibernate添加操作</div>
+    <a href="/2017/06/06/Hibernate绑定Session及API的使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hibernate绑定Session及API的使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
