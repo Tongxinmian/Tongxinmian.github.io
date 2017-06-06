@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/01/Hibernate/index.html">
 <meta property="og:site_name" content="Tongx">
 <meta property="og:description" content="一、映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称">
-<meta property="og:updated_time" content="2017-06-06T13:14:49.626Z">
+<meta property="og:updated_time" content="2017-06-06T13:44:36.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate配置">
 <meta name="twitter:description" content="一、映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称">
@@ -214,8 +214,11 @@ update:若有表，更新；若无表，创建
 </code></pre><h3 id="2-在角色映射文件中："><a href="#2-在角色映射文件中：" class="headerlink" title="2. 在角色映射文件中："></a>2. 在角色映射文件中：</h3><pre><code>&lt;set name=&quot;角色类中的用户集合对象&quot; table=&quot;与用户映射文件中的一致&quot;&gt;
     &lt;key column=&quot;角色主键&quot;&gt;&lt;/key&gt;
     &lt;many-to-many class=&quot;用户类全路径&quot; column=&quot;用户主键，用作外键&quot;&gt;&lt;/many-to-many&gt;
-&lt;/set&gt;s
-</code></pre>
+&lt;/set&gt;
+</code></pre><blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+
       
 
       

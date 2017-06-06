@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/06/Hibernate查询方式/index.html">
 <meta property="og:site_name" content="Tongx">
 <meta property="og:description" content="一、对象导航查询根据id查询某个客户，再查询该客户的所有联系人实体类 对象 = session.get(实体类.class,主键值); 二、OID查询根据id查询一条记录，返回对象，调用session中的get方法三、HQL查询1. 与sql的区别：sql操作数据库表和字段，hql操作实体类和属性 2. 使用HQL查询操作时，使用Query对象3. 常用HQL语句：A. 查询所有：from 实体类">
-<meta property="og:updated_time" content="2017-06-06T13:42:00.254Z">
+<meta property="og:updated_time" content="2017-06-06T13:43:51.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate查询方式">
 <meta name="twitter:description" content="一、对象导航查询根据id查询某个客户，再查询该客户的所有联系人实体类 对象 = session.get(实体类.class,主键值); 二、OID查询根据id查询一条记录，返回对象，调用session中的get方法三、HQL查询1. 与sql的区别：sql操作数据库表和字段，hql操作实体类和属性 2. 使用HQL查询操作时，使用Query对象3. 常用HQL语句：A. 查询所有：from 实体类">
@@ -188,7 +188,8 @@ query对象里有方法直接返回对象形式：query.uniqueResult()
 首先把object变long类型，再变成int类型：
     Long lobj = (Long) obj;
     int count = lobj.intValue();
-</code></pre><h3 id="4-QBC查询："><a href="#4-QBC查询：" class="headerlink" title="4. QBC查询："></a>4. QBC查询：</h3><hr>
+</code></pre><hr>
+<h3 id="4-QBC查询："><a href="#4-QBC查询：" class="headerlink" title="4. QBC查询："></a>4. QBC查询：</h3><hr>
 <blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
