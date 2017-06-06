@@ -8,16 +8,17 @@
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
   <title>Hibernate查询方式 | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Just for learn">
+  <meta name="description" content="一、对象导航查询根据id查询某个客户，再查询该客户的所有联系人实体类 对象 = session.get(实体类.class,主键值); 二、OID查询根据id查询一条记录，返回对象，调用session中的get方法三、HQL查询1. 与sql的区别：sql操作数据库表和字段，hql操作实体类和属性 2. 使用HQL查询操作时，使用Query对象3. 常用HQL语句：A. 查询所有：from 实体类">
+<meta name="keywords" content="Hibernate">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hibernate查询方式">
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/06/Hibernate查询方式/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="Just for learn">
-<meta property="og:updated_time" content="2017-06-06T13:10:46.444Z">
+<meta property="og:description" content="一、对象导航查询根据id查询某个客户，再查询该客户的所有联系人实体类 对象 = session.get(实体类.class,主键值); 二、OID查询根据id查询一条记录，返回对象，调用session中的get方法三、HQL查询1. 与sql的区别：sql操作数据库表和字段，hql操作实体类和属性 2. 使用HQL查询操作时，使用Query对象3. 常用HQL语句：A. 查询所有：from 实体类">
+<meta property="og:updated_time" content="2017-06-06T13:42:00.254Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate查询方式">
-<meta name="twitter:description" content="Just for learn">
+<meta name="twitter:description" content="一、对象导航查询根据id查询某个客户，再查询该客户的所有联系人实体类 对象 = session.get(实体类.class,主键值); 二、OID查询根据id查询一条记录，返回对象，调用session中的get方法三、HQL查询1. 与sql的区别：sql操作数据库表和字段，hql操作实体类和属性 2. 使用HQL查询操作时，使用Query对象3. 常用HQL语句：A. 查询所有：from 实体类">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -173,7 +174,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="一、对象导航查询"><a href="#一、对象导航查询" class="headerlink" title="一、对象导航查询"></a>一、对象导航查询</h1><h3 id="根据id查询某个客户，再查询该客户的所有联系人"><a href="#根据id查询某个客户，再查询该客户的所有联系人" class="headerlink" title="根据id查询某个客户，再查询该客户的所有联系人"></a>根据id查询某个客户，再查询该客户的所有联系人</h3><pre><code>实体类 对象 = session.get(实体类.class,主键值);
+</code></pre><h1 id="二、OID查询"><a href="#二、OID查询" class="headerlink" title="二、OID查询"></a>二、OID查询</h1><h3 id="根据id查询一条记录，返回对象，调用session中的get方法"><a href="#根据id查询一条记录，返回对象，调用session中的get方法" class="headerlink" title="根据id查询一条记录，返回对象，调用session中的get方法"></a>根据id查询一条记录，返回对象，调用session中的get方法</h3><h1 id="三、HQL查询"><a href="#三、HQL查询" class="headerlink" title="三、HQL查询"></a>三、HQL查询</h1><h3 id="1-与sql的区别："><a href="#1-与sql的区别：" class="headerlink" title="1. 与sql的区别："></a>1. 与sql的区别：</h3><pre><code>sql操作数据库表和字段，hql操作实体类和属性
+</code></pre><h3 id="2-使用HQL查询操作时，使用Query对象"><a href="#2-使用HQL查询操作时，使用Query对象" class="headerlink" title="2. 使用HQL查询操作时，使用Query对象"></a>2. 使用HQL查询操作时，使用Query对象</h3><h3 id="3-常用HQL语句："><a href="#3-常用HQL语句：" class="headerlink" title="3. 常用HQL语句："></a>3. 常用HQL语句：</h3><h5 id="A-查询所有："><a href="#A-查询所有：" class="headerlink" title="A. 查询所有："></a>A. 查询所有：</h5><pre><code>from 实体类名称
+</code></pre><h5 id="B-条件查询："><a href="#B-条件查询：" class="headerlink" title="B. 条件查询："></a>B. 条件查询：</h5><pre><code>from 实体类名称 where 属性名称=?(like ?)
+</code></pre><h5 id="C-排序查询："><a href="#C-排序查询：" class="headerlink" title="C. 排序查询："></a>C. 排序查询：</h5><pre><code>from 实体类名称 order by 属性名称 asc/desc
+</code></pre><h5 id="D-分页查询：-hql中不能写limit，Query对象封装了两个方法实现分页"><a href="#D-分页查询：-hql中不能写limit，Query对象封装了两个方法实现分页" class="headerlink" title="D. 分页查询：(hql中不能写limit，Query对象封装了两个方法实现分页)"></a>D. 分页查询：(hql中不能写limit，Query对象封装了两个方法实现分页)</h5><pre><code>query.setFirstResult();//设置开始位置
+query.setMaxResults();//设置每页记录数
+</code></pre><h5 id="E-投影查询：查询的不是所有的字段值，而是部分字段值"><a href="#E-投影查询：查询的不是所有的字段值，而是部分字段值" class="headerlink" title="E. 投影查询：查询的不是所有的字段值，而是部分字段值"></a>E. 投影查询：查询的不是所有的字段值，而是部分字段值</h5><pre><code>select 实体类属性名称1...n from 实体类名称
+select后面不能写‘*’
+</code></pre><h5 id="F-常用聚集函数的使用：count-avg-max-min-sum…"><a href="#F-常用聚集函数的使用：count-avg-max-min-sum…" class="headerlink" title="F. 常用聚集函数的使用：count,avg,max,min,sum…"></a>F. 常用聚集函数的使用：count,avg,max,min,sum…</h5><pre><code>select count(*) from 实体类名称
+query对象里有方法直接返回对象形式：query.uniqueResult()
+首先把object变long类型，再变成int类型：
+    Long lobj = (Long) obj;
+    int count = lobj.intValue();
+</code></pre><h3 id="4-QBC查询："><a href="#4-QBC查询：" class="headerlink" title="4. QBC查询："></a>4. QBC查询：</h3><hr>
+<blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+
       
 
       
@@ -212,6 +231,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
