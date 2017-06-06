@@ -6,19 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
-  <title>Hibernate配置 | Tongx</title>
+  <title>Tag: Hibernate | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称">
-<meta name="keywords" content="Hibernate">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hibernate配置">
-<meta property="og:url" content="https://tongxinmian.github.io/2017/06/01/Hibernate/index.html">
+  <meta name="description" content="Just for learn">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tongx">
+<meta property="og:url" content="https://tongxinmian.github.io/tags/Hibernate/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="一、映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称">
-<meta property="og:updated_time" content="2017-06-06T13:14:49.626Z">
+<meta property="og:description" content="Just for learn">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hibernate配置">
-<meta name="twitter:description" content="一、映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称">
+<meta name="twitter:title" content="Tongx">
+<meta name="twitter:description" content="Just for learn">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -154,106 +152,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hibernate" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Hibernate配置
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/06/06/Hibernate绑定Session及API的使用/" class="archive-article-date">
+  	<time datetime="2017-06-06T01:59:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/06/06/Hibernate绑定Session及API的使用/">Hibernate绑定Session及API的使用</a>
     </h1>
   
 
-        
-        <a href="/2017/06/01/Hibernate/" class="archive-article-date">
-  	<time datetime="2017-06-01T03:11:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、映射配置文件"><a href="#一、映射配置文件" class="headerlink" title="一、映射配置文件"></a>一、映射配置文件</h1><h3 id="1-引入约束"><a href="#1-引入约束" class="headerlink" title="1. 引入约束"></a>1. 引入约束</h3><h3 id="2-配置类和表对应"><a href="#2-配置类和表对应" class="headerlink" title="2. 配置类和表对应"></a>2. 配置类和表对应</h3><pre><code>class标签：
-    name属性：实体类全路径
-    table属性：数据库表名称
-</code></pre><a id="more"></a>
-<h3 id="3-配置实体类id和表id对应"><a href="#3-配置实体类id和表id对应" class="headerlink" title="3. 配置实体类id和表id对应"></a>3. 配置实体类id和表id对应</h3><pre><code>hibernate要求实体类有一个属性唯一值
-hibernate要求表有字段作为唯一值
-id标签：
-    name属性：实体类中id属性名称
-    column属性：生成的表字段名称
-</code></pre><h3 id="4-设置数据库表id增长策略："><a href="#4-设置数据库表id增长策略：" class="headerlink" title="4. 设置数据库表id增长策略："></a>4. 设置数据库表id增长策略：</h3><pre><code>generator标签：
-    class属性：native生成的表id值是逐渐自动增长
-</code></pre><h3 id="5-配置其他属性和表字段对应"><a href="#5-配置其他属性和表字段对应" class="headerlink" title="5. 配置其他属性和表字段对应"></a>5. 配置其他属性和表字段对应</h3><pre><code>property标签：
-    name属性：实体类属性名称
-    column属性：生成表字段名称
-</code></pre><h1 id="二、创建hibernate核心配置文件"><a href="#二、创建hibernate核心配置文件" class="headerlink" title="二、创建hibernate核心配置文件"></a>二、创建hibernate核心配置文件</h1><pre><code>名称位置固定：在src下面，hibernate.cfg.xml
-</code></pre><h3 id="1-配置数据库信息"><a href="#1-配置数据库信息" class="headerlink" title="1. 配置数据库信息"></a>1. 配置数据库信息</h3><pre><code>&lt;property name=&quot;hibernate.connection.driver_class&quot;&gt;com.mysql.jdbc.Driver&lt;/property&gt;
-&lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:mysql:///数据库名?characterEncoding=utf-8&lt;/property&gt;
-&lt;property name=&quot;hibernate.connection.username&quot;&gt;username&lt;/property&gt;
-&lt;property name=&quot;hibernate.connection.password&quot;&gt;password&lt;/property&gt;
-</code></pre><h3 id="2-配置hibernate信息"><a href="#2-配置hibernate信息" class="headerlink" title="2. 配置hibernate信息"></a>2. 配置hibernate信息</h3><h5 id="A-输出底层sql语句："><a href="#A-输出底层sql语句：" class="headerlink" title="A. 输出底层sql语句："></a>A. 输出底层sql语句：</h5><pre><code>&lt;property name=&quot;hibernate.show_sql&quot;&gt;true&lt;/property&gt;
-</code></pre><h5 id="B-对底层sql语句格式化："><a href="#B-对底层sql语句格式化：" class="headerlink" title="B. 对底层sql语句格式化："></a>B. 对底层sql语句格式化：</h5><pre><code>&lt;property name=&quot;hibernate.format_sql&quot;&gt;true&lt;/property&gt;
-</code></pre><h5 id="C-hibernate帮创建表："><a href="#C-hibernate帮创建表：" class="headerlink" title="C. hibernate帮创建表："></a>C. hibernate帮创建表：</h5><pre><code>&lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/property&gt;
-update:若有表，更新；若无表，创建
-</code></pre><h5 id="D-让hibernate框架识别不同数据库自己特有的语句："><a href="#D-让hibernate框架识别不同数据库自己特有的语句：" class="headerlink" title="D. 让hibernate框架识别不同数据库自己特有的语句："></a>D. 让hibernate框架识别不同数据库自己特有的语句：</h5><pre><code>&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;
-</code></pre><h3 id="3-把映射文件放入核心配置文件中"><a href="#3-把映射文件放入核心配置文件中" class="headerlink" title="3. 把映射文件放入核心配置文件中"></a>3. 把映射文件放入核心配置文件中</h3><pre><code>&lt;mapping resource=&quot;映射配置文件路径&quot;/&gt;
-</code></pre><h1 id="三、-一对多映射配置"><a href="#三、-一对多映射配置" class="headerlink" title="三、 一对多映射配置"></a>三、 一对多映射配置</h1><pre><code>Hibernate机制：双向维护外键
-</code></pre><h3 id="1-在客户映射文件中，表示所有联系人。使用set标签表示所有联系人："><a href="#1-在客户映射文件中，表示所有联系人。使用set标签表示所有联系人：" class="headerlink" title="1. 在客户映射文件中，表示所有联系人。使用set标签表示所有联系人："></a>1. 在客户映射文件中，表示所有联系人。使用set标签表示所有联系人：</h3><pre><code>cascade:级联保存，修改，删除
-&lt;set name=&quot;客户类中的联系人集合对象&quot; cascade=&quot;save-update,delete&quot;&gt;
-一对多建表，有外键
-    &lt;key column=&quot;外键&quot;&gt;&lt;/key&gt;
-    &lt;one-to-many class=&quot;联系人类全路径&quot;/&gt; 
-&lt;/set&gt;
-</code></pre><h3 id="2-在联系人映射文件中："><a href="#2-在联系人映射文件中：" class="headerlink" title="2. 在联系人映射文件中："></a>2. 在联系人映射文件中：</h3><pre><code>&lt;many-to-ome name=&quot;联系人类中的客户对象&quot; class=&quot;客户类全路径&quot; column=&quot;外键&quot;&gt;&lt;/many-to-one&gt;
-</code></pre><h1 id="四、多对多映射配置"><a href="#四、多对多映射配置" class="headerlink" title="四、多对多映射配置"></a>四、多对多映射配置</h1><h3 id="1-在用户映射文件中："><a href="#1-在用户映射文件中：" class="headerlink" title="1. 在用户映射文件中："></a>1. 在用户映射文件中：</h3><pre><code>&lt;set name=&quot;用户类中的角色集合对象&quot; table=&quot;新建一张表，关联用户类和角色类&quot; cascade=&quot;save-update,delete&quot;&gt;
-    &lt;key column=&quot;用户主键&quot;&gt;&lt;/key&gt;
-    &lt;many-to-many class=&quot;角色类全路径&quot; column=&quot;外键&quot;&gt;&lt;/many-to-many&gt;
-&lt;/set&gt;
-</code></pre><h3 id="2-在角色映射文件中："><a href="#2-在角色映射文件中：" class="headerlink" title="2. 在角色映射文件中："></a>2. 在角色映射文件中：</h3><pre><code>&lt;set name=&quot;角色类中的用户集合对象&quot; table=&quot;与用户映射文件中的一致&quot;&gt;
-    &lt;key column=&quot;角色主键&quot;&gt;&lt;/key&gt;
-    &lt;many-to-many class=&quot;用户类全路径&quot; column=&quot;用户主键，用作外键&quot;&gt;&lt;/many-to-many&gt;
-&lt;/set&gt;s
-</code></pre>
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/WeChat.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -265,93 +193,133 @@ update:若有表，更新；若无表，创建
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://tongxinmian.github.io/2017/06/01/Hibernate/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/06/05/Hibernate添加操作/" class="archive-article-date">
+  	<time datetime="2017-06-05T02:02:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-05</time>
+</a>
+        </div>
+    	 
   
-    <a href="/2017/06/03/hibernate核心接口/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hibernate核心接口
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
-
-
-
-
-  
-  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/06/05/Hibernate添加操作/">Hibernate添加操作</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/06/03/hibernate核心接口/" class="archive-article-date">
+  	<time datetime="2017-06-03T07:38:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-03</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/06/03/hibernate核心接口/">Hibernate核心接口</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/06/01/Hibernate/" class="archive-article-date">
+  	<time datetime="2017-06-01T03:11:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-01</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/06/01/Hibernate/">Hibernate配置</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -374,9 +342,9 @@ update:若有表，更新；若无表，创建
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
