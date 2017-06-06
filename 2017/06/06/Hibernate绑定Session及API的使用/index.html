@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/06/Hibernate绑定Session及API的使用/index.html">
 <meta property="og:site_name" content="Tongx">
 <meta property="og:description" content="一、Hibernate绑定本地SessionSession类似于jdbc的connection帮实现与本地线程绑定Session获取与本地线程绑定的session">
-<meta property="og:updated_time" content="2017-06-06T09:36:27.560Z">
+<meta property="og:updated_time" content="2017-06-06T09:46:25.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate绑定Session及API的使用">
 <meta name="twitter:description" content="一、Hibernate绑定本地SessionSession类似于jdbc的connection帮实现与本地线程绑定Session获取与本地线程绑定的session">
@@ -174,7 +174,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="一、Hibernate绑定本地Session"><a href="#一、Hibernate绑定本地Session" class="headerlink" title="一、Hibernate绑定本地Session"></a>一、Hibernate绑定本地Session</h1><h2 id="Session类似于jdbc的connection"><a href="#Session类似于jdbc的connection" class="headerlink" title="Session类似于jdbc的connection"></a>Session类似于jdbc的connection</h2><h2 id="帮实现与本地线程绑定Session"><a href="#帮实现与本地线程绑定Session" class="headerlink" title="帮实现与本地线程绑定Session"></a>帮实现与本地线程绑定Session</h2><h2 id="获取与本地线程绑定的session"><a href="#获取与本地线程绑定的session" class="headerlink" title="获取与本地线程绑定的session"></a>获取与本地线程绑定的session</h2><a id="more"></a>
-<h5 id="1-在hibernate核心配置文件中配置"><a href="#1-在hibernate核心配置文件中配置" class="headerlink" title="1. 在hibernate核心配置文件中配置"></a>1. 在hibernate核心配置文件中配置</h5><pre><code>&lt;property name=&quot;hibernate.current_session_context_class&quot;&gt;Tread&lt;/property&gt;
+<h5 id="1-在hibernate核心配置文件中配置"><a href="#1-在hibernate核心配置文件中配置" class="headerlink" title="1. 在hibernate核心配置文件中配置"></a>1. 在hibernate核心配置文件中配置</h5><pre><code>&lt;property name=&quot;hibernate.current_session_context_class&quot;&gt;Thread&lt;/property&gt;
 </code></pre><h5 id="2-调用SessionFactory里面的方法得到"><a href="#2-调用SessionFactory里面的方法得到" class="headerlink" title="2. 调用SessionFactory里面的方法得到"></a>2. 调用SessionFactory里面的方法得到</h5><pre><code>//提供返回与本地线程绑定的Session方法
 public static Session getSessionObject(){
     return sessionFactory.getCurrentSession();
