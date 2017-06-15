@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/06/Hibernate查询方式/index.html">
 <meta property="og:site_name" content="Tongx">
 <meta property="og:description" content="一、对象导航查询根据id查询某个客户，再查询该客户的所有联系人实体类 对象 = session.get(实体类.class,主键值);">
-<meta property="og:updated_time" content="2017-06-15T13:00:43.286Z">
+<meta property="og:updated_time" content="2017-06-15T13:10:59.831Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate查询方式">
 <meta name="twitter:description" content="一、对象导航查询根据id查询某个客户，再查询该客户的所有联系人实体类 对象 = session.get(实体类.class,主键值);">
@@ -53,7 +53,7 @@
 		  <h1 class="header-author"><a href="/">Tongx</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Welcome to my Blog</p>
+		<p class="header-subtitle">Welcome to my Notes</p>
 		
 
 		<nav class="header-menu">
@@ -111,7 +111,7 @@
 			  <h1 class="header-author js-header-author">Tongx</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Welcome to my Blog<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Welcome to my Notes<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -209,6 +209,13 @@ Restrictions.or                 or关系
 Restrictions.sqlRestriction     sql限定查询
 Restrictions.asc()              升序
 Restrictions.desc()             降序
+</code></pre><h5 id="C-排序查询：-1"><a href="#C-排序查询：-1" class="headerlink" title="C. 排序查询："></a>C. 排序查询：</h5><pre><code>Criteria.addOrder(Order.asc(&quot;cid&quot;));
+</code></pre><h5 id="D-分页查询："><a href="#D-分页查询：" class="headerlink" title="D. 分页查询："></a>D. 分页查询：</h5><pre><code>criteria.setFirstResult(0); //开始位置计算公式：(当前页-1)*每页记录数
+criteria.setMaxResults(3);
+</code></pre><h5 id="E-统计查询："><a href="#E-统计查询：" class="headerlink" title="E. 统计查询："></a>E. 统计查询：</h5><pre><code>创建对象：Criteria criteria = session.createCriteria();
+设置操作：criteria.setProjection(Projections.rowCount());
+调用方法得到结果：Object obj = criteria.uniqueResult();
+</code></pre><h5 id="F-离线查询"><a href="#F-离线查询" class="headerlink" title="F. 离线查询:"></a>F. 离线查询:</h5><pre><code>创建对象：Criteria criteria = session.createCriteria();
 </code></pre><blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
@@ -225,7 +232,7 @@ Restrictions.desc()             降序
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>有用就支持一下，谢谢^-^<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -325,6 +332,15 @@ Restrictions.desc()             降序
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/06/15/Hibernate查询方式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/2017/06/06/Hibernate绑定Session及API的使用/" id="article-nav-older" class="article-nav-link-wrap">
