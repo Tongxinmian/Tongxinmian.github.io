@@ -6,19 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
-  <title>Hibernate检索策略 | Tongx</title>
+  <title>Archives: 2017/10 | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. Hibernate检索策略分为两类1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：Custoemr customer = session.get(Customer.class,1);">
-<meta name="keywords" content="Hibernate,Java">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hibernate检索策略">
-<meta property="og:url" content="https://tongxinmian.github.io/2017/06/15/Hibernate检索策略/index.html">
+  <meta name="description" content="Just for learn">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tongx">
+<meta property="og:url" content="https://tongxinmian.github.io/archives/2017/10/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="1. Hibernate检索策略分为两类1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：Custoemr customer = session.get(Customer.class,1);">
-<meta property="og:updated_time" content="2017-11-01T02:30:12.000Z">
+<meta property="og:description" content="Just for learn">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hibernate检索策略">
-<meta name="twitter:description" content="1. Hibernate检索策略分为两类1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：Custoemr customer = session.get(Customer.class,1);">
+<meta name="twitter:title" content="Tongx">
+<meta name="twitter:description" content="Just for learn">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -154,88 +152,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hibernate检索策略" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Hibernate检索策略
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/10/31/操作符/" class="archive-article-date">
+  	<time datetime="2017-10-31T06:47:09.568Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/10/31/操作符/">操作符</a>
     </h1>
   
 
-        
-        <a href="/2017/06/15/Hibernate检索策略/" class="archive-article-date">
-  	<time datetime="2017-06-15T13:48:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-Hibernate检索策略分为两类"><a href="#1-Hibernate检索策略分为两类" class="headerlink" title="1. Hibernate检索策略分为两类"></a>1. Hibernate检索策略分为两类</h3><h5 id="1-立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库："><a href="#1-立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：" class="headerlink" title="1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库："></a>1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：</h5><pre><code>Custoemr customer = session.get(Customer.class,1);
-</code></pre><a id="more"></a>
-<h5 id="2-延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库"><a href="#2-延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库" class="headerlink" title="2).延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库"></a>2).延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库</h5><pre><code>Customer customer = session.load(Customer.class,2);
-System.out.println(customer.getCid());
-</code></pre><h3 id="2-延迟查询分两类"><a href="#2-延迟查询分两类" class="headerlink" title="2. 延迟查询分两类"></a>2. 延迟查询分两类</h3><h5 id="1-类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句"><a href="#1-类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句" class="headerlink" title="1).类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句"></a>1).类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句</h5><h5 id="2-关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟"><a href="#2-关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟" class="headerlink" title="2).关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟"></a>2).关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟</h5><h3 id="3-关联级别延迟操作"><a href="#3-关联级别延迟操作" class="headerlink" title="3. 关联级别延迟操作"></a>3. 关联级别延迟操作</h3><h5 id="1-在映射文件中进行配置实现"><a href="#1-在映射文件中进行配置实现" class="headerlink" title="1).在映射文件中进行配置实现"></a>1).在映射文件中进行配置实现</h5><pre><code>根据客户得到所有的联系人，在客户映射文件中配置
-</code></pre><h5 id="2-在set标签上使用属性"><a href="#2-在set标签上使用属性" class="headerlink" title="2).在set标签上使用属性"></a>2).在set标签上使用属性</h5><pre><code>fetch: select(默认)
-lazy: true 延迟(默认)
-      false 不延迟 调用方法后发两条sql语句
-      extra 极其延迟 要什么值给什么值
-</code></pre><h3 id="4-批量抓取"><a href="#4-批量抓取" class="headerlink" title="4. 批量抓取"></a>4. 批量抓取</h3><pre><code>查询所有客户，返回list集合，遍历list集合，得到每个客户，然后得到每个客户的联系人
-在客户的映射配置文件中，set标签配置
-    batch-size值：值越大发送的语句越少
-</code></pre><blockquote>
-<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HQLManyTable.java" target="_blank" rel="external">查看源代码</a></p>
-</blockquote>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>有用就支持一下呗^_^<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/WeChat.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
@@ -243,98 +193,57 @@ lazy: true 延迟(默认)
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://tongxinmian.github.io/2017/06/15/Hibernate检索策略/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/10/25/对象导论/" class="archive-article-date">
+  	<time datetime="2017-10-25T06:32:10.152Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-25</time>
+</a>
+        </div>
+    	 
   
-    <a href="/2017/09/06/知识/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          知识
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/06/06/Hibernate查询方式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hibernate查询方式</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-  
-  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/10/25/对象导论/">一切皆为对象</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
   
 
-  
+    
 
 
           </div>
@@ -357,8 +266,8 @@ lazy: true 延迟(默认)
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

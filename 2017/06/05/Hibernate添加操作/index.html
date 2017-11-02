@@ -9,13 +9,13 @@
   <title>Hibernate添加操作 | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、加载hibernate核心配置文件1. 到src下面找到名称是hibernate.cfg.xml的配置文件2. 在hibernate里面封装对象Configuration config = new Configuration().configure();">
-<meta name="keywords" content="Hibernate">
+<meta name="keywords" content="Hibernate,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hibernate添加操作">
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/05/Hibernate添加操作/index.html">
 <meta property="og:site_name" content="Tongx">
 <meta property="og:description" content="一、加载hibernate核心配置文件1. 到src下面找到名称是hibernate.cfg.xml的配置文件2. 在hibernate里面封装对象Configuration config = new Configuration().configure();">
-<meta property="og:updated_time" content="2017-06-15T13:48:24.895Z">
+<meta property="og:updated_time" content="2017-11-01T02:46:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate添加操作">
 <meta name="twitter:description" content="一、加载hibernate核心配置文件1. 到src下面找到名称是hibernate.cfg.xml的配置文件2. 在hibernate里面封装对象Configuration config = new Configuration().configure();">
@@ -87,7 +87,7 @@
 		        
 					<a class="weibo" target="_blank" href="https://m.weibo.cn/u/5759915988?from=1075295010&wm=90061_90002&sourceType=qq&uid=5759915988" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/Tongxinmian" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/tongxinmian/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
 		</nav>
@@ -128,7 +128,7 @@
 			        
 						<a class="weibo" target="_blank" href="https://m.weibo.cn/u/5759915988?from=1075295010&wm=90061_90002&sourceType=qq&uid=5759915988" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/Tongxinmian" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/tongxinmian/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -174,20 +174,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、加载hibernate核心配置文件"><a href="#一、加载hibernate核心配置文件" class="headerlink" title="一、加载hibernate核心配置文件"></a>一、加载hibernate核心配置文件</h1><h3 id="1-到src下面找到名称是hibernate-cfg-xml的配置文件"><a href="#1-到src下面找到名称是hibernate-cfg-xml的配置文件" class="headerlink" title="1. 到src下面找到名称是hibernate.cfg.xml的配置文件"></a>1. 到src下面找到名称是hibernate.cfg.xml的配置文件</h3><h3 id="2-在hibernate里面封装对象"><a href="#2-在hibernate里面封装对象" class="headerlink" title="2. 在hibernate里面封装对象"></a>2. 在hibernate里面封装对象</h3><pre><code>Configuration config = new Configuration().configure();
+        <h3 id="一、加载hibernate核心配置文件"><a href="#一、加载hibernate核心配置文件" class="headerlink" title="一、加载hibernate核心配置文件"></a>一、加载hibernate核心配置文件</h3><h5 id="1-到src下面找到名称是hibernate-cfg-xml的配置文件"><a href="#1-到src下面找到名称是hibernate-cfg-xml的配置文件" class="headerlink" title="1. 到src下面找到名称是hibernate.cfg.xml的配置文件"></a>1. 到src下面找到名称是hibernate.cfg.xml的配置文件</h5><h5 id="2-在hibernate里面封装对象"><a href="#2-在hibernate里面封装对象" class="headerlink" title="2. 在hibernate里面封装对象"></a>2. 在hibernate里面封装对象</h5><pre><code>Configuration config = new Configuration().configure();
 </code></pre><a id="more"></a>
-<h1 id="二、创建SessionFactory对象"><a href="#二、创建SessionFactory对象" class="headerlink" title="二、创建SessionFactory对象"></a>二、创建SessionFactory对象</h1><h3 id="1-读取hibernate核心配置文件内容，创建SessionFactory"><a href="#1-读取hibernate核心配置文件内容，创建SessionFactory" class="headerlink" title="1. 读取hibernate核心配置文件内容，创建SessionFactory"></a>1. 读取hibernate核心配置文件内容，创建SessionFactory</h3><h3 id="2-在过程中，根据映射关系，在配置数据库中将表创建"><a href="#2-在过程中，根据映射关系，在配置数据库中将表创建" class="headerlink" title="2. 在过程中，根据映射关系，在配置数据库中将表创建"></a>2. 在过程中，根据映射关系，在配置数据库中将表创建</h3><pre><code>SessionFactory sessionFactory = config.buildSessionFactory();
-</code></pre><h1 id="三、使用SessionFactory创建Session对象"><a href="#三、使用SessionFactory创建Session对象" class="headerlink" title="三、使用SessionFactory创建Session对象"></a>三、使用SessionFactory创建Session对象</h1><h3 id="类似于本地连接"><a href="#类似于本地连接" class="headerlink" title="类似于本地连接"></a>类似于本地连接</h3><pre><code>Session session = sessionFactory.openSession();
-</code></pre><h1 id="四、开启事务"><a href="#四、开启事务" class="headerlink" title="四、开启事务"></a>四、开启事务</h1><pre><code>Transaction tx = session.beginTransaction();
-</code></pre><h1 id="五、写具体的curd操作"><a href="#五、写具体的curd操作" class="headerlink" title="五、写具体的curd操作"></a>五、写具体的curd操作</h1><pre><code>User user = new User();
+<h3 id="二、创建SessionFactory对象"><a href="#二、创建SessionFactory对象" class="headerlink" title="二、创建SessionFactory对象"></a>二、创建SessionFactory对象</h3><h5 id="1-读取hibernate核心配置文件内容，创建SessionFactory"><a href="#1-读取hibernate核心配置文件内容，创建SessionFactory" class="headerlink" title="1. 读取hibernate核心配置文件内容，创建SessionFactory"></a>1. 读取hibernate核心配置文件内容，创建SessionFactory</h5><h5 id="2-在过程中，根据映射关系，在配置数据库中将表创建"><a href="#2-在过程中，根据映射关系，在配置数据库中将表创建" class="headerlink" title="2. 在过程中，根据映射关系，在配置数据库中将表创建"></a>2. 在过程中，根据映射关系，在配置数据库中将表创建</h5><pre><code>SessionFactory sessionFactory = config.buildSessionFactory();
+</code></pre><h3 id="三、使用SessionFactory创建Session对象"><a href="#三、使用SessionFactory创建Session对象" class="headerlink" title="三、使用SessionFactory创建Session对象"></a>三、使用SessionFactory创建Session对象</h3><h5 id="类似于本地连接"><a href="#类似于本地连接" class="headerlink" title="类似于本地连接"></a>类似于本地连接</h5><pre><code>Session session = sessionFactory.openSession();
+</code></pre><h3 id="四、开启事务"><a href="#四、开启事务" class="headerlink" title="四、开启事务"></a>四、开启事务</h3><pre><code>Transaction tx = session.beginTransaction();
+</code></pre><h3 id="五、写具体的curd操作"><a href="#五、写具体的curd操作" class="headerlink" title="五、写具体的curd操作"></a>五、写具体的curd操作</h3><pre><code>User user = new User();
 user.setName(&quot;&quot;);
 user.setPassword(&quot;&quot;);
-</code></pre><h3 id="调用session的方法实现添加"><a href="#调用session的方法实现添加" class="headerlink" title="调用session的方法实现添加"></a>调用session的方法实现添加</h3><pre><code>session.save(user);
-</code></pre><h1 id="六、提交事务"><a href="#六、提交事务" class="headerlink" title="六、提交事务"></a>六、提交事务</h1><pre><code>tx.commit();
-</code></pre><h1 id="七、关闭资源"><a href="#七、关闭资源" class="headerlink" title="七、关闭资源"></a>七、关闭资源</h1><pre><code>session.close();
+</code></pre><h5 id="调用session的方法实现添加"><a href="#调用session的方法实现添加" class="headerlink" title="调用session的方法实现添加"></a>调用session的方法实现添加</h5><pre><code>session.save(user);
+</code></pre><h3 id="六、提交事务"><a href="#六、提交事务" class="headerlink" title="六、提交事务"></a>六、提交事务</h3><pre><code>tx.commit();
+</code></pre><h3 id="七、关闭资源"><a href="#七、关闭资源" class="headerlink" title="七、关闭资源"></a>七、关闭资源</h3><pre><code>session.close();
 sessionFactory.close();
 </code></pre><blockquote>
-<p><a href="https://github.com/Tongxinmian/Hibernate" target="_blank" rel="external">查看源代码</a></p>
+<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HibernateTest.java" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
 
       
@@ -234,6 +234,10 @@ sessionFactory.close();
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -423,6 +427,14 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随记</a>
               </li>
             
             <div class="clearfix"></div>

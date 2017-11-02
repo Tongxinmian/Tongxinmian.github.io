@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
-  <title>Hibernate检索策略 | Tongx</title>
+  <title>操作符 | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. Hibernate检索策略分为两类1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：Custoemr customer = session.get(Customer.class,1);">
-<meta name="keywords" content="Hibernate,Java">
+  <meta name="description" content="Java操作符几乎所有的操作符都只能操作“基本类型”。例外的操作符是“=”，“==”和“!=”，这些操作符能操作所有的对象。此外，String类支持“+和“+=”。">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hibernate检索策略">
-<meta property="og:url" content="https://tongxinmian.github.io/2017/06/15/Hibernate检索策略/index.html">
+<meta property="og:title" content="操作符">
+<meta property="og:url" content="https://tongxinmian.github.io/2017/10/31/操作符/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="1. Hibernate检索策略分为两类1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：Custoemr customer = session.get(Customer.class,1);">
-<meta property="og:updated_time" content="2017-11-01T02:30:12.000Z">
+<meta property="og:description" content="Java操作符几乎所有的操作符都只能操作“基本类型”。例外的操作符是“=”，“==”和“!=”，这些操作符能操作所有的对象。此外，String类支持“+和“+=”。">
+<meta property="og:updated_time" content="2017-11-01T02:28:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hibernate检索策略">
-<meta name="twitter:description" content="1. Hibernate检索策略分为两类1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：Custoemr customer = session.get(Customer.class,1);">
+<meta name="twitter:title" content="操作符">
+<meta name="twitter:description" content="Java操作符几乎所有的操作符都只能操作“基本类型”。例外的操作符是“=”，“==”和“!=”，这些操作符能操作所有的对象。此外，String类支持“+和“+=”。">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -154,41 +154,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Hibernate检索策略" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-操作符" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hibernate检索策略
+      操作符
     </h1>
   
 
         
-        <a href="/2017/06/15/Hibernate检索策略/" class="archive-article-date">
-  	<time datetime="2017-06-15T13:48:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-15</time>
+        <a href="/2017/10/31/操作符/" class="archive-article-date">
+  	<time datetime="2017-10-31T06:47:09.568Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-Hibernate检索策略分为两类"><a href="#1-Hibernate检索策略分为两类" class="headerlink" title="1. Hibernate检索策略分为两类"></a>1. Hibernate检索策略分为两类</h3><h5 id="1-立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库："><a href="#1-立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：" class="headerlink" title="1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库："></a>1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：</h5><pre><code>Custoemr customer = session.get(Customer.class,1);
-</code></pre><a id="more"></a>
-<h5 id="2-延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库"><a href="#2-延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库" class="headerlink" title="2).延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库"></a>2).延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库</h5><pre><code>Customer customer = session.load(Customer.class,2);
-System.out.println(customer.getCid());
-</code></pre><h3 id="2-延迟查询分两类"><a href="#2-延迟查询分两类" class="headerlink" title="2. 延迟查询分两类"></a>2. 延迟查询分两类</h3><h5 id="1-类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句"><a href="#1-类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句" class="headerlink" title="1).类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句"></a>1).类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句</h5><h5 id="2-关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟"><a href="#2-关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟" class="headerlink" title="2).关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟"></a>2).关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟</h5><h3 id="3-关联级别延迟操作"><a href="#3-关联级别延迟操作" class="headerlink" title="3. 关联级别延迟操作"></a>3. 关联级别延迟操作</h3><h5 id="1-在映射文件中进行配置实现"><a href="#1-在映射文件中进行配置实现" class="headerlink" title="1).在映射文件中进行配置实现"></a>1).在映射文件中进行配置实现</h5><pre><code>根据客户得到所有的联系人，在客户映射文件中配置
-</code></pre><h5 id="2-在set标签上使用属性"><a href="#2-在set标签上使用属性" class="headerlink" title="2).在set标签上使用属性"></a>2).在set标签上使用属性</h5><pre><code>fetch: select(默认)
-lazy: true 延迟(默认)
-      false 不延迟 调用方法后发两条sql语句
-      extra 极其延迟 要什么值给什么值
-</code></pre><h3 id="4-批量抓取"><a href="#4-批量抓取" class="headerlink" title="4. 批量抓取"></a>4. 批量抓取</h3><pre><code>查询所有客户，返回list集合，遍历list集合，得到每个客户，然后得到每个客户的联系人
-在客户的映射配置文件中，set标签配置
-    batch-size值：值越大发送的语句越少
-</code></pre><blockquote>
-<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HQLManyTable.java" target="_blank" rel="external">查看源代码</a></p>
-</blockquote>
+        <h3 id="Java操作符"><a href="#Java操作符" class="headerlink" title="Java操作符"></a>Java操作符</h3><p>几乎所有的操作符都只能操作“基本类型”。例外的操作符是“=”，“==”和“!=”，这些操作符能操作所有的对象。此外，<strong>String</strong>类支持“+和“+=”。<br><a id="more"></a></p>
+<h3 id="直接常量"><a href="#直接常量" class="headerlink" title="直接常量"></a>直接常量</h3><p>直接常量后面的后缀字符标志了他的类型。若为大写或（小写）的L，代表long；若为大写或（小写）的F，代表flaot；若为大写或（小写）的D，代表double。</p>
+<h3 id="指数计数法"><a href="#指数计数法" class="headerlink" title="指数计数法"></a>指数计数法</h3><p>在科学与工程领域，“e”代表自然对数的基数，约等于2.718。例如1.39×e<sup>-43</sup>这样的指数表达式意味着1.39×2.718<sup>-32</sup>。然而，设计FORTRAN语言的时候，设计师们很自然地决定e代表“10的幂次”。这种惯例在C，C++以及Java中被保留下来。所以在看到1.39e-43f这样的表达式时，真正的含义是1.39×10<sup>-43</sup>。</p>
+<h3 id="三元操作符"><a href="#三元操作符" class="headerlink" title="三元操作符"></a>三元操作符</h3><p>三元操作符也称条件操作符，格式如下：<br>boolean-exp ？ value0 ： value1<br>如果boolean-exp（布尔表达式）的结果为<strong>true</strong>，就计算value0，而且这个计算结果作为操作符最终产生的值；<br>如果boolean-exp（布尔表达式）的结果为<strong>false</strong>，就计算value1，同样这个计算结果作为操作符最终产生的值。</p>
 
       
 
@@ -232,10 +221,6 @@ lazy: true 延迟(默认)
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
-        		</li>
-      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
@@ -293,7 +278,7 @@ lazy: true 延迟(默认)
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://tongxinmian.github.io/2017/06/15/Hibernate检索策略/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://tongxinmian.github.io/2017/10/31/操作符/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -307,18 +292,18 @@ lazy: true 延迟(默认)
   
 <nav id="article-nav">
   
-    <a href="/2017/09/06/知识/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/11/01/控制执行流程/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          知识
+          控制执行流程
         
       </div>
     </a>
   
   
-    <a href="/2017/06/06/Hibernate查询方式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hibernate查询方式</div>
+    <a href="/2017/10/25/对象导论/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一切皆为对象</div>
       <i class="icon-circle-right"></i>
     </a>
   
