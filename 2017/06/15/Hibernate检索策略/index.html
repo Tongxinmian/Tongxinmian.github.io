@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
   <title>Hibernate检索策略 | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. Hibernate检索策略分为两类1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：Custoemr customer = session.get(Customer.class,1);">
+  <meta name="description" content="1. Hibernate检索策略分为两类1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：&amp;nbsp; &amp;nbsp;Custoemr customer = session.get(Customer.class,1);2).延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库&amp;nbsp; &amp;nbsp;C">
 <meta name="keywords" content="Hibernate,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hibernate检索策略">
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/15/Hibernate检索策略/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="1. Hibernate检索策略分为两类1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：Custoemr customer = session.get(Customer.class,1);">
-<meta property="og:updated_time" content="2017-11-01T02:30:12.000Z">
+<meta property="og:description" content="1. Hibernate检索策略分为两类1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：&amp;nbsp; &amp;nbsp;Custoemr customer = session.get(Customer.class,1);2).延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库&amp;nbsp; &amp;nbsp;C">
+<meta property="og:updated_time" content="2017-11-01T06:11:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate检索策略">
-<meta name="twitter:description" content="1. Hibernate检索策略分为两类1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：Custoemr customer = session.get(Customer.class,1);">
+<meta name="twitter:description" content="1. Hibernate检索策略分为两类1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：&amp;nbsp; &amp;nbsp;Custoemr customer = session.get(Customer.class,1);2).延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库&amp;nbsp; &amp;nbsp;C">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -53,7 +53,7 @@
 		  <h1 class="header-author"><a href="/">Tongx</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Welcome to my Notes</p>
+		<p class="header-subtitle">Welcome to my Blog</p>
 		
 
 		<nav class="header-menu">
@@ -61,14 +61,16 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/archives">归档</a></li>
+				<li><a href="/photo">相册</a></li>
+	        
+				<li><a href="/archives">所有文章</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">归档</a>
     			
             
     			
@@ -111,9 +113,11 @@
 			  <h1 class="header-author js-header-author">Tongx</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Welcome to my Notes<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Welcome to my Blog<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
 			
 				
 			
@@ -134,12 +138,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/photo">相册</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives">所有文章</a></li>
 		        
 				</ul>
 			</nav>
@@ -174,19 +180,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-Hibernate检索策略分为两类"><a href="#1-Hibernate检索策略分为两类" class="headerlink" title="1. Hibernate检索策略分为两类"></a>1. Hibernate检索策略分为两类</h3><h5 id="1-立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库："><a href="#1-立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：" class="headerlink" title="1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库："></a>1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：</h5><pre><code>Custoemr customer = session.get(Customer.class,1);
-</code></pre><a id="more"></a>
-<h5 id="2-延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库"><a href="#2-延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库" class="headerlink" title="2).延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库"></a>2).延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库</h5><pre><code>Customer customer = session.load(Customer.class,2);
-System.out.println(customer.getCid());
-</code></pre><h3 id="2-延迟查询分两类"><a href="#2-延迟查询分两类" class="headerlink" title="2. 延迟查询分两类"></a>2. 延迟查询分两类</h3><h5 id="1-类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句"><a href="#1-类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句" class="headerlink" title="1).类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句"></a>1).类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句</h5><h5 id="2-关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟"><a href="#2-关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟" class="headerlink" title="2).关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟"></a>2).关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟</h5><h3 id="3-关联级别延迟操作"><a href="#3-关联级别延迟操作" class="headerlink" title="3. 关联级别延迟操作"></a>3. 关联级别延迟操作</h3><h5 id="1-在映射文件中进行配置实现"><a href="#1-在映射文件中进行配置实现" class="headerlink" title="1).在映射文件中进行配置实现"></a>1).在映射文件中进行配置实现</h5><pre><code>根据客户得到所有的联系人，在客户映射文件中配置
-</code></pre><h5 id="2-在set标签上使用属性"><a href="#2-在set标签上使用属性" class="headerlink" title="2).在set标签上使用属性"></a>2).在set标签上使用属性</h5><pre><code>fetch: select(默认)
-lazy: true 延迟(默认)
-      false 不延迟 调用方法后发两条sql语句
-      extra 极其延迟 要什么值给什么值
-</code></pre><h3 id="4-批量抓取"><a href="#4-批量抓取" class="headerlink" title="4. 批量抓取"></a>4. 批量抓取</h3><pre><code>查询所有客户，返回list集合，遍历list集合，得到每个客户，然后得到每个客户的联系人
-在客户的映射配置文件中，set标签配置
-    batch-size值：值越大发送的语句越少
-</code></pre><blockquote>
+        <h3 id="1-Hibernate检索策略分为两类"><a href="#1-Hibernate检索策略分为两类" class="headerlink" title="1. Hibernate检索策略分为两类"></a>1. Hibernate检索策略分为两类</h3><p>1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：<br>&nbsp; &nbsp;Custoemr customer = session.get(Customer.class,1);<br>2).延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库<br>&nbsp; &nbsp;Customer customer = session.load(Customer.class,2);<br>&nbsp; &nbsp;System.out.println(customer.getCid());<br><a id="more"></a></p>
+<h3 id="2-延迟查询分两类"><a href="#2-延迟查询分两类" class="headerlink" title="2. 延迟查询分两类"></a>2. 延迟查询分两类</h3><p>a. 类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句<br>b. 关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟</p>
+<h3 id="3-关联级别延迟操作"><a href="#3-关联级别延迟操作" class="headerlink" title="3. 关联级别延迟操作"></a>3. 关联级别延迟操作</h3><p>a.在映射文件中进行配置实现<br>&nbsp; &nbsp;根据客户得到所有的联系人，在客户映射文件中配置<br>b.在set标签上使用属性<br>&nbsp; &nbsp;fetch: select(默认)<br>&nbsp; &nbsp;lazy: true 延迟(默认)<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;false 不延迟 调用方法后发两条sql语句<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;extra 极其延迟 要什么值给什么值</p>
+<h3 id="4-批量抓取"><a href="#4-批量抓取" class="headerlink" title="4. 批量抓取"></a>4. 批量抓取</h3><p>查询所有客户，返回list集合，遍历list集合，得到每个客户，然后得到每个客户的联系人<br>在客户的映射配置文件中，set标签配置<br>    batch-size值：值越大发送的语句越少</p>
+<blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HQLManyTable.java" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
 
@@ -202,7 +200,7 @@ lazy: true 延迟(默认)
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>有用就支持一下呗^_^<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>喜欢就赏一个呗^_^<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -397,7 +395,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">归档</a></li>
       
         
       
@@ -521,7 +519,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只记录了一些自己的笔记与想法&lt;br&gt;请多包涵</div>
   	  	
     	</section>
     

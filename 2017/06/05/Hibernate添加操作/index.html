@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
   <title>Hibernate添加操作 | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、加载hibernate核心配置文件1. 到src下面找到名称是hibernate.cfg.xml的配置文件2. 在hibernate里面封装对象Configuration config = new Configuration().configure();">
+  <meta name="description" content="一、加载hibernate核心配置文件1. 到src下面找到名称是hibernate.cfg.xml的配置文件2. 在hibernate里面封装对象&amp;nbsp; &amp;nbsp; Configuration config = new Configuration().configure();">
 <meta name="keywords" content="Hibernate,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hibernate添加操作">
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/05/Hibernate添加操作/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="一、加载hibernate核心配置文件1. 到src下面找到名称是hibernate.cfg.xml的配置文件2. 在hibernate里面封装对象Configuration config = new Configuration().configure();">
-<meta property="og:updated_time" content="2017-11-01T02:46:55.000Z">
+<meta property="og:description" content="一、加载hibernate核心配置文件1. 到src下面找到名称是hibernate.cfg.xml的配置文件2. 在hibernate里面封装对象&amp;nbsp; &amp;nbsp; Configuration config = new Configuration().configure();">
+<meta property="og:updated_time" content="2017-11-01T06:30:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate添加操作">
-<meta name="twitter:description" content="一、加载hibernate核心配置文件1. 到src下面找到名称是hibernate.cfg.xml的配置文件2. 在hibernate里面封装对象Configuration config = new Configuration().configure();">
+<meta name="twitter:description" content="一、加载hibernate核心配置文件1. 到src下面找到名称是hibernate.cfg.xml的配置文件2. 在hibernate里面封装对象&amp;nbsp; &amp;nbsp; Configuration config = new Configuration().configure();">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -53,7 +53,7 @@
 		  <h1 class="header-author"><a href="/">Tongx</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Welcome to my Notes</p>
+		<p class="header-subtitle">Welcome to my Blog</p>
 		
 
 		<nav class="header-menu">
@@ -61,14 +61,16 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/archives">归档</a></li>
+				<li><a href="/photo">相册</a></li>
+	        
+				<li><a href="/archives">所有文章</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">归档</a>
     			
             
     			
@@ -111,9 +113,11 @@
 			  <h1 class="header-author js-header-author">Tongx</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Welcome to my Notes<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Welcome to my Blog<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
 			
 				
 			
@@ -134,12 +138,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/photo">相册</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives">所有文章</a></li>
 		        
 				</ul>
 			</nav>
@@ -174,19 +180,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、加载hibernate核心配置文件"><a href="#一、加载hibernate核心配置文件" class="headerlink" title="一、加载hibernate核心配置文件"></a>一、加载hibernate核心配置文件</h3><h5 id="1-到src下面找到名称是hibernate-cfg-xml的配置文件"><a href="#1-到src下面找到名称是hibernate-cfg-xml的配置文件" class="headerlink" title="1. 到src下面找到名称是hibernate.cfg.xml的配置文件"></a>1. 到src下面找到名称是hibernate.cfg.xml的配置文件</h5><h5 id="2-在hibernate里面封装对象"><a href="#2-在hibernate里面封装对象" class="headerlink" title="2. 在hibernate里面封装对象"></a>2. 在hibernate里面封装对象</h5><pre><code>Configuration config = new Configuration().configure();
-</code></pre><a id="more"></a>
-<h3 id="二、创建SessionFactory对象"><a href="#二、创建SessionFactory对象" class="headerlink" title="二、创建SessionFactory对象"></a>二、创建SessionFactory对象</h3><h5 id="1-读取hibernate核心配置文件内容，创建SessionFactory"><a href="#1-读取hibernate核心配置文件内容，创建SessionFactory" class="headerlink" title="1. 读取hibernate核心配置文件内容，创建SessionFactory"></a>1. 读取hibernate核心配置文件内容，创建SessionFactory</h5><h5 id="2-在过程中，根据映射关系，在配置数据库中将表创建"><a href="#2-在过程中，根据映射关系，在配置数据库中将表创建" class="headerlink" title="2. 在过程中，根据映射关系，在配置数据库中将表创建"></a>2. 在过程中，根据映射关系，在配置数据库中将表创建</h5><pre><code>SessionFactory sessionFactory = config.buildSessionFactory();
-</code></pre><h3 id="三、使用SessionFactory创建Session对象"><a href="#三、使用SessionFactory创建Session对象" class="headerlink" title="三、使用SessionFactory创建Session对象"></a>三、使用SessionFactory创建Session对象</h3><h5 id="类似于本地连接"><a href="#类似于本地连接" class="headerlink" title="类似于本地连接"></a>类似于本地连接</h5><pre><code>Session session = sessionFactory.openSession();
-</code></pre><h3 id="四、开启事务"><a href="#四、开启事务" class="headerlink" title="四、开启事务"></a>四、开启事务</h3><pre><code>Transaction tx = session.beginTransaction();
-</code></pre><h3 id="五、写具体的curd操作"><a href="#五、写具体的curd操作" class="headerlink" title="五、写具体的curd操作"></a>五、写具体的curd操作</h3><pre><code>User user = new User();
-user.setName(&quot;&quot;);
-user.setPassword(&quot;&quot;);
-</code></pre><h5 id="调用session的方法实现添加"><a href="#调用session的方法实现添加" class="headerlink" title="调用session的方法实现添加"></a>调用session的方法实现添加</h5><pre><code>session.save(user);
-</code></pre><h3 id="六、提交事务"><a href="#六、提交事务" class="headerlink" title="六、提交事务"></a>六、提交事务</h3><pre><code>tx.commit();
-</code></pre><h3 id="七、关闭资源"><a href="#七、关闭资源" class="headerlink" title="七、关闭资源"></a>七、关闭资源</h3><pre><code>session.close();
-sessionFactory.close();
-</code></pre><blockquote>
+        <h3 id="一、加载hibernate核心配置文件"><a href="#一、加载hibernate核心配置文件" class="headerlink" title="一、加载hibernate核心配置文件"></a>一、加载hibernate核心配置文件</h3><p><strong>1. 到src下面找到名称是hibernate.cfg.xml的配置文件</strong><br><strong>2. 在hibernate里面封装对象</strong><br>&nbsp; &nbsp; Configuration config = new Configuration().configure();</p>
+<a id="more"></a>
+<h3 id="二、创建SessionFactory对象"><a href="#二、创建SessionFactory对象" class="headerlink" title="二、创建SessionFactory对象"></a>二、创建SessionFactory对象</h3><p><strong>1. 读取hibernate核心配置文件内容，创建SessionFactory</strong><br><strong>2. 在过程中，根据映射关系，在配置数据库中将表创建</strong><br>&nbsp; &nbsp; SessionFactory sessionFactory = config.buildSessionFactory();</p>
+<h3 id="三、使用SessionFactory创建Session对象"><a href="#三、使用SessionFactory创建Session对象" class="headerlink" title="三、使用SessionFactory创建Session对象"></a>三、使用SessionFactory创建Session对象</h3><p><strong>类似于本地连接</strong><br>&nbsp; &nbsp; Session session = sessionFactory.openSession();</p>
+<h3 id="四、开启事务"><a href="#四、开启事务" class="headerlink" title="四、开启事务"></a>四、开启事务</h3><p>&nbsp; &nbsp; Transaction tx = session.beginTransaction();</p>
+<h3 id="五、写具体的curd操作"><a href="#五、写具体的curd操作" class="headerlink" title="五、写具体的curd操作"></a>五、写具体的curd操作</h3><p>&nbsp; &nbsp; User user = new User();<br>&nbsp; &nbsp; user.setName(“”);<br>&nbsp; &nbsp; user.setPassword(“”);<br><strong>调用session的方法实现添加</strong><br>&nbsp; &nbsp; session.save(user);</p>
+<h3 id="六、提交事务"><a href="#六、提交事务" class="headerlink" title="六、提交事务"></a>六、提交事务</h3><p>&nbsp; &nbsp; tx.commit();</p>
+<h3 id="七、关闭资源"><a href="#七、关闭资源" class="headerlink" title="七、关闭资源"></a>七、关闭资源</h3><p>&nbsp; &nbsp; session.close();<br>&nbsp; &nbsp; sessionFactory.close();</p>
+<blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HibernateTest.java" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
 
@@ -202,7 +204,7 @@ sessionFactory.close();
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>有用就支持一下呗^_^<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>喜欢就赏一个呗^_^<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -397,7 +399,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">归档</a></li>
       
         
       
@@ -521,7 +523,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只记录了一些自己的笔记与想法&lt;br&gt;请多包涵</div>
   	  	
     	</section>
     

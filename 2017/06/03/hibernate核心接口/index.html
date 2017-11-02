@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
   <title>Hibernate核心接口 | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、Configuration负责在Hibernate初始化时加载默认文件下的配置文件信息到计算机内存，并通过他的对象加载指定的映射文件到内存。 最后创建一个SessionFactory对象，把读入的配置信息拷贝到SessionFactory对象的缓存中">
+  <meta name="description" content="一、Configuration&amp;nbsp; &amp;nbsp; 负责在Hibernate初始化时加载默认文件下的配置文件信息到计算机内存，并通过他的对象加载指定的映射文件到内存。&amp;nbsp; &amp;nbsp; 最后创建一个SessionFactory对象，把读入的配置信息拷贝到SessionFactory对象的缓存中">
 <meta name="keywords" content="Hibernate,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hibernate核心接口">
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/03/hibernate核心接口/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="一、Configuration负责在Hibernate初始化时加载默认文件下的配置文件信息到计算机内存，并通过他的对象加载指定的映射文件到内存。 最后创建一个SessionFactory对象，把读入的配置信息拷贝到SessionFactory对象的缓存中">
-<meta property="og:updated_time" content="2017-11-01T02:49:25.000Z">
+<meta property="og:description" content="一、Configuration&amp;nbsp; &amp;nbsp; 负责在Hibernate初始化时加载默认文件下的配置文件信息到计算机内存，并通过他的对象加载指定的映射文件到内存。&amp;nbsp; &amp;nbsp; 最后创建一个SessionFactory对象，把读入的配置信息拷贝到SessionFactory对象的缓存中">
+<meta property="og:updated_time" content="2017-11-01T06:31:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate核心接口">
-<meta name="twitter:description" content="一、Configuration负责在Hibernate初始化时加载默认文件下的配置文件信息到计算机内存，并通过他的对象加载指定的映射文件到内存。 最后创建一个SessionFactory对象，把读入的配置信息拷贝到SessionFactory对象的缓存中">
+<meta name="twitter:description" content="一、Configuration&amp;nbsp; &amp;nbsp; 负责在Hibernate初始化时加载默认文件下的配置文件信息到计算机内存，并通过他的对象加载指定的映射文件到内存。&amp;nbsp; &amp;nbsp; 最后创建一个SessionFactory对象，把读入的配置信息拷贝到SessionFactory对象的缓存中">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -53,7 +53,7 @@
 		  <h1 class="header-author"><a href="/">Tongx</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Welcome to my Notes</p>
+		<p class="header-subtitle">Welcome to my Blog</p>
 		
 
 		<nav class="header-menu">
@@ -61,14 +61,16 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/archives">归档</a></li>
+				<li><a href="/photo">相册</a></li>
+	        
+				<li><a href="/archives">所有文章</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">归档</a>
     			
             
     			
@@ -111,9 +113,11 @@
 			  <h1 class="header-author js-header-author">Tongx</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Welcome to my Notes<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Welcome to my Blog<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
 			
 				
 			
@@ -134,12 +138,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/photo">相册</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives">所有文章</a></li>
 		        
 				</ul>
 			</nav>
@@ -174,14 +180,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、Configuration"><a href="#一、Configuration" class="headerlink" title="一、Configuration"></a>一、Configuration</h3><pre><code>负责在Hibernate初始化时加载默认文件下的配置文件信息到计算机内存，并通过他的对象加载指定的映射文件到内存。
-最后创建一个SessionFactory对象，把读入的配置信息拷贝到SessionFactory对象的缓存中
-</code></pre><a id="more"></a>
-<h3 id="二、SessionFactory"><a href="#二、SessionFactory" class="headerlink" title="二、SessionFactory"></a>二、SessionFactory</h3><pre><code>负责创建Session实例，每个SessionFactory类的实例对应一个数据库
-</code></pre><h3 id="三、Session"><a href="#三、Session" class="headerlink" title="三、Session"></a>三、Session</h3><pre><code>Session是Hibernate持久化操作的基础，负责管理所有与持久化相关的操作
-</code></pre><h3 id="四、Transaction"><a href="#四、Transaction" class="headerlink" title="四、Transaction"></a>四、Transaction</h3><pre><code>负责Hibernate的数据库事务
-</code></pre><h3 id="五、Query和Criteria"><a href="#五、Query和Criteria" class="headerlink" title="五、Query和Criteria"></a>五、Query和Criteria</h3><pre><code>负责Hibernate的查询操作
-</code></pre><blockquote>
+        <h3 id="一、Configuration"><a href="#一、Configuration" class="headerlink" title="一、Configuration"></a>一、Configuration</h3><p>&nbsp; &nbsp; 负责在Hibernate初始化时加载默认文件下的配置文件信息到计算机内存，并通过他的对象加载指定的映射文件到内存。<br>&nbsp; &nbsp; 最后创建一个SessionFactory对象，把读入的配置信息拷贝到SessionFactory对象的缓存中</p>
+<a id="more"></a>
+<h3 id="二、SessionFactory"><a href="#二、SessionFactory" class="headerlink" title="二、SessionFactory"></a>二、SessionFactory</h3><p>&nbsp; &nbsp; 负责创建Session实例，每个SessionFactory类的实例对应一个数据库</p>
+<h3 id="三、Session"><a href="#三、Session" class="headerlink" title="三、Session"></a>三、Session</h3><p>&nbsp; &nbsp; Session是Hibernate持久化操作的基础，负责管理所有与持久化相关的操作</p>
+<h3 id="四、Transaction"><a href="#四、Transaction" class="headerlink" title="四、Transaction"></a>四、Transaction</h3><p>&nbsp; &nbsp; 负责Hibernate的数据库事务</p>
+<h3 id="五、Query和Criteria"><a href="#五、Query和Criteria" class="headerlink" title="五、Query和Criteria"></a>五、Query和Criteria</h3><p>&nbsp; &nbsp; 负责Hibernate的查询操作</p>
+<blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HibernateTest.java" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
 
@@ -197,7 +202,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>有用就支持一下呗^_^<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>喜欢就赏一个呗^_^<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -392,7 +397,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">归档</a></li>
       
         
       
@@ -516,7 +521,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只记录了一些自己的笔记与想法&lt;br&gt;请多包涵</div>
   	  	
     	</section>
     

@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
   <title>Hibernate配置 | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称">
+  <meta name="description" content="一、映射配置文件1. 引入约束2. 配置类和表对应&amp;nbsp; &amp;nbsp; class标签：&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; name属性：实体类全路径&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; table属性：数据库表名称">
 <meta name="keywords" content="Hibernate,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hibernate配置">
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/01/Hibernate配置/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="一、映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称">
-<meta property="og:updated_time" content="2017-11-01T02:48:09.000Z">
+<meta property="og:description" content="一、映射配置文件1. 引入约束2. 配置类和表对应&amp;nbsp; &amp;nbsp; class标签：&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; name属性：实体类全路径&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; table属性：数据库表名称">
+<meta property="og:updated_time" content="2017-11-01T06:44:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate配置">
-<meta name="twitter:description" content="一、映射配置文件1. 引入约束2. 配置类和表对应class标签：     name属性：实体类全路径     table属性：数据库表名称">
+<meta name="twitter:description" content="一、映射配置文件1. 引入约束2. 配置类和表对应&amp;nbsp; &amp;nbsp; class标签：&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; name属性：实体类全路径&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; table属性：数据库表名称">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -53,7 +53,7 @@
 		  <h1 class="header-author"><a href="/">Tongx</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Welcome to my Notes</p>
+		<p class="header-subtitle">Welcome to my Blog</p>
 		
 
 		<nav class="header-menu">
@@ -61,14 +61,16 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/archives">归档</a></li>
+				<li><a href="/photo">相册</a></li>
+	        
+				<li><a href="/archives">所有文章</a></li>
 	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">归档</a>
     			
             
     			
@@ -111,9 +113,11 @@
 			  <h1 class="header-author js-header-author">Tongx</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Welcome to my Notes<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Welcome to my Blog<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
 			
 				
 			
@@ -134,12 +138,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/photo">相册</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives">所有文章</a></li>
 		        
 				</ul>
 			</nav>
@@ -174,57 +180,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、映射配置文件"><a href="#一、映射配置文件" class="headerlink" title="一、映射配置文件"></a>一、映射配置文件</h2><h5 id="1-引入约束"><a href="#1-引入约束" class="headerlink" title="1. 引入约束"></a>1. 引入约束</h5><h5 id="2-配置类和表对应"><a href="#2-配置类和表对应" class="headerlink" title="2. 配置类和表对应"></a>2. 配置类和表对应</h5><pre><code>class标签：
-    name属性：实体类全路径
-    table属性：数据库表名称
-</code></pre><a id="more"></a>
-<h5 id="3-配置实体类id和表id对应"><a href="#3-配置实体类id和表id对应" class="headerlink" title="3. 配置实体类id和表id对应"></a>3. 配置实体类id和表id对应</h5><pre><code>hibernate要求实体类有一个属性唯一值
-hibernate要求表有字段作为唯一值
-id标签：
-    name属性：实体类中id属性名称
-    column属性：生成的表字段名称
-</code></pre><h5 id="4-设置数据库表id增长策略："><a href="#4-设置数据库表id增长策略：" class="headerlink" title="4. 设置数据库表id增长策略："></a>4. 设置数据库表id增长策略：</h5><pre><code>generator标签：
-    class属性：native生成的表id值是逐渐自动增长
-</code></pre><h5 id="5-配置其他属性和表字段对应"><a href="#5-配置其他属性和表字段对应" class="headerlink" title="5. 配置其他属性和表字段对应"></a>5. 配置其他属性和表字段对应</h5><pre><code>property标签：
-    name属性：实体类属性名称
-    column属性：生成表字段名称
-</code></pre><blockquote>
+        <h2 id="一、映射配置文件"><a href="#一、映射配置文件" class="headerlink" title="一、映射配置文件"></a>一、映射配置文件</h2><p><strong>1. 引入约束</strong><br><strong>2. 配置类和表对应</strong><br>&nbsp; &nbsp; class标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; name属性：实体类全路径<br>&nbsp; &nbsp; &nbsp; &nbsp; table属性：数据库表名称<br><a id="more"></a><br><strong>3. 配置实体类id和表id对应</strong><br>&nbsp; &nbsp; hibernate要求实体类有一个属性唯一值<br>&nbsp; &nbsp; hibernate要求表有字段作为唯一值<br>&nbsp; &nbsp; id标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; name属性：实体类中id属性名称<br>&nbsp; &nbsp; &nbsp; &nbsp; column属性：生成的表字段名称<br><strong>4. 设置数据库表id增长策略：</strong><br>&nbsp; &nbsp; generator标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; class属性：native生成的表id值是逐渐自动增长<br><strong>5. 配置其他属性和表字段对应</strong><br>&nbsp; &nbsp; property标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; name属性：实体类属性名称<br>&nbsp; &nbsp; &nbsp; &nbsp; column属性：生成表字段名称</p>
+<blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/mapping/User.hbm.xml" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
 <h3 id="二、创建hibernate核心配置文件"><a href="#二、创建hibernate核心配置文件" class="headerlink" title="二、创建hibernate核心配置文件"></a>二、创建hibernate核心配置文件</h3><pre><code>名称位置固定：在src下面，hibernate.cfg.xml
-</code></pre><h5 id="1-配置数据库信息"><a href="#1-配置数据库信息" class="headerlink" title="1. 配置数据库信息"></a>1. 配置数据库信息</h5><pre><code>&lt;property name=&quot;hibernate.connection.driver_class&quot;&gt;com.mysql.jdbc.Driver&lt;/property&gt;
-&lt;property name=&quot;hibernate.connection.url&quot;&gt;jdbc:mysql:///数据库名?characterEncoding=utf-8&lt;/property&gt;
-&lt;property name=&quot;hibernate.connection.username&quot;&gt;username&lt;/property&gt;
-&lt;property name=&quot;hibernate.connection.password&quot;&gt;password&lt;/property&gt;
-</code></pre><h5 id="2-配置hibernate信息"><a href="#2-配置hibernate信息" class="headerlink" title="2. 配置hibernate信息"></a>2. 配置hibernate信息</h5><h6 id="A-输出底层sql语句："><a href="#A-输出底层sql语句：" class="headerlink" title="A. 输出底层sql语句："></a>A. 输出底层sql语句：</h6><pre><code>&lt;property name=&quot;hibernate.show_sql&quot;&gt;true&lt;/property&gt;
-</code></pre><h6 id="B-对底层sql语句格式化："><a href="#B-对底层sql语句格式化：" class="headerlink" title="B. 对底层sql语句格式化："></a>B. 对底层sql语句格式化：</h6><pre><code>&lt;property name=&quot;hibernate.format_sql&quot;&gt;true&lt;/property&gt;
-</code></pre><h6 id="C-hibernate帮创建表："><a href="#C-hibernate帮创建表：" class="headerlink" title="C. hibernate帮创建表："></a>C. hibernate帮创建表：</h6><pre><code>&lt;property name=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/property&gt;
-update:若有表，更新；若无表，创建
-</code></pre><h6 id="D-让hibernate框架识别不同数据库自己特有的语句："><a href="#D-让hibernate框架识别不同数据库自己特有的语句：" class="headerlink" title="D. 让hibernate框架识别不同数据库自己特有的语句："></a>D. 让hibernate框架识别不同数据库自己特有的语句：</h6><pre><code>&lt;property name=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;
-</code></pre><h5 id="3-把映射文件放入核心配置文件中"><a href="#3-把映射文件放入核心配置文件中" class="headerlink" title="3. 把映射文件放入核心配置文件中"></a>3. 把映射文件放入核心配置文件中</h5><pre><code>&lt;mapping resource=&quot;映射配置文件路径&quot;/&gt;
-</code></pre><blockquote>
+</code></pre><p><strong>1. 配置数据库信息</strong><br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.driver_class”&gt;com.mysql.jdbc.Driver&lt;/property&gt;<br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.url”&gt;jdbc:mysql:///数据库名?characterEncoding=utf-8&lt;/property&gt;<br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.username”&gt;username&lt;/property&gt;<br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.password”&gt;password&lt;/property&gt;<br><strong>2. 配置hibernate信息</strong><br>A. 输出底层sql语句：<br>&nbsp; &nbsp; &lt;property name=”hibernate.show_sql”&gt;true&lt;/property&gt;<br>B. 对底层sql语句格式化：<br>&nbsp; &nbsp; &lt;property name=”hibernate.format_sql”&gt;true&lt;/property&gt;<br>C. hibernate帮创建表：<br>&nbsp; &nbsp; &lt;property name=”hibernate.hbm2ddl.auto”&gt;update&lt;/property&gt;<br>&nbsp; &nbsp; update:若有表，更新；若无表，创建<br>D. 让hibernate框架识别不同数据库自己特有的语句：<br>&nbsp; &nbsp; &lt;property name=”hibernate.dialect”&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;<br><strong>3. 把映射文件放入核心配置文件中</strong><br>&nbsp; &nbsp; &lt;mapping resource=”映射配置文件路径”/&gt;</p>
+<blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/User.hbm.xml" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
-<h3 id="三、-一对多映射配置"><a href="#三、-一对多映射配置" class="headerlink" title="三、 一对多映射配置"></a>三、 一对多映射配置</h3><pre><code>Hibernate机制：双向维护外键
-</code></pre><h5 id="1-在客户映射文件中，表示所有联系人。使用set标签表示所有联系人："><a href="#1-在客户映射文件中，表示所有联系人。使用set标签表示所有联系人：" class="headerlink" title="1. 在客户映射文件中，表示所有联系人。使用set标签表示所有联系人："></a>1. 在客户映射文件中，表示所有联系人。使用set标签表示所有联系人：</h5><pre><code>cascade:级联保存，修改，删除
-&lt;set name=&quot;客户类中的联系人集合对象&quot; cascade=&quot;save-update,delete&quot;&gt;
-一对多建表，有外键
-    &lt;key column=&quot;外键&quot;&gt;&lt;/key&gt;
-    &lt;one-to-many class=&quot;联系人类全路径&quot;/&gt; 
-&lt;/set&gt;
-</code></pre><h5 id="2-在联系人映射文件中："><a href="#2-在联系人映射文件中：" class="headerlink" title="2. 在联系人映射文件中："></a>2. 在联系人映射文件中：</h5><pre><code>&lt;many-to-ome name=&quot;联系人类中的客户对象&quot; class=&quot;客户类全路径&quot; column=&quot;外键&quot;&gt;&lt;/many-to-one&gt;
-</code></pre><blockquote>
+<h3 id="三、-一对多映射配置"><a href="#三、-一对多映射配置" class="headerlink" title="三、 一对多映射配置"></a>三、 一对多映射配置</h3><p>&nbsp; &nbsp; Hibernate机制：双向维护外键<br><strong>1. 在客户映射文件中，表示所有联系人。使用set标签表示所有联系人：</strong><br>&nbsp; &nbsp; cascade:级联保存，修改，删除<br>&nbsp; &nbsp; &lt;set name=”客户类中的联系人集合对象” cascade=”save-update,delete”&gt;<br>&nbsp; &nbsp; //一对多建表，有外键<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;key column=”外键”&gt;&lt;/key&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;one-to-many class=”联系人类全路径”/&gt;<br>&nbsp; &nbsp; &lt;/set&gt;<br><strong>2. 在联系人映射文件中：</strong><br>&nbsp; &nbsp; &lt;many-to-ome name=”联系人类中的客户对象” class=”客户类全路径” column=”外键”&gt;&lt;/many-to-one&gt;</p>
+<blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/mapping/Customer.hbm.xml" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
-<h3 id="四、多对多映射配置"><a href="#四、多对多映射配置" class="headerlink" title="四、多对多映射配置"></a>四、多对多映射配置</h3><h5 id="1-在用户映射文件中："><a href="#1-在用户映射文件中：" class="headerlink" title="1. 在用户映射文件中："></a>1. 在用户映射文件中：</h5><pre><code>&lt;set name=&quot;用户类中的角色集合对象&quot; table=&quot;新建一张表，关联用户类和角色类&quot; cascade=&quot;save-update,delete&quot;&gt;
-    &lt;key column=&quot;用户主键&quot;&gt;&lt;/key&gt;
-    &lt;many-to-many class=&quot;角色类全路径&quot; column=&quot;外键&quot;&gt;&lt;/many-to-many&gt;
-&lt;/set&gt;
-</code></pre><h5 id="2-在角色映射文件中："><a href="#2-在角色映射文件中：" class="headerlink" title="2. 在角色映射文件中："></a>2. 在角色映射文件中：</h5><pre><code>&lt;set name=&quot;角色类中的用户集合对象&quot; table=&quot;与用户映射文件中的一致&quot;&gt;
-    &lt;key column=&quot;角色主键&quot;&gt;&lt;/key&gt;
-    &lt;many-to-many class=&quot;用户类全路径&quot; column=&quot;用户主键，用作外键&quot;&gt;&lt;/many-to-many&gt;
-&lt;/set&gt;
-</code></pre><blockquote>
+<h3 id="四、多对多映射配置"><a href="#四、多对多映射配置" class="headerlink" title="四、多对多映射配置"></a>四、多对多映射配置</h3><p><strong>1. 在用户映射文件中：</strong><br>&nbsp; &nbsp; &lt;set name=”用户类中的角色集合对象” table=”新建一张表，关联用户类和角色类” cascade=”save-update,delete”&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;key column=”用户主键”&gt;&lt;/key&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;many-to-many class=”角色类全路径” column=”外键”&gt;&lt;/many-to-many&gt;<br>&nbsp; &nbsp; &lt;/set&gt;<br><strong>2. 在角色映射文件中：</strong><br>&nbsp; &nbsp; &lt;set name=”角色类中的用户集合对象” table=”与用户映射文件中的一致”&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;key column=”角色主键”&gt;&lt;/key&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;many-to-many class=”用户类全路径” column=”用户主键，用作外键”&gt;&lt;/many-to-many&gt;<br>&nbsp; &nbsp; &lt;/set&gt;</p>
+<blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/mapping/User.hbm.xml" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
 
@@ -240,7 +210,7 @@ update:若有表，更新；若无表，创建
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>有用就支持一下呗^_^<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>喜欢就赏一个呗^_^<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -355,8 +325,8 @@ update:若有表，更新；若无表，创建
     </a>
   
   
-    <a href="/2016/12/06/青春/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">青春</div>
+    <a href="/2017/04/03/价值/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">价值</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -435,7 +405,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">归档</a></li>
       
         
       
@@ -559,7 +529,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只记录了一些自己的笔记与想法&lt;br&gt;请多包涵</div>
   	  	
     	</section>
     
