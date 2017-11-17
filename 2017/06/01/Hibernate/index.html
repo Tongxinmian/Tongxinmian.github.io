@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
-  <title>Tongx</title>
+  <title>Hibernate | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Just for learn">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tongx">
-<meta property="og:url" content="https://tongxinmian.github.io/page/2/index.html">
+  <meta name="description" content="Hibernate配置一、映射配置文件1. 引入约束2. 配置类和表对应&amp;nbsp; &amp;nbsp; class标签：&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; name属性：实体类全路径&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; table属性：数据库表名称">
+<meta name="keywords" content="Java,Hibernate">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hibernate">
+<meta property="og:url" content="https://tongxinmian.github.io/2017/06/01/Hibernate/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="Just for learn">
+<meta property="og:description" content="Hibernate配置一、映射配置文件1. 引入约束2. 配置类和表对应&amp;nbsp; &amp;nbsp; class标签：&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; name属性：实体类全路径&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; table属性：数据库表名称">
+<meta property="og:updated_time" content="2017-11-17T04:19:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tongx">
-<meta name="twitter:description" content="Just for learn">
+<meta name="twitter:title" content="Hibernate">
+<meta name="twitter:description" content="Hibernate配置一、映射配置文件1. 引入约束2. 配置类和表对应&amp;nbsp; &amp;nbsp; class标签：&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; name属性：实体类全路径&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; table属性：数据库表名称">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -162,32 +164,193 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-价值" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Hibernate" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/03/价值/">价值</a>
+    <h1 class="article-title" itemprop="name">
+      Hibernate
     </h1>
   
 
         
-        <a href="/2017/04/03/价值/" class="archive-article-date">
-  	<time datetime="2017-04-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-03</time>
+        <a href="/2017/06/01/Hibernate/" class="archive-article-date">
+  	<time datetime="2017-06-01T03:11:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="账面价值-薪酬回报-实际价值-内在因素-外部溢价-外在因素"><a href="#账面价值-薪酬回报-实际价值-内在因素-外部溢价-外在因素" class="headerlink" title="账面价值(薪酬回报) = 实际价值(内在因素) + 外部溢价(外在因素)"></a>账面价值(薪酬回报) = 实际价值(内在因素) + 外部溢价(外在因素)</h2><p><strong>一个人的实际价值取决于什么呢？</strong><br>&nbsp; &nbsp; &nbsp; 这里有一个基础模型，被称为冰山模型，可以用来分析我们的问题：<br><img src="/img/Iceberg-Model.jpeg" height="350" width="550"><br>
-        
+        <h1 id="Hibernate配置"><a href="#Hibernate配置" class="headerlink" title="Hibernate配置"></a>Hibernate配置</h1><h3 id="一、映射配置文件"><a href="#一、映射配置文件" class="headerlink" title="一、映射配置文件"></a>一、映射配置文件</h3><p><strong>1. 引入约束</strong><br><strong>2. 配置类和表对应</strong><br>&nbsp; &nbsp; class标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; name属性：实体类全路径<br>&nbsp; &nbsp; &nbsp; &nbsp; table属性：数据库表名称<br><a id="more"></a><br><strong>3. 配置实体类id和表id对应</strong><br>&nbsp; &nbsp; hibernate要求实体类有一个属性唯一值<br>&nbsp; &nbsp; hibernate要求表有字段作为唯一值<br>&nbsp; &nbsp; id标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; name属性：实体类中id属性名称<br>&nbsp; &nbsp; &nbsp; &nbsp; column属性：生成的表字段名称<br><strong>4. 设置数据库表id增长策略：</strong><br>&nbsp; &nbsp; generator标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; class属性：native生成的表id值是逐渐自动增长<br><strong>5. 配置其他属性和表字段对应</strong><br>&nbsp; &nbsp; property标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; name属性：实体类属性名称<br>&nbsp; &nbsp; &nbsp; &nbsp; column属性：生成表字段名称</p>
+<blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/mapping/User.hbm.xml" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+<h3 id="二、创建hibernate核心配置文件"><a href="#二、创建hibernate核心配置文件" class="headerlink" title="二、创建hibernate核心配置文件"></a>二、创建hibernate核心配置文件</h3><p>&nbsp; &nbsp; &lt;名称位置固定：在src下面，hibernate.cfg.xml<br><strong>1. 配置数据库信息</strong><br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.driver_class”&gt;com.mysql.jdbc.Driver&lt;/property&gt;<br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.url”&gt;jdbc:mysql:///数据库名?characterEncoding=utf-8&lt;/property&gt;<br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.username”&gt;username&lt;/property&gt;<br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.password”&gt;password&lt;/property&gt;<br><strong>2. 配置hibernate信息</strong><br>A. 输出底层sql语句：<br>&nbsp; &nbsp; &lt;property name=”hibernate.show_sql”&gt;true&lt;/property&gt;<br>B. 对底层sql语句格式化：<br>&nbsp; &nbsp; &lt;property name=”hibernate.format_sql”&gt;true&lt;/property&gt;<br>C. hibernate帮创建表：<br>&nbsp; &nbsp; &lt;property name=”hibernate.hbm2ddl.auto”&gt;update&lt;/property&gt;<br>&nbsp; &nbsp; update:若有表，更新；若无表，创建<br>D. 让hibernate框架识别不同数据库自己特有的语句：<br>&nbsp; &nbsp; &lt;property name=”hibernate.dialect”&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;<br><strong>3. 把映射文件放入核心配置文件中</strong><br>&nbsp; &nbsp; &lt;mapping resource=”映射配置文件路径”/&gt;</p>
+<blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/User.hbm.xml" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+<h3 id="三、-一对多映射配置"><a href="#三、-一对多映射配置" class="headerlink" title="三、 一对多映射配置"></a>三、 一对多映射配置</h3><p>&nbsp; &nbsp; Hibernate机制：双向维护外键<br><strong>1. 在客户映射文件中，表示所有联系人。使用set标签表示所有联系人：</strong><br>&nbsp; &nbsp; cascade:级联保存，修改，删除<br>&nbsp; &nbsp; &lt;set name=”客户类中的联系人集合对象” cascade=”save-update,delete”&gt;<br>&nbsp; &nbsp; //一对多建表，有外键<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;key column=”外键”&gt;&lt;/key&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;one-to-many class=”联系人类全路径”/&gt;<br>&nbsp; &nbsp; &lt;/set&gt;<br><strong>2. 在联系人映射文件中：</strong><br>&nbsp; &nbsp; &lt;many-to-ome name=”联系人类中的客户对象” class=”客户类全路径” column=”外键”&gt;&lt;/many-to-one&gt;</p>
+<blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/mapping/Customer.hbm.xml" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+<h3 id="四、多对多映射配置"><a href="#四、多对多映射配置" class="headerlink" title="四、多对多映射配置"></a>四、多对多映射配置</h3><p><strong>1. 在用户映射文件中：</strong><br>&nbsp; &nbsp; &lt;set name=”用户类中的角色集合对象” table=”新建一张表，关联用户类和角色类” cascade=”save-update,delete”&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;key column=”用户主键”&gt;&lt;/key&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;many-to-many class=”角色类全路径” column=”外键”&gt;&lt;/many-to-many&gt;<br>&nbsp; &nbsp; &lt;/set&gt;<br><strong>2. 在角色映射文件中：</strong><br>&nbsp; &nbsp; &lt;set name=”角色类中的用户集合对象” table=”与用户映射文件中的一致”&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;key column=”角色主键”&gt;&lt;/key&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;many-to-many class=”用户类全路径” column=”用户主键，用作外键”&gt;&lt;/many-to-many&gt;<br>&nbsp; &nbsp; &lt;/set&gt;</p>
+<blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/mapping/User.hbm.xml" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+<h1 id="Hibernate核心接口"><a href="#Hibernate核心接口" class="headerlink" title="Hibernate核心接口"></a>Hibernate核心接口</h1><h3 id="一、Configuration"><a href="#一、Configuration" class="headerlink" title="一、Configuration"></a>一、Configuration</h3><p>&nbsp; &nbsp; 负责在Hibernate初始化时加载默认文件下的配置文件信息到计算机内存，并通过他的对象加载指定的映射文件到内存。<br>&nbsp; &nbsp; 最后创建一个SessionFactory对象，把读入的配置信息拷贝到SessionFactory对象的缓存中</p>
+<h3 id="二、SessionFactory"><a href="#二、SessionFactory" class="headerlink" title="二、SessionFactory"></a>二、SessionFactory</h3><p>&nbsp; &nbsp; 负责创建Session实例，每个SessionFactory类的实例对应一个数据库</p>
+<h3 id="三、Session"><a href="#三、Session" class="headerlink" title="三、Session"></a>三、Session</h3><p>&nbsp; &nbsp; Session是Hibernate持久化操作的基础，负责管理所有与持久化相关的操作</p>
+<h3 id="四、Transaction"><a href="#四、Transaction" class="headerlink" title="四、Transaction"></a>四、Transaction</h3><p>&nbsp; &nbsp; 负责Hibernate的数据库事务</p>
+<h3 id="五、Query和Criteria"><a href="#五、Query和Criteria" class="headerlink" title="五、Query和Criteria"></a>五、Query和Criteria</h3><p>&nbsp; &nbsp; 负责Hibernate的查询操作</p>
+<blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HibernateTest.java" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+<h1 id="Hibernate添加操作"><a href="#Hibernate添加操作" class="headerlink" title="Hibernate添加操作"></a>Hibernate添加操作</h1><h3 id="一、加载hibernate核心配置文件"><a href="#一、加载hibernate核心配置文件" class="headerlink" title="一、加载hibernate核心配置文件"></a>一、加载hibernate核心配置文件</h3><p><strong>1. 到src下面找到名称是hibernate.cfg.xml的配置文件</strong><br><strong>2. 在hibernate里面封装对象</strong><br>&nbsp; &nbsp; Configuration config = new Configuration().configure();</p>
+<h3 id="二、创建SessionFactory对象"><a href="#二、创建SessionFactory对象" class="headerlink" title="二、创建SessionFactory对象"></a>二、创建SessionFactory对象</h3><p><strong>1. 读取hibernate核心配置文件内容，创建SessionFactory</strong><br><strong>2. 在过程中，根据映射关系，在配置数据库中将表创建</strong><br>&nbsp; &nbsp; SessionFactory sessionFactory = config.buildSessionFactory();</p>
+<h3 id="三、使用SessionFactory创建Session对象"><a href="#三、使用SessionFactory创建Session对象" class="headerlink" title="三、使用SessionFactory创建Session对象"></a>三、使用SessionFactory创建Session对象</h3><p><strong>类似于本地连接</strong><br>&nbsp; &nbsp; Session session = sessionFactory.openSession();</p>
+<h3 id="四、开启事务"><a href="#四、开启事务" class="headerlink" title="四、开启事务"></a>四、开启事务</h3><p>&nbsp; &nbsp; Transaction tx = session.beginTransaction();</p>
+<h3 id="五、写具体的curd操作"><a href="#五、写具体的curd操作" class="headerlink" title="五、写具体的curd操作"></a>五、写具体的curd操作</h3><p>&nbsp; &nbsp; User user = new User();<br>&nbsp; &nbsp; user.setName(“”);<br>&nbsp; &nbsp; user.setPassword(“”);<br><strong>调用session的方法实现添加</strong><br>&nbsp; &nbsp; session.save(user);</p>
+<h3 id="六、提交事务"><a href="#六、提交事务" class="headerlink" title="六、提交事务"></a>六、提交事务</h3><p>&nbsp; &nbsp; tx.commit();</p>
+<h3 id="七、关闭资源"><a href="#七、关闭资源" class="headerlink" title="七、关闭资源"></a>七、关闭资源</h3><p>&nbsp; &nbsp; session.close();<br>&nbsp; &nbsp; sessionFactory.close();</p>
+<blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HibernateTest.java" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+<h1 id="Hibernate绑定Session及API的使用"><a href="#Hibernate绑定Session及API的使用" class="headerlink" title="Hibernate绑定Session及API的使用"></a>Hibernate绑定Session及API的使用</h1><h3 id="一、Hibernate绑定本地Session"><a href="#一、Hibernate绑定本地Session" class="headerlink" title="一、Hibernate绑定本地Session"></a>一、Hibernate绑定本地Session</h3><h5 id="获取与本地线程绑定的session"><a href="#获取与本地线程绑定的session" class="headerlink" title="获取与本地线程绑定的session"></a>获取与本地线程绑定的session</h5><p><strong>1. 在hibernate核心配置文件中配置</strong><br>&nbsp; &nbsp; &lt;property name=”hibernate.current_session_context_class”&gt;Thread&lt;/property&gt;<br><strong>2. 调用SessionFactory里面的方法得到</strong><br>&nbsp; &nbsp; //提供返回与本地线程绑定的Session方法<br>&nbsp; &nbsp; public static Session getSessionObject(){<br>&nbsp; &nbsp; &nbsp; &nbsp; return sessionFactory.getCurrentSession();<br>&nbsp; &nbsp; }<br>获取与本地线程绑定Session时候，不需要手动关闭session</p>
+<blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HibernateUtils.java" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+<h3 id="二、Hibernate的API使用"><a href="#二、Hibernate的API使用" class="headerlink" title="二、Hibernate的API使用"></a>二、Hibernate的API使用</h3><h5 id="Query对象"><a href="#Query对象" class="headerlink" title="Query对象"></a>Query对象</h5><p><strong>1. 使用Query对象，不需要写sql语句，但要写hql语句</strong><br>&nbsp; &nbsp; hql：hibernate query language hibernate提供的查询语句，与sql相似<br>&nbsp; &nbsp; 区别：使用sql操作表和字段<br>&nbsp; &nbsp; &nbsp; &nbsp; 使用hql操作实体类和属性<br><strong>2. 查询所有hql语句</strong><br>&nbsp; &nbsp; from 实体类名称<br><strong>3. Query对象的使用</strong><br>&nbsp; &nbsp; 创建Query对象：<br>&nbsp; &nbsp; Query query = session.createQuery(“from 实体类”);<br>&nbsp; &nbsp; 调用Query对象里面的方法得到结果<br>&nbsp; &nbsp; &nbsp; &nbsp; List&lt;实体类&gt; list = query.list();</p>
+<h5 id="Criteria对象"><a href="#Criteria对象" class="headerlink" title="Criteria对象"></a>Criteria对象</h5><p><strong>1. 使用该对象查询操作，不需要写语句，直接调用方法实现</strong><br><strong>2. 过程</strong><br>&nbsp; &nbsp; 创建Criteria对象<br>&nbsp; &nbsp; &nbsp; &nbsp; Criteria criteria = session.createCriteria(实体类.class);<br>&nbsp; &nbsp; 调用方法得到结果<br>&nbsp; &nbsp; &nbsp; &nbsp; List&lt;实体类&gt; list = criteria.list();</p>
+<h5 id="SQLQuery对象"><a href="#SQLQuery对象" class="headerlink" title="SQLQuery对象"></a>SQLQuery对象</h5><p><strong>1. 使用SQLQuery时，调用底层sql语句</strong><br><strong>2. 实现过程</strong><br>&nbsp; &nbsp; 创建对象<br>&nbsp; &nbsp; &nbsp; &nbsp; SQLQuery sqlQuery = session.createSQLQuery(“select * from 表名”);<br>&nbsp; &nbsp; 返回的List默认是数组结构<br>&nbsp; &nbsp; &nbsp; &nbsp; List<object[]> list = sqlQuery.list();<br>&nbsp; &nbsp; 调用方法是List每部分都是对象<br>&nbsp; &nbsp; &nbsp; &nbsp; sqlQuery.addEntity(实体类.class);<br>&nbsp; &nbsp; &nbsp; &nbsp; List&lt;实体类&gt; list = sqlQuery.list();</object[]></p>
+<blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HibernateTest.java" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+<h1 id="Hibernate查询方式"><a href="#Hibernate查询方式" class="headerlink" title="Hibernate查询方式"></a>Hibernate查询方式</h1><h3 id="一、对象导航查询"><a href="#一、对象导航查询" class="headerlink" title="一、对象导航查询"></a>一、对象导航查询</h3><p>根据id查询某个客户，再查询该客户的所有联系人<br>    实体类 对象 = session.get(实体类.class,主键值);</p>
+<h3 id="二、OID查询"><a href="#二、OID查询" class="headerlink" title="二、OID查询"></a>二、OID查询</h3><p>根据id查询一条记录，返回对象，调用session中的get方法</p>
+<h3 id="三、HQL查询"><a href="#三、HQL查询" class="headerlink" title="三、HQL查询"></a>三、HQL查询</h3><p><strong>1. 与sql的区别：</strong><br>&nbsp; &nbsp; sql操作数据库表和字段，hql操作实体类和属性<br><strong>2. 使用HQL查询操作时，使用Query对象</strong><br><strong>3. 常用HQL语句：</strong><br>A. 查询所有：<br>&nbsp; &nbsp; from 实体类名称<br>B. 条件查询：<br>&nbsp; &nbsp; from 实体类名称 where 属性名称 =  (like ?)<br>C. 排序查询：<br>&nbsp; &nbsp; from 实体类名称 order by 属性名称 asc/desc<br>D. 分页查询：(hql中不能写limit，Query对象封装了两个方法实现分页)<br>&nbsp; &nbsp; query.setFirstResult();//设置开始位置<br>&nbsp; &nbsp; query.setMaxResults();//设置每页记录数<br>E. 投影查询：查询的不是所有的字段值，而是部分字段值<br>&nbsp; &nbsp; select 实体类属性名称1…n from 实体类名称<br>&nbsp; &nbsp; select后面不能写‘*’<br>F. 常用聚集函数的使用：count,avg,max,min,sum…<br>&nbsp; &nbsp; select count(*) from 实体类名称<br>&nbsp; &nbsp; query对象里有方法直接返回对象形式：query.uniqueResult()<br>&nbsp; &nbsp; 首先把object变long类型，再变成int类型：<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Long lobj = (Long) obj;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;int count = lobj.intValue();</p>
+<blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HQLSelect.java" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+<h3 id="四、QBC查询："><a href="#四、QBC查询：" class="headerlink" title="四、QBC查询："></a>四、QBC查询：</h3><p>使用Criteria对象<br><strong>1. 查询所有：</strong><br>&nbsp; &nbsp; 创建对象：Criteria criteria = session.createCriteria();<br>&nbsp; &nbsp; 调用方法得到结果：List&lt;类&gt; list = criteria.list();<br><strong>2. 条件查询：没有语句，调用封装的方法实现</strong><br>&nbsp; &nbsp; 调用方法设置条件值：首先使用add方法，表示设置条件值，在add方法里使用类的方法实现条件设置<br>&nbsp; &nbsp; criteria.add(Restrictions.eq(“cid”,1));  //类似于cid=1<br><strong>常用的方法：</strong></p>
+<table>
+<thead>
+<tr>
+<th>短语</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Restrictions.eq</td>
+<td>=</td>
+</tr>
+<tr>
+<td>Restrictions.allEq</td>
+<td>使用Map，使用key/value进行多个等于的判断</td>
+</tr>
+<tr>
+<td>Restrictions.gt</td>
+<td>&gt;</td>
+</tr>
+<tr>
+<td>Restrictions.ge</td>
+<td>&gt;=    </td>
+</tr>
+<tr>
+<td>Restrictions.lt</td>
+<td>&lt;</td>
+</tr>
+<tr>
+<td>Restrictions.le</td>
+<td>&lt;=</td>
+</tr>
+<tr>
+<td>Restrictions.between</td>
+<td>对应sql的between子句</td>
+</tr>
+<tr>
+<td>Restrictions.like</td>
+<td>对应sql的like子句</td>
+</tr>
+<tr>
+<td>Restrictions.in</td>
+<td>对应sql的in子句</td>
+</tr>
+<tr>
+<td>Restrictions.and</td>
+<td>and关系</td>
+</tr>
+<tr>
+<td>Restrictions.or</td>
+<td>or关系</td>
+</tr>
+<tr>
+<td>Restrictions.sqlRestriction</td>
+<td>sql限定查询</td>
+</tr>
+<tr>
+<td>Restrictions.asc()</td>
+<td>升序</td>
+</tr>
+<tr>
+<td>Restrictions.desc()</td>
+<td>降序</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. 排序查询：</strong><br>&nbsp; &nbsp; Criteria.addOrder(Order.asc(“cid”));<br><strong>4. 分页查询：</strong><br>&nbsp; &nbsp; criteria.setFirstResult(0); //开始位置计算公式：(当前页-1)×每页记录数<br>&nbsp; &nbsp; criteria.setMaxResults(3);<br><strong>5. 统计查询：</strong><br>&nbsp; &nbsp; 创建对象：Criteria criteria = session.createCriteria();<br>&nbsp; &nbsp; 设置操作：criteria.setProjection(Projections.rowCount());<br>&nbsp; &nbsp; 调用方法得到结果：Object obj = criteria.uniqueResult();<br><strong>6. 离线查询:</strong><br>&nbsp; &nbsp; 创建对象：DetachedCriteria dc = DetachedCriteria.forclass(类.class);<br>&nbsp; &nbsp; 最终执行时才需要session: Criteria criteria = dc.getExeactableCriteria(session);<br>&nbsp; &nbsp; servlet调用service，service调用dao<br>&nbsp; &nbsp; 1.在dao里面对数据库crud操作<br>&nbsp; &nbsp; 2.在dao里面使用hibernate框架，调用session中的方法实现功能</p>
+<blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/QBCSelect.java" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+<h3 id="五、多表查询"><a href="#五、多表查询" class="headerlink" title="五、多表查询"></a>五、多表查询</h3><p><strong>内连接</strong><br>&nbsp; &nbsp; select * from table1,table2 where table1.cid = table2.lid;<br>&nbsp; &nbsp; select * from table1 inner join table2 on table1.cid = table2.lid;<br><strong>左外连接</strong><br>&nbsp; &nbsp; select * from table1 left outer join table2 on table1.cid = talbe2.lid;<br><strong>右外连接</strong><br>&nbsp; &nbsp; select * from table1 right outer join table2 on table1.cid = talbe2.lid;</p>
+<h3 id="六、HQL多表查询"><a href="#六、HQL多表查询" class="headerlink" title="六、HQL多表查询"></a>六、HQL多表查询</h3><p><strong>HQL内连接：以客户联系人为例</strong><br>&nbsp; &nbsp; from Customer inner join Customer.setLinkMan<br>&nbsp; &nbsp; 返回的list里面每部分都是数组形式<br><strong>HQL迫切内连接：</strong><br>&nbsp; &nbsp; from Customer c inner join fetch c.setLinkMan<br><strong>HQL左外连接(右外连接类似)：</strong><br>&nbsp; &nbsp; from Customer c left outer join c setLinkMan<br><strong>HQL迫切做外连接(五迫切右外连接)：</strong><br>&nbsp; &nbsp; from Customer c left outer join fetch c.setLinkMan</p>
+<blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HQLManyTable.java" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+<h1 id="Hibernate检索策略"><a href="#Hibernate检索策略" class="headerlink" title="Hibernate检索策略"></a>Hibernate检索策略</h1><h3 id="1-Hibernate检索策略分为两类"><a href="#1-Hibernate检索策略分为两类" class="headerlink" title="1. Hibernate检索策略分为两类"></a>1. Hibernate检索策略分为两类</h3><p>1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：<br>&nbsp; &nbsp;Custoemr customer = session.get(Customer.class,1);<br>2).延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库<br>&nbsp; &nbsp;Customer customer = session.load(Customer.class,2);<br>&nbsp; &nbsp;System.out.println(customer.getCid());</p>
+<h3 id="2-延迟查询分两类"><a href="#2-延迟查询分两类" class="headerlink" title="2. 延迟查询分两类"></a>2. 延迟查询分两类</h3><p>a. 类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句<br>b. 关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟</p>
+<h3 id="3-关联级别延迟操作"><a href="#3-关联级别延迟操作" class="headerlink" title="3. 关联级别延迟操作"></a>3. 关联级别延迟操作</h3><p>a.在映射文件中进行配置实现<br>&nbsp; &nbsp;根据客户得到所有的联系人，在客户映射文件中配置<br>b.在set标签上使用属性<br>&nbsp; &nbsp;fetch: select(默认)<br>&nbsp; &nbsp;lazy: true 延迟(默认)<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;false 不延迟 调用方法后发两条sql语句<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;extra 极其延迟 要什么值给什么值</p>
+<h3 id="4-批量抓取"><a href="#4-批量抓取" class="headerlink" title="4. 批量抓取"></a>4. 批量抓取</h3><p>查询所有客户，返回list集合，遍历list集合，得到每个客户，然后得到每个客户的联系人<br>在客户的映射配置文件中，set标签配置<br>    batch-size值：值越大发送的语句越少</p>
+<blockquote>
+<p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HQLManyTable.java" target="_blank" rel="external">查看源代码</a></p>
+</blockquote>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>喜欢就赏一个呗^_^<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/WeChat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -198,70 +361,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/03/价值/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-<!--
-
--->
-
-
-
-  
-    <article id="post-青春" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/06/青春/">青春</a>
-    </h1>
-  
-
-        
-        <a href="/2016/12/06/青春/" class="archive-article-date">
-  	<time datetime="2016-12-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="希望你的青春，无所畏惧，没有遗憾！"><a href="#希望你的青春，无所畏惧，没有遗憾！" class="headerlink" title="希望你的青春，无所畏惧，没有遗憾！"></a>希望你的青春，无所畏惧，没有遗憾！</h2><p><img src="/img/youth.jpeg" alt="希望你的青春，无所畏惧，没有遗憾！"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
         		</li>
       		
 		</ul>
@@ -270,11 +374,58 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/06/青春/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://tongxinmian.github.io/2017/06/01/Hibernate/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
@@ -282,18 +433,56 @@
 </article>
 
 
+  
+<nav id="article-nav">
+  
+    <a href="/2017/09/06/学习/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/03/价值/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">价值</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
 
 <!--
-
+ 
+  <section id="comments"> 
+<div id="SOHUCS" sid="Hibernate" style="padding:0px 30px 0px 46px"></div>
+<script> 
+  (function(){ 
+    var appid = 'cytirpscS', 
+    conf = '2b60f0ba9eb39055b089b1e1df23fd74'; 
+    var doc = document, 
+    s = doc.createElement('script'), 
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement; 
+    s.type = 'text/javascript'; 
+    s.charset = 'utf-8'; 
+    s.src = 'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid; 
+    h.insertBefore(s,h.firstChild); window.SCS_NO_IFRAME = true; 
+  })() 
+</script> 
+  </section> 
+  
 -->
 
 
+  
+  
+  
 
   
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+
   
 
 
@@ -316,8 +505,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
@@ -386,15 +575,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
               </li>
             
             <div class="clearfix"></div>
