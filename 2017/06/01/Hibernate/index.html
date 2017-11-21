@@ -9,13 +9,13 @@
   <title>Hibernate | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Hibernate配置一、映射配置文件1. 引入约束2. 配置类和表对应&amp;nbsp; &amp;nbsp; class标签：&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; name属性：实体类全路径&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; table属性：数据库表名称">
-<meta name="keywords" content="Java,Hibernate">
+<meta name="keywords" content="Hibernate,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hibernate">
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/01/Hibernate/index.html">
 <meta property="og:site_name" content="Tongx">
 <meta property="og:description" content="Hibernate配置一、映射配置文件1. 引入约束2. 配置类和表对应&amp;nbsp; &amp;nbsp; class标签：&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; name属性：实体类全路径&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; table属性：数据库表名称">
-<meta property="og:updated_time" content="2017-11-17T04:19:57.000Z">
+<meta property="og:updated_time" content="2017-11-17T08:49:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate">
 <meta name="twitter:description" content="Hibernate配置一、映射配置文件1. 引入约束2. 配置类和表对应&amp;nbsp; &amp;nbsp; class标签：&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; name属性：实体类全路径&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; table属性：数据库表名称">
@@ -310,13 +310,17 @@
 <blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HQLManyTable.java" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
-<h1 id="Hibernate检索策略"><a href="#Hibernate检索策略" class="headerlink" title="Hibernate检索策略"></a>Hibernate检索策略</h1><h3 id="1-Hibernate检索策略分为两类"><a href="#1-Hibernate检索策略分为两类" class="headerlink" title="1. Hibernate检索策略分为两类"></a>1. Hibernate检索策略分为两类</h3><p>1).立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：<br>&nbsp; &nbsp;Custoemr customer = session.get(Customer.class,1);<br>2).延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库<br>&nbsp; &nbsp;Customer customer = session.load(Customer.class,2);<br>&nbsp; &nbsp;System.out.println(customer.getCid());</p>
-<h3 id="2-延迟查询分两类"><a href="#2-延迟查询分两类" class="headerlink" title="2. 延迟查询分两类"></a>2. 延迟查询分两类</h3><p>a. 类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句<br>b. 关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟</p>
-<h3 id="3-关联级别延迟操作"><a href="#3-关联级别延迟操作" class="headerlink" title="3. 关联级别延迟操作"></a>3. 关联级别延迟操作</h3><p>a.在映射文件中进行配置实现<br>&nbsp; &nbsp;根据客户得到所有的联系人，在客户映射文件中配置<br>b.在set标签上使用属性<br>&nbsp; &nbsp;fetch: select(默认)<br>&nbsp; &nbsp;lazy: true 延迟(默认)<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;false 不延迟 调用方法后发两条sql语句<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;extra 极其延迟 要什么值给什么值</p>
-<h3 id="4-批量抓取"><a href="#4-批量抓取" class="headerlink" title="4. 批量抓取"></a>4. 批量抓取</h3><p>查询所有客户，返回list集合，遍历list集合，得到每个客户，然后得到每个客户的联系人<br>在客户的映射配置文件中，set标签配置<br>    batch-size值：值越大发送的语句越少</p>
-<blockquote>
+<h1 id="Hibernate检索策略"><a href="#Hibernate检索策略" class="headerlink" title="Hibernate检索策略"></a>Hibernate检索策略</h1><h3 id="一、-Hibernate检索策略分为两类"><a href="#一、-Hibernate检索策略分为两类" class="headerlink" title="一、 Hibernate检索策略分为两类"></a>一、 Hibernate检索策略分为两类</h3><ol>
+<li>立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：<br>&nbsp; &nbsp;Custoemr customer = session.get(Customer.class,1);</li>
+<li>延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库<br>&nbsp; &nbsp;Customer customer = session.load(Customer.class,2);<br>&nbsp; &nbsp;System.out.println(customer.getCid());<h3 id="二、-延迟查询分两类"><a href="#二、-延迟查询分两类" class="headerlink" title="二、 延迟查询分两类"></a>二、 延迟查询分两类</h3></li>
+<li>类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句</li>
+<li>关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟<h3 id="三、-关联级别延迟操作"><a href="#三、-关联级别延迟操作" class="headerlink" title="三、 关联级别延迟操作"></a>三、 关联级别延迟操作</h3></li>
+<li>在映射文件中进行配置实现<br>&nbsp; &nbsp;根据客户得到所有的联系人，在客户映射文件中配置</li>
+<li>在set标签上使用属性<br>&nbsp; &nbsp;fetch: select(默认)<br>&nbsp; &nbsp;lazy: true 延迟(默认)<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;false 不延迟 调用方法后发两条sql语句<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;extra 极其延迟 要什么值给什么值<h3 id="四、-批量抓取"><a href="#四、-批量抓取" class="headerlink" title="四、 批量抓取"></a>四、 批量抓取</h3>查询所有客户，返回list集合，遍历list集合，得到每个客户，然后得到每个客户的联系人<br>在客户的映射配置文件中，set标签配置<br> batch-size值：值越大发送的语句越少<blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HQLManyTable.java" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
+</li>
+</ol>
 
       
 
@@ -361,11 +365,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hibernate</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -575,15 +579,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
               </li>
             
             <div class="clearfix"></div>
