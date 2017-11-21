@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
   <title>Hibernate | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hibernate配置一、映射配置文件1. 引入约束2. 配置类和表对应&amp;nbsp; &amp;nbsp; class标签：&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; name属性：实体类全路径&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; table属性：数据库表名称">
+  <meta name="description" content="Hibernate简介&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Hibernate是一个基于java的对象/关系数据库映射工具，它将对象模型表示的数据映射到SQL表示的关系模型上去。Hibernate管理java到数据库的映射，提供给了数据查询和存取的方法，减少了程序员对数据持久化层相关的编程任务。">
 <meta name="keywords" content="Hibernate,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hibernate">
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/01/Hibernate/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="Hibernate配置一、映射配置文件1. 引入约束2. 配置类和表对应&amp;nbsp; &amp;nbsp; class标签：&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; name属性：实体类全路径&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; table属性：数据库表名称">
-<meta property="og:updated_time" content="2017-11-17T08:49:05.000Z">
+<meta property="og:description" content="Hibernate简介&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Hibernate是一个基于java的对象/关系数据库映射工具，它将对象模型表示的数据映射到SQL表示的关系模型上去。Hibernate管理java到数据库的映射，提供给了数据查询和存取的方法，减少了程序员对数据持久化层相关的编程任务。">
+<meta property="og:updated_time" content="2017-11-21T14:36:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate">
-<meta name="twitter:description" content="Hibernate配置一、映射配置文件1. 引入约束2. 配置类和表对应&amp;nbsp; &amp;nbsp; class标签：&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; name属性：实体类全路径&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; table属性：数据库表名称">
+<meta name="twitter:description" content="Hibernate简介&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Hibernate是一个基于java的对象/关系数据库映射工具，它将对象模型表示的数据映射到SQL表示的关系模型上去。Hibernate管理java到数据库的映射，提供给了数据查询和存取的方法，减少了程序员对数据持久化层相关的编程任务。">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -184,11 +184,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Hibernate配置"><a href="#Hibernate配置" class="headerlink" title="Hibernate配置"></a>Hibernate配置</h1><h3 id="一、映射配置文件"><a href="#一、映射配置文件" class="headerlink" title="一、映射配置文件"></a>一、映射配置文件</h3><p><strong>1. 引入约束</strong><br><strong>2. 配置类和表对应</strong><br>&nbsp; &nbsp; class标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; name属性：实体类全路径<br>&nbsp; &nbsp; &nbsp; &nbsp; table属性：数据库表名称<br><a id="more"></a><br><strong>3. 配置实体类id和表id对应</strong><br>&nbsp; &nbsp; hibernate要求实体类有一个属性唯一值<br>&nbsp; &nbsp; hibernate要求表有字段作为唯一值<br>&nbsp; &nbsp; id标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; name属性：实体类中id属性名称<br>&nbsp; &nbsp; &nbsp; &nbsp; column属性：生成的表字段名称<br><strong>4. 设置数据库表id增长策略：</strong><br>&nbsp; &nbsp; generator标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; class属性：native生成的表id值是逐渐自动增长<br><strong>5. 配置其他属性和表字段对应</strong><br>&nbsp; &nbsp; property标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; name属性：实体类属性名称<br>&nbsp; &nbsp; &nbsp; &nbsp; column属性：生成表字段名称</p>
+        <h2 id="Hibernate简介"><a href="#Hibernate简介" class="headerlink" title="Hibernate简介"></a>Hibernate简介</h2><p>&nbsp; &nbsp; &nbsp; &nbsp;Hibernate是一个基于java的对象/关系数据库映射工具，它将对象模型表示的数据映射到SQL表示的关系模型上去。Hibernate管理java到数据库的映射，提供给了数据查询和存取的方法，减少了程序员对数据持久化层相关的编程任务。<br><a id="more"></a><br>Hibernate是一个基于<strong>元数据</strong>的<strong>轻量级</strong>的<strong>ORM</strong>框架：<br>&nbsp; &nbsp; &nbsp; &nbsp;1. <strong>元数据（Meta Data）</strong>:data about data(数据的数据)，也就是说描述一个对象数据，相当于这个对象的上下文环境。<br>&nbsp; &nbsp; &nbsp; &nbsp;2. <strong>轻量级</strong>:占用资源少，没有侵入性。（其实我认为这只是相对而言，如果和Ibatis相比，它到成重量级的了）。<br>&nbsp; &nbsp; &nbsp; &nbsp;3. <strong>ORM（Object Relation Mapping）</strong>:对象关系数据库的映射。这是Hibernate框架的重点，也就是说将我们程序中的实体（bean，这里也叫POJO）和数据库中的表进行映射。java类型和sql类型映射，面向对象设计和关系型数据库设计的映射，从而我们只需要将更多的精力放到业务中，而不是sql数据库方面。<br>&nbsp; &nbsp; &nbsp; &nbsp;4. <strong>POJO（Plain Ordinary Java Object）</strong>:无格式的普通java对象，也就是上边说的实体，和数据库做映射的简单类。只是在这里提出了一个新的名词而已。</p>
+<h2 id="Hibernate配置"><a href="#Hibernate配置" class="headerlink" title="Hibernate配置"></a>Hibernate配置</h2><h3 id="一、映射配置文件"><a href="#一、映射配置文件" class="headerlink" title="一、映射配置文件"></a>一、映射配置文件</h3><p><strong>1. 引入约束</strong><br><strong>2. 配置类和表对应</strong><br>&nbsp; &nbsp; class标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; name属性：实体类全路径<br>&nbsp; &nbsp; &nbsp; &nbsp; table属性：数据库表名称<br><strong>3. 配置实体类id和表id对应</strong><br>&nbsp; &nbsp; hibernate要求实体类有一个属性唯一值<br>&nbsp; &nbsp; hibernate要求表有字段作为唯一值<br>&nbsp; &nbsp; id标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; name属性：实体类中id属性名称<br>&nbsp; &nbsp; &nbsp; &nbsp; column属性：生成的表字段名称<br><strong>4. 设置数据库表id增长策略：</strong><br>&nbsp; &nbsp; generator标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; class属性：native生成的表id值是逐渐自动增长<br><strong>5. 配置其他属性和表字段对应</strong><br>&nbsp; &nbsp; property标签：<br>&nbsp; &nbsp; &nbsp; &nbsp; name属性：实体类属性名称<br>&nbsp; &nbsp; &nbsp; &nbsp; column属性：生成表字段名称</p>
 <blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/mapping/User.hbm.xml" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
-<h3 id="二、创建hibernate核心配置文件"><a href="#二、创建hibernate核心配置文件" class="headerlink" title="二、创建hibernate核心配置文件"></a>二、创建hibernate核心配置文件</h3><p>&nbsp; &nbsp; &lt;名称位置固定：在src下面，hibernate.cfg.xml<br><strong>1. 配置数据库信息</strong><br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.driver_class”&gt;com.mysql.jdbc.Driver&lt;/property&gt;<br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.url”&gt;jdbc:mysql:///数据库名?characterEncoding=utf-8&lt;/property&gt;<br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.username”&gt;username&lt;/property&gt;<br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.password”&gt;password&lt;/property&gt;<br><strong>2. 配置hibernate信息</strong><br>A. 输出底层sql语句：<br>&nbsp; &nbsp; &lt;property name=”hibernate.show_sql”&gt;true&lt;/property&gt;<br>B. 对底层sql语句格式化：<br>&nbsp; &nbsp; &lt;property name=”hibernate.format_sql”&gt;true&lt;/property&gt;<br>C. hibernate帮创建表：<br>&nbsp; &nbsp; &lt;property name=”hibernate.hbm2ddl.auto”&gt;update&lt;/property&gt;<br>&nbsp; &nbsp; update:若有表，更新；若无表，创建<br>D. 让hibernate框架识别不同数据库自己特有的语句：<br>&nbsp; &nbsp; &lt;property name=”hibernate.dialect”&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;<br><strong>3. 把映射文件放入核心配置文件中</strong><br>&nbsp; &nbsp; &lt;mapping resource=”映射配置文件路径”/&gt;</p>
+<h3 id="二、创建hibernate核心配置文件"><a href="#二、创建hibernate核心配置文件" class="headerlink" title="二、创建hibernate核心配置文件"></a>二、创建hibernate核心配置文件</h3><p>&nbsp; &nbsp; &lt;名称位置固定：在src下面，hibernate.cfg.xml&gt;<br><strong>1. 配置数据库信息</strong><br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.driver_class”&gt;com.mysql.jdbc.Driver&lt;/property&gt;<br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.url”&gt;jdbc:mysql:///数据库名?characterEncoding=utf-8&lt;/property&gt;<br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.username”&gt;username&lt;/property&gt;<br>&nbsp; &nbsp; &lt;property name=”hibernate.connection.password”&gt;password&lt;/property&gt;<br><strong>2. 配置hibernate信息</strong><br>A. 输出底层sql语句：<br>&nbsp; &nbsp; &lt;property name=”hibernate.show_sql”&gt;true&lt;/property&gt;<br>B. 对底层sql语句格式化：<br>&nbsp; &nbsp; &lt;property name=”hibernate.format_sql”&gt;true&lt;/property&gt;<br>C. hibernate帮创建表：<br>&nbsp; &nbsp; &lt;property name=”hibernate.hbm2ddl.auto”&gt;update&lt;/property&gt;<br>&nbsp; &nbsp; update:若有表，更新；若无表，创建<br>D. 让hibernate框架识别不同数据库自己特有的语句：<br>&nbsp; &nbsp; &lt;property name=”hibernate.dialect”&gt;org.hibernate.dialect.MySQLDialect&lt;/property&gt;<br><strong>3. 把映射文件放入核心配置文件中</strong><br>&nbsp; &nbsp; &lt;mapping resource=”映射配置文件路径”/&gt;</p>
 <blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/User.hbm.xml" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
@@ -200,15 +201,11 @@
 <blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/mapping/User.hbm.xml" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
-<h1 id="Hibernate核心接口"><a href="#Hibernate核心接口" class="headerlink" title="Hibernate核心接口"></a>Hibernate核心接口</h1><h3 id="一、Configuration"><a href="#一、Configuration" class="headerlink" title="一、Configuration"></a>一、Configuration</h3><p>&nbsp; &nbsp; 负责在Hibernate初始化时加载默认文件下的配置文件信息到计算机内存，并通过他的对象加载指定的映射文件到内存。<br>&nbsp; &nbsp; 最后创建一个SessionFactory对象，把读入的配置信息拷贝到SessionFactory对象的缓存中</p>
-<h3 id="二、SessionFactory"><a href="#二、SessionFactory" class="headerlink" title="二、SessionFactory"></a>二、SessionFactory</h3><p>&nbsp; &nbsp; 负责创建Session实例，每个SessionFactory类的实例对应一个数据库</p>
-<h3 id="三、Session"><a href="#三、Session" class="headerlink" title="三、Session"></a>三、Session</h3><p>&nbsp; &nbsp; Session是Hibernate持久化操作的基础，负责管理所有与持久化相关的操作</p>
-<h3 id="四、Transaction"><a href="#四、Transaction" class="headerlink" title="四、Transaction"></a>四、Transaction</h3><p>&nbsp; &nbsp; 负责Hibernate的数据库事务</p>
-<h3 id="五、Query和Criteria"><a href="#五、Query和Criteria" class="headerlink" title="五、Query和Criteria"></a>五、Query和Criteria</h3><p>&nbsp; &nbsp; 负责Hibernate的查询操作</p>
+<h2 id="Hibernate核心接口"><a href="#Hibernate核心接口" class="headerlink" title="Hibernate核心接口"></a>Hibernate核心接口</h2><p><strong>1. Configuration</strong><br>&nbsp; &nbsp; 负责在Hibernate初始化时加载默认文件下的配置文件信息到计算机内存，并通过他的对象加载指定的映射文件到内存。<br>&nbsp; &nbsp; 最后创建一个SessionFactory对象，把读入的配置信息拷贝到SessionFactory对象的缓存中<br><strong>2. SessionFactory</strong><br>&nbsp; &nbsp; 负责创建Session实例，每个SessionFactory类的实例对应一个数据库<br><strong>3. Session</strong><br>&nbsp; &nbsp; Session是Hibernate持久化操作的基础，负责管理所有与持久化相关的操作<br><strong>4. Transaction</strong><br>&nbsp; &nbsp; 负责Hibernate的数据库事务<br><strong>5. Query和Criteria</strong><br>&nbsp; &nbsp; 负责Hibernate的查询操作</p>
 <blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HibernateTest.java" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
-<h1 id="Hibernate添加操作"><a href="#Hibernate添加操作" class="headerlink" title="Hibernate添加操作"></a>Hibernate添加操作</h1><h3 id="一、加载hibernate核心配置文件"><a href="#一、加载hibernate核心配置文件" class="headerlink" title="一、加载hibernate核心配置文件"></a>一、加载hibernate核心配置文件</h3><p><strong>1. 到src下面找到名称是hibernate.cfg.xml的配置文件</strong><br><strong>2. 在hibernate里面封装对象</strong><br>&nbsp; &nbsp; Configuration config = new Configuration().configure();</p>
+<h2 id="Hibernate添加操作"><a href="#Hibernate添加操作" class="headerlink" title="Hibernate添加操作"></a>Hibernate添加操作</h2><h3 id="一、加载hibernate核心配置文件"><a href="#一、加载hibernate核心配置文件" class="headerlink" title="一、加载hibernate核心配置文件"></a>一、加载hibernate核心配置文件</h3><p><strong>1. 到src下面找到名称是hibernate.cfg.xml的配置文件</strong><br><strong>2. 在hibernate里面封装对象</strong><br>&nbsp; &nbsp; Configuration config = new Configuration().configure();</p>
 <h3 id="二、创建SessionFactory对象"><a href="#二、创建SessionFactory对象" class="headerlink" title="二、创建SessionFactory对象"></a>二、创建SessionFactory对象</h3><p><strong>1. 读取hibernate核心配置文件内容，创建SessionFactory</strong><br><strong>2. 在过程中，根据映射关系，在配置数据库中将表创建</strong><br>&nbsp; &nbsp; SessionFactory sessionFactory = config.buildSessionFactory();</p>
 <h3 id="三、使用SessionFactory创建Session对象"><a href="#三、使用SessionFactory创建Session对象" class="headerlink" title="三、使用SessionFactory创建Session对象"></a>三、使用SessionFactory创建Session对象</h3><p><strong>类似于本地连接</strong><br>&nbsp; &nbsp; Session session = sessionFactory.openSession();</p>
 <h3 id="四、开启事务"><a href="#四、开启事务" class="headerlink" title="四、开启事务"></a>四、开启事务</h3><p>&nbsp; &nbsp; Transaction tx = session.beginTransaction();</p>
@@ -218,7 +215,7 @@
 <blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HibernateTest.java" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
-<h1 id="Hibernate绑定Session及API的使用"><a href="#Hibernate绑定Session及API的使用" class="headerlink" title="Hibernate绑定Session及API的使用"></a>Hibernate绑定Session及API的使用</h1><h3 id="一、Hibernate绑定本地Session"><a href="#一、Hibernate绑定本地Session" class="headerlink" title="一、Hibernate绑定本地Session"></a>一、Hibernate绑定本地Session</h3><h5 id="获取与本地线程绑定的session"><a href="#获取与本地线程绑定的session" class="headerlink" title="获取与本地线程绑定的session"></a>获取与本地线程绑定的session</h5><p><strong>1. 在hibernate核心配置文件中配置</strong><br>&nbsp; &nbsp; &lt;property name=”hibernate.current_session_context_class”&gt;Thread&lt;/property&gt;<br><strong>2. 调用SessionFactory里面的方法得到</strong><br>&nbsp; &nbsp; //提供返回与本地线程绑定的Session方法<br>&nbsp; &nbsp; public static Session getSessionObject(){<br>&nbsp; &nbsp; &nbsp; &nbsp; return sessionFactory.getCurrentSession();<br>&nbsp; &nbsp; }<br>获取与本地线程绑定Session时候，不需要手动关闭session</p>
+<h2 id="Hibernate绑定Session及API的使用"><a href="#Hibernate绑定Session及API的使用" class="headerlink" title="Hibernate绑定Session及API的使用"></a>Hibernate绑定Session及API的使用</h2><h3 id="一、Hibernate绑定本地Session"><a href="#一、Hibernate绑定本地Session" class="headerlink" title="一、Hibernate绑定本地Session"></a>一、Hibernate绑定本地Session</h3><h5 id="获取与本地线程绑定的session"><a href="#获取与本地线程绑定的session" class="headerlink" title="获取与本地线程绑定的session"></a>获取与本地线程绑定的session</h5><p><strong>1. 在hibernate核心配置文件中配置</strong><br>&nbsp; &nbsp; &lt;property name=”hibernate.current_session_context_class”&gt;Thread&lt;/property&gt;<br><strong>2. 调用SessionFactory里面的方法得到</strong><br>&nbsp; &nbsp; //提供返回与本地线程绑定的Session方法<br>&nbsp; &nbsp; public static Session getSessionObject(){<br>&nbsp; &nbsp; &nbsp; &nbsp; return sessionFactory.getCurrentSession();<br>&nbsp; &nbsp; }<br>获取与本地线程绑定Session时候，不需要手动关闭session</p>
 <blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HibernateUtils.java" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
@@ -228,7 +225,7 @@
 <blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HibernateTest.java" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
-<h1 id="Hibernate查询方式"><a href="#Hibernate查询方式" class="headerlink" title="Hibernate查询方式"></a>Hibernate查询方式</h1><h3 id="一、对象导航查询"><a href="#一、对象导航查询" class="headerlink" title="一、对象导航查询"></a>一、对象导航查询</h3><p>根据id查询某个客户，再查询该客户的所有联系人<br>    实体类 对象 = session.get(实体类.class,主键值);</p>
+<h2 id="Hibernate查询方式"><a href="#Hibernate查询方式" class="headerlink" title="Hibernate查询方式"></a>Hibernate查询方式</h2><h3 id="一、对象导航查询"><a href="#一、对象导航查询" class="headerlink" title="一、对象导航查询"></a>一、对象导航查询</h3><p>根据id查询某个客户，再查询该客户的所有联系人<br>    实体类 对象 = session.get(实体类.class,主键值);</p>
 <h3 id="二、OID查询"><a href="#二、OID查询" class="headerlink" title="二、OID查询"></a>二、OID查询</h3><p>根据id查询一条记录，返回对象，调用session中的get方法</p>
 <h3 id="三、HQL查询"><a href="#三、HQL查询" class="headerlink" title="三、HQL查询"></a>三、HQL查询</h3><p><strong>1. 与sql的区别：</strong><br>&nbsp; &nbsp; sql操作数据库表和字段，hql操作实体类和属性<br><strong>2. 使用HQL查询操作时，使用Query对象</strong><br><strong>3. 常用HQL语句：</strong><br>A. 查询所有：<br>&nbsp; &nbsp; from 实体类名称<br>B. 条件查询：<br>&nbsp; &nbsp; from 实体类名称 where 属性名称 =  (like ?)<br>C. 排序查询：<br>&nbsp; &nbsp; from 实体类名称 order by 属性名称 asc/desc<br>D. 分页查询：(hql中不能写limit，Query对象封装了两个方法实现分页)<br>&nbsp; &nbsp; query.setFirstResult();//设置开始位置<br>&nbsp; &nbsp; query.setMaxResults();//设置每页记录数<br>E. 投影查询：查询的不是所有的字段值，而是部分字段值<br>&nbsp; &nbsp; select 实体类属性名称1…n from 实体类名称<br>&nbsp; &nbsp; select后面不能写‘*’<br>F. 常用聚集函数的使用：count,avg,max,min,sum…<br>&nbsp; &nbsp; select count(*) from 实体类名称<br>&nbsp; &nbsp; query对象里有方法直接返回对象形式：query.uniqueResult()<br>&nbsp; &nbsp; 首先把object变long类型，再变成int类型：<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Long lobj = (Long) obj;<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;int count = lobj.intValue();</p>
 <blockquote>
@@ -310,17 +307,22 @@
 <blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HQLManyTable.java" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
-<h1 id="Hibernate检索策略"><a href="#Hibernate检索策略" class="headerlink" title="Hibernate检索策略"></a>Hibernate检索策略</h1><h3 id="一、-Hibernate检索策略分为两类"><a href="#一、-Hibernate检索策略分为两类" class="headerlink" title="一、 Hibernate检索策略分为两类"></a>一、 Hibernate检索策略分为两类</h3><ol>
+<h2 id="Hibernate检索策略"><a href="#Hibernate检索策略" class="headerlink" title="Hibernate检索策略"></a>Hibernate检索策略</h2><h3 id="一、-Hibernate检索策略分为两类"><a href="#一、-Hibernate检索策略分为两类" class="headerlink" title="一、 Hibernate检索策略分为两类"></a>一、 Hibernate检索策略分为两类</h3><ol>
 <li>立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：<br>&nbsp; &nbsp;Custoemr customer = session.get(Customer.class,1);</li>
-<li>延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库<br>&nbsp; &nbsp;Customer customer = session.load(Customer.class,2);<br>&nbsp; &nbsp;System.out.println(customer.getCid());<h3 id="二、-延迟查询分两类"><a href="#二、-延迟查询分两类" class="headerlink" title="二、 延迟查询分两类"></a>二、 延迟查询分两类</h3></li>
+<li>延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库<br>&nbsp; &nbsp;Customer customer = session.load(Customer.class,2);<br>&nbsp; &nbsp;System.out.println(customer.getCid());</li>
+</ol>
+<h3 id="二、-延迟查询分两类"><a href="#二、-延迟查询分两类" class="headerlink" title="二、 延迟查询分两类"></a>二、 延迟查询分两类</h3><ol>
 <li>类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句</li>
-<li>关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟<h3 id="三、-关联级别延迟操作"><a href="#三、-关联级别延迟操作" class="headerlink" title="三、 关联级别延迟操作"></a>三、 关联级别延迟操作</h3></li>
+<li>关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟</li>
+</ol>
+<h3 id="三、-关联级别延迟操作"><a href="#三、-关联级别延迟操作" class="headerlink" title="三、 关联级别延迟操作"></a>三、 关联级别延迟操作</h3><ol>
 <li>在映射文件中进行配置实现<br>&nbsp; &nbsp;根据客户得到所有的联系人，在客户映射文件中配置</li>
-<li>在set标签上使用属性<br>&nbsp; &nbsp;fetch: select(默认)<br>&nbsp; &nbsp;lazy: true 延迟(默认)<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;false 不延迟 调用方法后发两条sql语句<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;extra 极其延迟 要什么值给什么值<h3 id="四、-批量抓取"><a href="#四、-批量抓取" class="headerlink" title="四、 批量抓取"></a>四、 批量抓取</h3>查询所有客户，返回list集合，遍历list集合，得到每个客户，然后得到每个客户的联系人<br>在客户的映射配置文件中，set标签配置<br> batch-size值：值越大发送的语句越少<blockquote>
+<li>在set标签上使用属性<br>&nbsp; &nbsp;fetch: select(默认)<br>&nbsp; &nbsp;lazy: true 延迟(默认)<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;false 不延迟 调用方法后发两条sql语句<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;extra 极其延迟 要什么值给什么值</li>
+</ol>
+<h3 id="四、-批量抓取"><a href="#四、-批量抓取" class="headerlink" title="四、 批量抓取"></a>四、 批量抓取</h3><p>查询所有客户，返回list集合，遍历list集合，得到每个客户，然后得到每个客户的联系人<br>在客户的映射配置文件中，set标签配置<br>    batch-size值：值越大发送的语句越少</p>
+<blockquote>
 <p><a href="https://github.com/Tongxinmian/Hibernate/blob/master/HibernateDemo/src/just/For/you/hibernate/HQLManyTable.java" target="_blank" rel="external">查看源代码</a></p>
 </blockquote>
-</li>
-</ol>
 
       
 
