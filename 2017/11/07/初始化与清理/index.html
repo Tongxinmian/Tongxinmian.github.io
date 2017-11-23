@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
   <title>初始化与清理 | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="用构造器确保初始化">
+  <meta name="description" content="this关键字this关键字只能在方法内部使用，表示对“调用方法的那个对象”的引用。如果在方法内部调用同一个类的另一个方法，就不必使用this，直接调用即可。当前方法中的this引用会自动应用于同一类中的其他方法。">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初始化与清理">
 <meta property="og:url" content="https://tongxinmian.github.io/2017/11/07/初始化与清理/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="用构造器确保初始化">
-<meta property="og:updated_time" content="2017-11-21T04:23:06.000Z">
+<meta property="og:description" content="this关键字this关键字只能在方法内部使用，表示对“调用方法的那个对象”的引用。如果在方法内部调用同一个类的另一个方法，就不必使用this，直接调用即可。当前方法中的this引用会自动应用于同一类中的其他方法。">
+<meta property="og:updated_time" content="2017-11-23T08:45:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初始化与清理">
-<meta name="twitter:description" content="用构造器确保初始化">
+<meta name="twitter:description" content="this关键字this关键字只能在方法内部使用，表示对“调用方法的那个对象”的引用。如果在方法内部调用同一个类的另一个方法，就不必使用this，直接调用即可。当前方法中的this引用会自动应用于同一类中的其他方法。">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -184,7 +184,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="用构造器确保初始化"><a href="#用构造器确保初始化" class="headerlink" title="用构造器确保初始化"></a>用构造器确保初始化</h3>
+        <h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3><p>this关键字只能在方法内部使用，表示对“调用方法的那个对象”的引用。如果在方法内部调用同一个类的另一个方法，就不必使用this，直接调用即可。当前方法中的this引用会自动应用于同一类中的其他方法。<a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">public class Apricot&#123;</div><div class="line">  void pick()&#123;&#125;</div><div class="line">  void pit()&#123;pick();&#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在pit()内部，可以写this.pick()，但无此必要，编译器能帮你自动添加。只有当需要明确指出对当前对象的引用，才需要使用this关键字。</p>
+<h3 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h3><p><strong>引用计数</strong>:<br>是一种简单但是速度很慢的垃圾回收技术，每个对象都含有一个引用计数器，当有引用连接至对象时，引用计数加1。当引用离开作用域或者被置为null时，引用计数减1。虽然管理引用计数的开销不大，但这项开销在整个程序生命周期中将持续发生。垃圾回收器会在含有全部对象的列表上遍历，当发现某个对象的引用计数为0时，就释放其占有的空间(引用计数模式经常会在计数值变为0时立即释放对象)。这种方法有个缺陷，如果对象之间存在循环引用，可能会出现“对象应该被回收，但引用计数却不为0”的情况。对垃圾回收器而言，定位这样的交互自引用的对象组所需要的工作量极大。<br><strong>停止-复制</strong>:<br>先暂停程序的运行，然后将所有存活的对象从当前堆复制到另一个堆，没有被复制的全都时垃圾。<br><strong>标记-清扫</strong>:<br>从堆栈和静态存储区出发，遍历所有的引用，进而找出所有的存活对象，每当找到一个存活对象，就会给对象设一个标记，这个过程那个中不会回收任何对象。只有全部标记工作完成的时候，清理动作才会开始，在清理过程中，没有标记的对象将被释放。</p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p><strong>成员初始化</strong>:<br>Java尽力保证所有的变量在使用之前都能得到恰当的初始化。对于方法的局部变量，Java以编译时错误的形式来贯彻这种保证。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">void f()&#123;  </div><div class="line">  int i;</div><div class="line">  i++;  //Error  -- i not initialized</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>要是类的数据成员(即字段)是基本类型，情况会有所不同，类的每个基本类型数据成员保证都会有一个初始值。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class InitialValues&#123;</div><div class="line">  int i;</div><div class="line">  void printInitialValues()&#123;</div><div class="line">    System.out.println(i);     </div><div class="line">  &#125;</div><div class="line">  public static void main(String[] args)&#123;</div><div class="line">    new InitialValues.printInitialValues();    </div><div class="line">&#125;</div><div class="line">&#125;/* Output: 0 */</div></pre></td></tr></table></figure></p>
+<p><strong>构造器初始化</strong>:<br>在类的内部，变量定义的先后顺序决定了初始化的顺序,即使变量定义散布于方法定义之间，他们仍旧会在任何方法（包括构造器）被调用之前得到初始化。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">class Window&#123;</div><div class="line">  Window(int i)&#123;System.out.println(&quot;Window(&quot;+i+&quot;)&quot;);&#125;</div><div class="line">&#125;</div><div class="line">class House&#123;</div><div class="line">  Window w1 = new Window(1);</div><div class="line">  House()&#123;</div><div class="line">    System.out.println(&quot;House()&quot;);</div><div class="line">    w3 = new Window(33);</div><div class="line">  &#125;</div><div class="line">  Window w2 = new Window(2);</div><div class="line">  void f()&#123;System.out.println(&quot;f()&quot;);&#125;</div><div class="line">  Window w3 = new Window(3);</div><div class="line">&#125;</div><div class="line">public class OrderOfInitialization&#123;</div><div class="line">  public staitc void main(String[] args)&#123;</div><div class="line">    House h = new House();</div><div class="line">    h.f();</div><div class="line">  &#125;  </div><div class="line">&#125;/* Output:</div><div class="line">Window(1)</div><div class="line">Window(2)</div><div class="line">Window(3)</div><div class="line">House()</div><div class="line">Window(33)</div><div class="line">f() */</div></pre></td></tr></table></figure></p>
+<p><strong>静态数据的初始化</strong>:<br>无论创建多少个对象，静态数据都只占用一份存储区域。初始化的顺序是先静态对象，然后是非静态对象。<br>Java允许将多个静态初始化动作组织成一个特殊的“静态子句”(静态块)。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">public class Spoon &#123;</div><div class="line">  static int i;</div><div class="line">  static &#123;</div><div class="line">    i = 47;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>枚举类型</strong>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public enum Spiciness&#123;</div><div class="line">  NOT,MILD,MEDIUM,HOT,FLAMING</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>创建一个枚举类型，他有5个具名值。因为枚举类型的实例是常量，所以用大写字母表示。<br>为了使用enum，需要创建一个该类型的引用，并将其赋值给某个实例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class SimpleenumUse&#123;</div><div class="line">  public static void main(String[] args)&#123;</div><div class="line">    Spiciness howHot = Spiciness.MEDIUM;</div><div class="line">    System.out.println(howHot);</div><div class="line">  &#125;</div><div class="line">&#125;/* Output:</div><div class="line">MEDIUM */</div></pre></td></tr></table></figure></p>
+
       
 
       
@@ -429,7 +438,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
+                <a href="javascript:void(0)" class="js-tag color3">随记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -437,7 +446,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随记</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
               </li>
             
             <div class="clearfix"></div>
@@ -524,7 +533,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只记录了一些自己的笔记与想法&lt;br&gt;请多包涵</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">学无止境！</div>
   	  	
     	</section>
     
