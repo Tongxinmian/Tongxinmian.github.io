@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
   <title>Linux常用指令及软件安装 | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="this关键字">
+  <meta name="description" content="Linux文件目录/: 根目录bin: 可执行文件，程序，命令(应用软件)sbin: 系统命令(系统软件)etc: 配置文件">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux常用指令及软件安装">
 <meta property="og:url" content="https://tongxinmian.github.io/2017/11/28/Linux常用指令及软件安装/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="this关键字">
-<meta property="og:updated_time" content="2017-11-28T01:01:21.000Z">
+<meta property="og:description" content="Linux文件目录/: 根目录bin: 可执行文件，程序，命令(应用软件)sbin: 系统命令(系统软件)etc: 配置文件">
+<meta property="og:updated_time" content="2017-11-28T03:37:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux常用指令及软件安装">
-<meta name="twitter:description" content="this关键字">
+<meta name="twitter:description" content="Linux文件目录/: 根目录bin: 可执行文件，程序，命令(应用软件)sbin: 系统命令(系统软件)etc: 配置文件">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -184,7 +184,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3>
+        <h3 id="Linux文件目录"><a href="#Linux文件目录" class="headerlink" title="Linux文件目录"></a>Linux文件目录</h3><p><strong>/:</strong> 根目录<br><strong>bin:</strong> 可执行文件，程序，命令(应用软件)<br><strong>sbin:</strong> 系统命令(系统软件)<br><strong>etc:</strong> 配置文件<a id="more"></a><br><strong>dev:</strong> 访问设备入口<br><strong>home:</strong> 家目录，普通用户的主目录<br><strong>lib/lib64:</strong> 库文件<br><strong>root:</strong> root用户的家目录<br><strong>usr:</strong> Unix共享资源，用户安装的软件<br><strong>tmp:</strong> 临时目录</p>
+<h3 id="Linux常用指令"><a href="#Linux常用指令" class="headerlink" title="Linux常用指令"></a>Linux常用指令</h3><p><strong>init 3:</strong> 进入命令行界面<br><strong>pwd:</strong> 查看当前目录全路径<br><strong>date:</strong> 查看当前系统时间<br><strong>xx –help:</strong> 查看当前命令所有参数<br><strong>hwclock -w:</strong> 修改时间后，需要写入硬件BIOS才能在重启后依然生效<br><strong>clear:</strong> 清屏(ctrl + L)<br><strong>halt/shutdown -h now:</strong> 立即关机<br><strong>reboot/shutdown -r now:</strong> 立即重启<br><strong>ctrl + c:</strong> 退出当前程序，进程<br><strong>ctrl + 2:</strong> 进程挂起到后台<br><strong>fg jobid:</strong> 让进程回到前台<br><strong>echo:</strong> 打印，输出<br><strong>ls:</strong> 查看当前目录下文件<br><strong>cd:</strong> 切换目录<br><strong>mkdir:</strong> 新建文件夹<br><strong>rmdir:</strong> 删除文件夹(只能删除空目录)<br><strong>rm:</strong> 可删文件/文件夹 <strong>(-rf)</strong>强制删除<br><strong>mv:</strong> 移动/改名<br><strong>gzip:</strong> 压缩 <strong>(-d)</strong>解压<br><strong>tar -cvf:</strong> 打包 <strong>(-xvf)</strong>解压 <strong>(-zcvf)</strong>打包并压缩 <strong>(-zxvf)</strong>解包并加压缩 <strong>(-C)</strong>指定路径<br><strong>cat:</strong> 一次性将文件内容输出到控制台<br><strong>more/less:</strong> 分页查看 <strong>空格</strong>翻页 <strong>b</strong>上翻页<br><strong>tail:</strong> 查看文件末尾内容 <strong>(-f)</strong>实时查看更新，跟踪文件唯一标识 <strong>(-F)</strong>根据文件名称跟踪<br><strong>find / -name “hadoop*”:</strong> 在根目录下查找名称含”hadoop”的文件<br><strong>grep hadoop /ect/passwd:</strong> 在passwd文件中找到包含”hadoop”的行 <strong>(-v)</strong>不包含<br><strong>adduser username:</strong> 添加用户<br><strong>passwd username:</strong>为用户设置密码<br><strong>userdel -r username:</strong>删除用户<br><strong>sudo:</strong> 获取管理员权限<br><strong>mount -t iso9660 -o loop 原文件目录 目标路径:</strong> 挂载 <strong>(umount)</strong>卸载<br><strong>service 服务名 start/stop/status:</strong> 启动/停止/查看服务<br><strong>chkconfig 服务名 on/off:</strong> 启动/关闭服务<br><strong>ps -ef:</strong> 查看进程<br><strong>kill -9 2538:</strong>将指定进程杀死</p>
+<h3 id="Linux安装Google拼音"><a href="#Linux安装Google拼音" class="headerlink" title="Linux安装Google拼音"></a>Linux安装Google拼音</h3><p>apt-get install fcitx<br>apt-get install fcitx-googlepinyin</p>
+<h3 id="下载并开启ssh服务"><a href="#下载并开启ssh服务" class="headerlink" title="下载并开启ssh服务"></a>下载并开启ssh服务</h3><p>apt-get install openssh-server (服务端)/(客户端)<br>启动: /ect/init.d/ssh start 或 service ssh start</p>
+<h3 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h3><p>tar -zxvf jdk(版本号).tar.gz<br>mv jdk(版本号) /usr/local<br>配置环境变量:export JAVA_HOME=/usr/local/jdk(版本号）<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; export PATH=$JAVA_HOME/bin:$PATH</p>
+<h3 id="安装Tomcat"><a href="#安装Tomcat" class="headerlink" title="安装Tomcat"></a>安装Tomcat</h3><p>tar -zxvf apache-tomcat-7.0.tar.gz<br>mv apache-tomcat-7.0 /usr/local<br>启动: sh /usr/local/apache-tomcat-7.0/bin/startup.sh</p>
+<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><p>tar -zxvf mysql.tar.gz<br>mv mysql /usr/local<br>检查是否有mysql用户组合用户: group mysql<br>若无则添加: groupadd mysql<br>&emsp;&emsp;&emsp; &emsp;&emsp; useradd -r -g mysql mysql<br>进入mysql目录:cd mysql/ 更改权限:chown -R mysql:mysql ./<br>执行安装脚本:./scripts/mysql_install_db –user=mysql<br>修改权限: chown -R root:root ./<br>&emsp;&emsp; &emsp; &emsp;chown -R mysql:mysql data<br>启动: ./support-files/mysql.server start<br>更改密码: ./mysqladmin -u root -hlocalhost.localhostmain password ‘root’<br>登录: ./bin/mysql -uroot -proot<br>将mysql加入service服务: cp support-files/mysql.server /etc/init.d/mysqld<br>增加远程登录权限: grant all privileges on *.* to root@’%’ identified by ‘root’;<br>&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &emsp;flush privileges;</p>
+
       
 
       
@@ -429,15 +436,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
