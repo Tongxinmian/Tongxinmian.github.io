@@ -8,20 +8,36 @@
   <link rel="dns-prefetch" href="https://tongxinmian.github.io">
   <title>Spring | Tongx</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Spring概念 spring是一个开源的轻量级框架 spring核心主要两部分：&amp;nbsp; &amp;nbsp; &amp;nbsp;AOP: 面向切面编程，扩展功能不是修改源代码实现&amp;nbsp; &amp;nbsp; &amp;nbsp;IOC: 控制反转，对象的创建不是通过new，而是交给spring配置来创建">
+  <meta name="description" content="Spring概念1.spring是一个开源的轻量级框架2.spring核心主要两部分：&amp;nbsp; &amp;nbsp; &amp;nbsp;AOP: 面向切面编程，扩展功能不是修改源代码实现&amp;nbsp; &amp;nbsp; &amp;nbsp;IOC: 控制反转，对象的创建不是通过new，而是交给spring配置来创建">
 <meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring">
 <meta property="og:url" content="https://tongxinmian.github.io/2017/12/14/Spring/index.html">
 <meta property="og:site_name" content="Tongx">
-<meta property="og:description" content="Spring概念 spring是一个开源的轻量级框架 spring核心主要两部分：&amp;nbsp; &amp;nbsp; &amp;nbsp;AOP: 面向切面编程，扩展功能不是修改源代码实现&amp;nbsp; &amp;nbsp; &amp;nbsp;IOC: 控制反转，对象的创建不是通过new，而是交给spring配置来创建">
-<meta property="og:image" content="https://tongxinmian.github.io/img/jar.jpg">
-<meta property="og:image" content="https://tongxinmian.github.io/img/schema约束.jpg">
-<meta property="og:updated_time" content="2017-12-15T03:22:29.000Z">
+<meta property="og:description" content="Spring概念1.spring是一个开源的轻量级框架2.spring核心主要两部分：&amp;nbsp; &amp;nbsp; &amp;nbsp;AOP: 面向切面编程，扩展功能不是修改源代码实现&amp;nbsp; &amp;nbsp; &amp;nbsp;IOC: 控制反转，对象的创建不是通过new，而是交给spring配置来创建">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/jar.jpg">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/User.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/schema约束.jpg">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/TestIOC.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/Bean1Factory.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/Bean2Factory.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/PropertyDemo1.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/testUser.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/book.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/testBook.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/dao.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/service.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/userDaoXML.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/testUserDao.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/Person.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/p.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/pXml.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/testPerson.png">
+<meta property="og:updated_time" content="2017-12-19T09:12:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring">
-<meta name="twitter:description" content="Spring概念 spring是一个开源的轻量级框架 spring核心主要两部分：&amp;nbsp; &amp;nbsp; &amp;nbsp;AOP: 面向切面编程，扩展功能不是修改源代码实现&amp;nbsp; &amp;nbsp; &amp;nbsp;IOC: 控制反转，对象的创建不是通过new，而是交给spring配置来创建">
-<meta name="twitter:image" content="https://tongxinmian.github.io/img/jar.jpg">
+<meta name="twitter:description" content="Spring概念1.spring是一个开源的轻量级框架2.spring核心主要两部分：&amp;nbsp; &amp;nbsp; &amp;nbsp;AOP: 面向切面编程，扩展功能不是修改源代码实现&amp;nbsp; &amp;nbsp; &amp;nbsp;IOC: 控制反转，对象的创建不是通过new，而是交给spring配置来创建">
+<meta name="twitter:image" content="https://tongxinmian.github.io/img/Spring/jar.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -187,17 +203,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Spring概念"><a href="#Spring概念" class="headerlink" title="Spring概念"></a>Spring概念</h2><ol>
-<li>spring是一个开源的轻量级框架</li>
-<li>spring核心主要两部分：<br>&nbsp; &nbsp; &nbsp;<strong>AOP</strong>: 面向切面编程，扩展功能不是修改源代码实现<br>&nbsp; &nbsp; &nbsp;<strong>IOC</strong>: 控制反转，对象的创建不是通过new，而是交给spring配置来创建<a id="more"></a></li>
-<li>spring是一站式框架(spring在javaEE三层结构中，每一层都提供了不同的解决方式)：<br>&nbsp; &nbsp; &nbsp;web层：SpringMVC<br>&nbsp; &nbsp; &nbsp;service层：IOC<br>&nbsp; &nbsp; &nbsp;dao层：jdbcTemplate<h2 id="IOC底层原理"><a href="#IOC底层原理" class="headerlink" title="IOC底层原理"></a>IOC底层原理</h2><strong>第一步：</strong> 创建xml配置文件，配置要创建的对象类<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;bean id=&quot;userService&quot; class=&quot;对象类的全路径&quot;/&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong>第二步：</strong> 创建工厂类，使用dom4j解析配置文件+反射<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//返回UserService对象的方法</div><div class="line">public static UserService getService()&#123;</div><div class="line">    //调用dom4j解析xml文件</div><div class="line">    //根据id值得到对应的class属性值</div><div class="line">    String value = &quot;class属性值&quot;;</div><div class="line">    //使用反射创建类对象</div><div class="line">    class c = Class.forName(value);</div><div class="line">    //创建类对象</div><div class="line">    UserService service = c.newInstance();</div><div class="line">    return service;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="IOC入门案例"><a href="#IOC入门案例" class="headerlink" title="IOC入门案例"></a>IOC入门案例</h2><p><strong>第一步：</strong> 导入jar包 <a href="https://repo.spring.io/release/org/springframework/spring/" target="_blank" rel="external">jar包下载</a> <a href="http://download.csdn.net/download/beitian_123/10034004" target="_blank" rel="external">日志包下载</a><br>做Spring最基本功能时，导入4个核心jar包和日志输出jar包即可：<br><img src="/img/jar.jpg" alt="jar包"></p>
-<p><strong>第二步：</strong> 创建类(User)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public class User &#123;</div><div class="line">	public void add() &#123;</div><div class="line">		System.out.println(&quot;add.....&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>第三步：</strong> 创建Spring核心配置文件，配置创建类<br>1.Spring核心配置文件名称和位置不是固定的，建议放到src下，官方建议名称：applicationContext.xml<br>2.引入schema约束：用浏览器打开下载好的文件目录spring-framework-4.2.4.RELEASE/docs/spring-framework-reference/html中的xsd-configuration.html文件,找到最后面的代码引入即可：<br><img src="/img/schema约束.jpg" alt="schema约束"><br>3.配置对象创建<br>&lt;bean id=”user” class=”User类的全路径”&gt;&lt;/bean&gt;</p>
-<p><strong>第四步：</strong> 写代码测试对象创建<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class TestIOC &#123;</div><div class="line">	@Test</div><div class="line">	public void testUser() &#123;</div><div class="line">		//1. 加载spring配置文件，根据创建对象</div><div class="line">		ApplicationContext context = new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);</div><div class="line">		//2. 得到配置创建的对象</div><div class="line">		User user = (User) context.getBean(&quot;user&quot;);</div><div class="line">		user.add();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <h2 id="Spring概念"><a href="#Spring概念" class="headerlink" title="Spring概念"></a>Spring概念</h2><p>1.spring是一个开源的轻量级框架<br>2.spring核心主要两部分：<br>&nbsp; &nbsp; &nbsp;<strong>AOP</strong>: 面向切面编程，扩展功能不是修改源代码实现<br>&nbsp; &nbsp; &nbsp;<strong>IOC</strong>: 控制反转，对象的创建不是通过new，而是交给spring配置来创建<a id="more"></a><br>3.spring是一站式框架(spring在javaEE三层结构中，每一层都提供了不同的解决方式)：<br>&nbsp; &nbsp; &nbsp;web层：SpringMVC<br>&nbsp; &nbsp; &nbsp;service层：IOC<br>&nbsp; &nbsp; &nbsp;dao层：jdbcTemplate</p>
+<h2 id="IOC底层原理"><a href="#IOC底层原理" class="headerlink" title="IOC底层原理"></a>IOC底层原理</h2><p><strong>第一步： 创建xml配置文件，配置要创建的对象类</strong><br>&lt;bean id=”userService” class=”对象类的全路径”/&gt;&lt;/bean&gt;<br><strong>第二步： 创建工厂类，使用dom4j解析配置文件+反射</strong><br>//返回UserService对象的方法<br>public static UserService getService(){<br>&nbsp; &nbsp; &nbsp; //调用dom4j解析xml文件,根据id值得到对应的class属性值<br>&nbsp; &nbsp; &nbsp; String value = “class属性值”;<br>&nbsp; &nbsp; &nbsp; //使用反射创建类对象<br>&nbsp; &nbsp; &nbsp; class c = Class.forName(value);<br>&nbsp; &nbsp; &nbsp; //创建类对象<br>&nbsp; &nbsp; &nbsp; UserService service = c.newInstance();<br>&nbsp; &nbsp; &nbsp; return service;<br>}</p>
+<h2 id="IOC入门案例"><a href="#IOC入门案例" class="headerlink" title="IOC入门案例"></a>IOC入门案例</h2><p><strong>第一步： 导入jar包</strong> <a href="https://repo.spring.io/release/org/springframework/spring/" target="_blank" rel="external">jar包下载</a> <a href="http://download.csdn.net/download/beitian_123/10034004" target="_blank" rel="external">日志包下载</a><br>做Spring最基本功能时，导入4个核心jar包和日志输出jar包即可：<br><img src="/img/Spring/jar.jpg" alt="jar包"></p>
+<p><strong>第二步： 创建类(User)</strong><br><img src="/img/Spring/User.png" alt="User.java"></p>
+<p><strong>第三步： 创建Spring核心配置文件，配置创建类</strong><br>1.Spring核心配置文件名称和位置不是固定的，建议放到src下，官方建议名称：applicationContext.xml<br>2.引入schema约束：用浏览器打开下载好的文件目录spring-framework-4.2.4.RELEASE/docs/spring-framework-reference/html中的xsd-configuration.html文件,找到最后面的代码引入即可：<br><img src="/img/Spring/schema约束.jpg" alt="schema约束"><br>3.配置对象创建<br>&lt;bean id=”user” class=”User类的全路径”&gt;&lt;/bean&gt;</p>
+<p><strong>第四步： 写代码测试对象创建</strong><br><img src="/img/Spring/TestIOC.png" alt="TestIOC.java"></p>
+<h2 id="Spring的Bean管理（xml方式）"><a href="#Spring的Bean管理（xml方式）" class="headerlink" title="Spring的Bean管理（xml方式）"></a>Spring的Bean管理（xml方式）</h2><h3 id="Bean的三种实例化实现方式：-源代码"><a href="#Bean的三种实例化实现方式：-源代码" class="headerlink" title="Bean的三种实例化实现方式：(源代码)"></a>Bean的三种实例化实现方式：<a href="https://github.com/Tongxinmian/Code/blob/master/SpringDemo/src/com/tongx/ioc/TestIOC.java" target="_blank" rel="external">(源代码)</a></h3><p><strong>1.使用类的无参数构造创建，如果类中没有无参数构造会报异常。</strong><br>&lt;bean id=”user” class=”com.tongx.User”&gt;&lt;/bean&gt;</p>
+<p><strong>2.使用静态工厂创建。</strong><br><img src="/img/Spring/Bean1Factory.png" alt="Bean1Factory.java"><br><strong>在applicationContext.xml的配置：</strong><br>&lt;bean id=”bean1Factory” class=”com.tongx.bean.Bean1Factory” factory-method=”getBean1”&gt;&lt;/bean&gt;</p>
+<p><strong>3.使用实例工厂创建</strong><br><img src="/img/Spring/Bean2Factory.png" alt="Bean2Factory.java"><br><strong>在applicationContext.xml的配置：</strong><br>&lt;bean id=”bean2Factory” class=”com.tongx.bean.Bean2Factory”&gt;&lt;/bean&gt;<br>&lt;bean id=”bean3” factory-bean=”bean2Factory” factory-method=”getBean2”&gt;&lt;/bean&gt;</p>
+<h2 id="属性注入"><a href="#属性注入" class="headerlink" title="属性注入"></a>属性注入</h2><h3 id="Java三种属性注入方式"><a href="#Java三种属性注入方式" class="headerlink" title="Java三种属性注入方式"></a>Java三种属性注入方式</h3><p><strong>第一种 属性的set方法注入：</strong><br>public class User {<br>&nbsp; &nbsp; &nbsp; private String name;<br>&nbsp; &nbsp; &nbsp; public void setName(String name) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this.name = name;<br>&nbsp; &nbsp; &nbsp; }<br>}<br>执行时：<br>User user = new User();<br>user.setName(“Tongx”);</p>
+<p><strong>第二种 有参数构造器注入：</strong><br>public void User {<br>&nbsp; &nbsp; &nbsp; public User(String name) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this.name = name;<br>&nbsp; &nbsp; &nbsp; }<br>}<br>执行时：<br>User user = new User(“Tongx”);</p>
+<p><strong>第三种 使用接口注入(不常用)：</strong><br>public interface Dao {<br>&nbsp; &nbsp; &nbsp; public void delete(String name);<br>}<br>public DaoImpl implements Dao {<br>&nbsp; &nbsp; &nbsp; private String name;<br>&nbsp; &nbsp; &nbsp; public void delete(String name) {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; this.name = name;<br>&nbsp; &nbsp; &nbsp; }<br>}</p>
+<h3 id="Spring框架的属性注入-只支持前两种"><a href="#Spring框架的属性注入-只支持前两种" class="headerlink" title="Spring框架的属性注入(只支持前两种)"></a>Spring框架的属性注入(只支持前两种)</h3><p><strong>1.有参数构造注入：</strong><br>PropertyDemo1.java:<br><img src="/img/Spring/PropertyDemo1.png" height="250" width="450"><br><strong>在applicationContext.xml文件中配置如下：</strong><br>&lt;bean id=”demo1” class=”com.tongx.property.PropertyDemo1”&gt;<br>&nbsp; &nbsp; &nbsp; &lt;constructor-arg name=”name” value=”Tongx”&gt;&lt;/constructor-arg&gt;<br>&lt;/bean&gt;<br><strong>测试方法：</strong><br><img src="/img/Spring/testUser.png" alt="testUser()"></p>
+<p><strong>2.属性的set方法注入(常用)：</strong><br>Book.java:<br><img src="/img/Spring/book.png" height="250" width="450"><br><strong>在applicationContext.xml文件中配置如下：</strong><br>&lt;bean id=”book” class=”com.tongx.property.Book”&gt;<br>&nbsp; &nbsp; &nbsp; &lt;property name=”bookname” value=”Thinking in Java”&gt;&lt;/property&gt;<br>&lt;/bean&gt;<br><strong>测试方法：</strong><br><img src="/img/Spring/testBook.png" alt="testBook()"></p>
+<h3 id="注入对象类型属性"><a href="#注入对象类型属性" class="headerlink" title="注入对象类型属性"></a>注入对象类型属性</h3><p><strong>创建service类和dao类，在service中得到dao对象。在service里把dao作为类型属性，生成dao类型属性的set方法。</strong><br><img src="/img/Spring/dao.png" height="250" width="400"><img src="/img/Spring/service.png" height="250" width="400"><br><strong>在applicationContext.xml文件中配置如下：</strong><br><img src="/img/Spring/userDaoXML.png" height="250" width="600"><br><strong>测试方法：</strong><br><img src="/img/Spring/testUserDao.png" alt="testUserDao()"></p>
+<h3 id="p名称空间注入"><a href="#p名称空间注入" class="headerlink" title="p名称空间注入"></a>p名称空间注入</h3><p><strong>创建Person类：</strong><br><img src="/img/Spring/Person.png" height="250" width="450"><br><strong>在配置文件中引入：</strong><img src="/img/Spring/p.png" alt="p"><br><strong>进行配置：</strong><img src="/img/Spring/pXml.png" alt="pXml"><br><strong>测试方法：</strong><br><img src="/img/Spring/testPerson.png" alt="testPerson()"></p>
 <p>(未完。。。)</p>
 
       
@@ -444,15 +465,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color1">notes</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -460,7 +481,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随记</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
               </li>
             
             <div class="clearfix"></div>

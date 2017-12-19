@@ -15,12 +15,12 @@
 <meta property="og:url" content="https://tongxinmian.github.io/2017/11/29/多态/index.html">
 <meta property="og:site_name" content="Tongx">
 <meta property="og:description" content="多态通过分离做什么和怎么做，从另一个角度将接口和实现分离开来。多态不但能够改变代码的组织结构和可读性，还能够创建可扩展的程序，即无论在项目最初创建时还是在需要添加新功能时都可以“生长”的程序。">
-<meta property="og:image" content="https://tongxinmian.github.io/img/Shape.jpg">
-<meta property="og:updated_time" content="2017-12-04T00:42:38.000Z">
+<meta property="og:image" content="https://tongxinmian.github.io/img/JavaSE/Shape.jpg">
+<meta property="og:updated_time" content="2017-12-19T03:31:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多态">
 <meta name="twitter:description" content="多态通过分离做什么和怎么做，从另一个角度将接口和实现分离开来。多态不但能够改变代码的组织结构和可读性，还能够创建可扩展的程序，即无论在项目最初创建时还是在需要添加新功能时都可以“生长”的程序。">
-<meta name="twitter:image" content="https://tongxinmian.github.io/img/Shape.jpg">
+<meta name="twitter:image" content="https://tongxinmian.github.io/img/JavaSE/Shape.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Tongx" type="application/atom+xml">
   
@@ -188,7 +188,7 @@
       
         <p><strong>多态通过分离做什么和怎么做，从另一个角度将接口和实现分离开来。多态不但能够改变代码的组织结构和可读性，还能够创建可扩展的程序，即无论在项目最初创建时还是在需要添加新功能时都可以“生长”的程序。</strong><a id="more"></a></p>
 <h3 id="向上转型"><a href="#向上转型" class="headerlink" title="向上转型"></a>向上转型</h3><p>传统的类继承图的绘制方法是将根置于页面的顶端，然后逐渐向下。由导出类转型成基类，在继承图上是向上移动的，所以这种将Wind引用转换为Instrument引用的动作，一般称为<strong>向上转型</strong>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class Instrument &#123;&#125;</div><div class="line">public class Wind extends Instrument &#123;</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        Instrument i = new Wind();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="方法调用绑定"><a href="#方法调用绑定" class="headerlink" title="方法调用绑定"></a>方法调用绑定</h3><p>将一个方法调用同一个方法主体关联起来被称作<strong>绑定</strong>。若在程序执行前进行绑定(如果有的话，由编译器和连接程序实现)，叫做<strong>前期绑定</strong>。若在运行时根据对象的类型进行绑定，叫做<strong>后期绑定</strong>，也叫<strong>动态绑定</strong>或<strong>运行时绑定</strong>。<br>Java中除了static方法和final方法(private方法属于final方法)之外，其他所有的方法都属于后期绑定。这意味着通常情况下，我们不必判断是否应该进行后期绑定，他会自动发生。<br>在“几何形状”的例子中，有一个基类<strong>Shape</strong>，以及多个导出类：<strong>Circle、Square、Triangle</strong>。下面的继承图展示他们之间的关系：<br><img src="/img/Shape.jpg" height="250" width="500"><br>向上转型很简单：<br>Shape s = new Circle();<br>这里，创建了一个Circle对象，并把得到的引用立即赋值给Shape，通过继承，Circle就是一种Shape。因此，编译器认可这条语句，不会报错。假设调用一个基类方法(它已在导出类中被覆盖)：<br>s.draw();<br>由于后期绑定(多态)，编译器正确的调用了Circle.draw()方法。</p>
+<h3 id="方法调用绑定"><a href="#方法调用绑定" class="headerlink" title="方法调用绑定"></a>方法调用绑定</h3><p>将一个方法调用同一个方法主体关联起来被称作<strong>绑定</strong>。若在程序执行前进行绑定(如果有的话，由编译器和连接程序实现)，叫做<strong>前期绑定</strong>。若在运行时根据对象的类型进行绑定，叫做<strong>后期绑定</strong>，也叫<strong>动态绑定</strong>或<strong>运行时绑定</strong>。<br>Java中除了static方法和final方法(private方法属于final方法)之外，其他所有的方法都属于后期绑定。这意味着通常情况下，我们不必判断是否应该进行后期绑定，他会自动发生。<br>在“几何形状”的例子中，有一个基类<strong>Shape</strong>，以及多个导出类：<strong>Circle、Square、Triangle</strong>。下面的继承图展示他们之间的关系：<br><img src="/img/JavaSE/Shape.jpg" height="250" width="500"><br>向上转型很简单：<br>Shape s = new Circle();<br>这里，创建了一个Circle对象，并把得到的引用立即赋值给Shape，通过继承，Circle就是一种Shape。因此，编译器认可这条语句，不会报错。假设调用一个基类方法(它已在导出类中被覆盖)：<br>s.draw();<br>由于后期绑定(多态)，编译器正确的调用了Circle.draw()方法。</p>
 <h3 id="缺陷：“覆盖”私有方法"><a href="#缺陷：“覆盖”私有方法" class="headerlink" title="缺陷：“覆盖”私有方法"></a>缺陷：“覆盖”私有方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public class PrivateOverride &#123;</div><div class="line">    private void f() &#123;</div><div class="line">        System.out.println(&quot;private f()&quot;);</div><div class="line">    &#125;</div><div class="line">    public static void main(String[] args)&#123;</div><div class="line">        PrivateOverride po = new Derived();</div><div class="line">        po.f();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Derived extends PrivateOverride &#123;</div><div class="line">    public void f() &#123;</div><div class="line">        System.out.println(&quot;public f()&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;/*Output:</div><div class="line">Private f()*/</div></pre></td></tr></table></figure>
 <p>我们所期望的输出是public f()，但是由于private方法被自动认为是final方法，而且对导出类是屏蔽的。因此，在这种情况下，Derived类中的f()方法就是一个全新的方法。基类中的f()方法在子类Derived中不可见，因此不能被重载。</p>
 <h3 id="缺陷：域与静态方法"><a href="#缺陷：域与静态方法" class="headerlink" title="缺陷：域与静态方法"></a>缺陷：域与静态方法</h3><p>只有普通的方法调用才可以是多态的，如果直接访问某个域，这个访问就会在编译期进行解析，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">class Super &#123;</div><div class="line">    public int field = 0;</div><div class="line">    public int getFiled() &#123; return field; &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Sub extends Super &#123;</div><div class="line">    public int field = 1;</div><div class="line">    public int getField() &#123; return field; &#125;</div><div class="line">    public int getSuperField() &#123; return super.field; &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public class FieldAccess &#123;</div><div class="line">    public static void main(String[] args)&#123;</div><div class="line">        Super sup = new Sub();</div><div class="line">        System.out.println(&quot;sup.field = &quot; + sup.field + &quot;, sup.getField() = &quot; + sup.getFiled());</div><div class="line">        Sub sub = new Sub();</div><div class="line">        System.out.println(&quot;sub.field = &quot; + sub.field + &quot;, sub.getField() = &quot; + sub.getFiled() + &quot;, sub.getSuperField() = &quot; + sub.getSuperField());</div><div class="line">    &#125;</div><div class="line">&#125;/*Output:</div><div class="line">sup.field = 0, sup.getField() = 1</div><div class="line">sub.field = 1, sub.getField() = 1, sub.getSuperField() = 0*/</div></pre></td></tr></table></figure></p>
@@ -449,15 +449,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color1">notes</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -465,7 +465,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随记</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
               </li>
             
             <div class="clearfix"></div>
