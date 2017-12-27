@@ -47,7 +47,14 @@
 <meta property="og:image" content="https://tongxinmian.github.io/img/Spring/MyBook.png">
 <meta property="og:image" content="https://tongxinmian.github.io/img/Spring/aopXml.png">
 <meta property="og:image" content="https://tongxinmian.github.io/img/Spring/testBook(aop).png">
-<meta property="og:updated_time" content="2017-12-22T09:19:08.000Z">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/JdbcTemplate.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/add.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/testCount.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/User1.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/MyRowMapper.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/testObject.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/testList.png">
+<meta property="og:updated_time" content="2017-12-27T13:52:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring">
 <meta name="twitter:description" content="一、Spring概念1.spring是一个开源的轻量级框架2.spring核心主要两部分：&amp;nbsp; &amp;nbsp; &amp;nbsp;AOP: 面向切面编程，扩展功能不是修改源代码实现&amp;nbsp; &amp;nbsp; &amp;nbsp;IOC: 控制反转，对象的创建不是通过new，而是交给spring配置来创建">
@@ -242,7 +249,11 @@
 <h3 id="一-、AOP操作准备"><a href="#一-、AOP操作准备" class="headerlink" title="(一)、AOP操作准备"></a>(一)、AOP操作准备</h3><p><strong>1.导入jar包：</strong><a href="http://maven.ibiblio.org/maven2/" target="_blank" rel="external">jar包下载</a><br>除了基本jar包外，还需要导入aop相关jar包：<br><img src="/img/Spring/aop.png" alt="AOP"><br><strong>2.创建Spring核心文件，引入aop约束：</strong><br><img src="/img/Spring/schema约束3.png" alt="schema约束3"></p>
 <h3 id="二-、使用表达式配置切入点"><a href="#二-、使用表达式配置切入点" class="headerlink" title="(二)、使用表达式配置切入点"></a>(二)、使用表达式配置切入点</h3><p><strong>execution(&lt;访问修饰符&gt;?&lt;返回类型&gt;&lt;方法名&gt;(&lt;参数&gt;)&lt;异常&gt;)</strong><br>execution(* com.tongx.aop.Book.add(..))<br>execution(* com.tongx.aop.Book.*(..))<br>execution(* *.*(..))<br>匹配所有save开头的方法:execution(* *.save*(..))</p>
 <h3 id="三-、aspectj的aop实现"><a href="#三-、aspectj的aop实现" class="headerlink" title="(三)、aspectj的aop实现"></a>(三)、aspectj的aop实现</h3><p><strong>创建Book类和MyBook类:</strong><br><img src="/img/Spring/Book(aop).png" height="200" width="310"><img src="/img/Spring/MyBook.png" height="200" width="360"><br><strong>在配置文件中配置如下：</strong><br><img src="/img/Spring/aopXml.png" alt="aop"><br><strong>测试方法：</strong><br><img src="/img/Spring/testBook(aop).png" height="140" width="1276"></p>
-<p>(未完。。。)</p>
+<h2 id="七、Spring的JdbcTemplate"><a href="#七、Spring的JdbcTemplate" class="headerlink" title="七、Spring的JdbcTemplate"></a>七、Spring的JdbcTemplate</h2><h3 id="一-、创建工具类方法，返回JdbcTemplate对象"><a href="#一-、创建工具类方法，返回JdbcTemplate对象" class="headerlink" title="(一)、创建工具类方法，返回JdbcTemplate对象"></a>(一)、创建工具类方法，返回JdbcTemplate对象</h3><p><img src="/img/Spring/JdbcTemplate.png" height="300" width="700"></p>
+<h3 id="二-、添加，修改，删除都是通过JdbcTemplate对象调用update方法实现"><a href="#二-、添加，修改，删除都是通过JdbcTemplate对象调用update方法实现" class="headerlink" title="(二)、添加，修改，删除都是通过JdbcTemplate对象调用update方法实现"></a>(二)、添加，修改，删除都是通过JdbcTemplate对象调用update方法实现</h3><p><img src="/img/Spring/add.png" height="240" width="600"></p>
+<h3 id="三-、查询返回单个值"><a href="#三-、查询返回单个值" class="headerlink" title="(三)、查询返回单个值"></a>(三)、查询返回单个值</h3><p><img src="/img/Spring/testCount.png" height="240" width="700"></p>
+<h3 id="四-、查询返回对象"><a href="#四-、查询返回对象" class="headerlink" title="(四)、查询返回对象"></a>(四)、查询返回对象</h3><p><strong>1.创建User类</strong><br><img src="/img/Spring/User1.png" height="500" width="800"><br><strong>2.创建MyRowMapper类实现RowMapper接口</strong><br><img src="/img/Spring/MyRowMapper.png" height="340" width="600"><br><strong>3.调用方法实现：</strong><br><img src="/img/Spring/testObject.png" height="200" width="800"></p>
+<h3 id="五-、查询返回List"><a href="#五-、查询返回List" class="headerlink" title="(五)、查询返回List"></a>(五)、查询返回List</h3><p><img src="/img/Spring/testList.png" height="200" width="700"><br>(未完。。。)</p>
 
       
 
@@ -488,7 +499,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,15 +507,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">notes</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JavaSE</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">notes</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
