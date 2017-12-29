@@ -54,7 +54,12 @@
 <meta property="og:image" content="https://tongxinmian.github.io/img/Spring/MyRowMapper.png">
 <meta property="og:image" content="https://tongxinmian.github.io/img/Spring/testObject.png">
 <meta property="og:image" content="https://tongxinmian.github.io/img/Spring/testList.png">
-<meta property="og:updated_time" content="2017-12-27T13:52:53.000Z">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/jar2.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/UserService1.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/UserDao1.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/c3p0Xml.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/testService.png">
+<meta property="og:updated_time" content="2017-12-29T10:14:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring">
 <meta name="twitter:description" content="一、Spring概念1.spring是一个开源的轻量级框架2.spring核心主要两部分：&amp;nbsp; &amp;nbsp; &amp;nbsp;AOP: 面向切面编程，扩展功能不是修改源代码实现&amp;nbsp; &amp;nbsp; &amp;nbsp;IOC: 控制反转，对象的创建不是通过new，而是交给spring配置来创建">
@@ -226,7 +231,7 @@
       
         <h2 id="一、Spring概念"><a href="#一、Spring概念" class="headerlink" title="一、Spring概念"></a>一、Spring概念</h2><p>1.spring是一个开源的轻量级框架<br>2.spring核心主要两部分：<br>&nbsp; &nbsp; &nbsp;<strong>AOP</strong>: 面向切面编程，扩展功能不是修改源代码实现<br>&nbsp; &nbsp; &nbsp;<strong>IOC</strong>: 控制反转，对象的创建不是通过new，而是交给spring配置来创建<a id="more"></a><br>3.spring是一站式框架(spring在javaEE三层结构中，每一层都提供了不同的解决方式)：<br>&nbsp; &nbsp; &nbsp;web层：SpringMVC<br>&nbsp; &nbsp; &nbsp;service层：IOC<br>&nbsp; &nbsp; &nbsp;dao层：jdbcTemplate</p>
 <h2 id="二、IOC底层原理"><a href="#二、IOC底层原理" class="headerlink" title="二、IOC底层原理"></a>二、IOC底层原理</h2><p><strong>第一步： 创建xml配置文件，配置要创建的对象类</strong><br>&lt;bean id=”userService” class=”对象类的全路径”/&gt;&lt;/bean&gt;<br><strong>第二步： 创建工厂类，使用dom4j解析配置文件+反射</strong><br>//返回UserService对象的方法<br>public static UserService getService(){<br>&nbsp; &nbsp; &nbsp; //调用dom4j解析xml文件,根据id值得到对应的class属性值<br>&nbsp; &nbsp; &nbsp; String value = “class属性值”;<br>&nbsp; &nbsp; &nbsp; //使用反射创建类对象<br>&nbsp; &nbsp; &nbsp; class c = Class.forName(value);<br>&nbsp; &nbsp; &nbsp; //创建类对象<br>&nbsp; &nbsp; &nbsp; UserService service = c.newInstance();<br>&nbsp; &nbsp; &nbsp; return service;<br>}</p>
-<h2 id="三、IOC入门案例"><a href="#三、IOC入门案例" class="headerlink" title="三、IOC入门案例"></a>三、IOC入门案例</h2><p><strong>第一步： 导入jar包</strong> <a href="https://repo.spring.io/release/org/springframework/spring/" target="_blank" rel="external">jar包下载</a> <a href="http://download.csdn.net/download/beitian_123/10034004" target="_blank" rel="external">日志包下载</a><br>做Spring最基本功能时，导入4个核心jar包和日志输出jar包即可：<br><img src="/img/Spring/jar.jpg" alt="jar包"></p>
+<h2 id="三、IOC入门案例"><a href="#三、IOC入门案例" class="headerlink" title="三、IOC入门案例"></a>三、IOC入门案例</h2><p><strong>第一步： 导入jar包</strong> <a href="https://repo.spring.io/release/org/springframework/spring/" target="_blank" rel="external">jar包下载</a> <a href="http://download.csdn.net/download/beitian_123/10034004" target="_blank" rel="external">日志包下载</a><br>做Spring最基本功能时，导入4个核心jar包和日志输出jar包即可：<br><img src="/img/Spring/jar.jpg" height="180" width="400"></p>
 <p><strong>第二步： 创建类(User)</strong><br><img src="/img/Spring/User.png" height="150" width="400"></p>
 <p><strong>第三步： 创建Spring核心配置文件，配置创建类</strong><br>1.Spring核心配置文件名称和位置不是固定的，建议放到src下，官方建议名称：<a href="https://github.com/Tongxinmian/Code/blob/master/SpringDemo/src/applicationContext.xml" target="_blank" rel="external">applicationContext.xml</a><br>2.引入schema约束：用浏览器打开下载好的文件目录spring-framework-4.2.4.RELEASE/docs/spring-framework-reference/html中的xsd-configuration.html文件,找到最后面的代码引入即可：<br><img src="/img/Spring/schema约束.jpg" alt="schema约束"><br>3.配置对象创建<br>&lt;bean id=”user” class=”User类的全路径”&gt;&lt;/bean&gt;</p>
 <p><strong>第四步： 写代码测试对象创建</strong><br><img src="/img/Spring/TestIOC.png" alt="TestIOC.java"></p>
@@ -240,20 +245,22 @@
 <p><strong>2).属性的set方法注入(常用)：</strong><br>Book.java:<br><img src="/img/Spring/book.png" height="250" width="450"><br><strong>在applicationContext.xml文件中配置如下：</strong><br>&lt;bean id=”book” class=”com.tongx.property.Book”&gt;<br>&nbsp; &nbsp; &nbsp; &lt;property name=”bookname” value=”Thinking in Java”&gt;&lt;/property&gt;<br>&lt;/bean&gt;<br><strong>测试方法：</strong><br><img src="/img/Spring/testBook.png" alt="testBook()"></p>
 <h5 id="3-注入对象类型属性"><a href="#3-注入对象类型属性" class="headerlink" title="3.注入对象类型属性"></a>3.注入对象类型属性</h5><p><strong>创建service类和dao类，在service中得到dao对象。在service里把dao作为类型属性，生成dao类型属性的set方法。</strong><br><img src="/img/Spring/dao.png" height="250" width="400"><img src="/img/Spring/service.png" height="250" width="400"><br><strong>在applicationContext.xml文件中配置如下：</strong><br><img src="/img/Spring/userDaoXML.png" height="250" width="600"><br><strong>测试方法：</strong><br><img src="/img/Spring/testUserDao.png" alt="testUserDao()"></p>
 <h5 id="4-p名称空间注入"><a href="#4-p名称空间注入" class="headerlink" title="4.p名称空间注入"></a>4.p名称空间注入</h5><p><strong>创建Person类：</strong><br><img src="/img/Spring/Person.png" height="250" width="450"><br><strong>在配置文件中引入：</strong><img src="/img/Spring/p.png" alt="p"><br><strong>进行配置：</strong><img src="/img/Spring/pXml.png" alt="pXml"><br><strong>测试方法：</strong><br><img src="/img/Spring/testPerson.png" alt="testPerson()"></p>
-<h5 id="5-复杂类型属性注入"><a href="#5-复杂类型属性注入" class="headerlink" title="5.复杂类型属性注入"></a>5.复杂类型属性注入</h5><p><strong>创建Person1类：</strong><br><img src="/img/Spring/Person1.png" height="500" width="500"><br><strong>在applicationContext.xml文件中配置如下：</strong><br><img src="/img/Spring/Person1Xml.png" height="600" width="480"><br><strong>测试方法：</strong><br><img src="/img/Spring/testPerson1.png" alt="testPerson1()"></p>
+<h5 id="5-复杂类型属性注入"><a href="#5-复杂类型属性注入" class="headerlink" title="5.复杂类型属性注入"></a>5.复杂类型属性注入</h5><p><strong>创建Person1类：</strong><br><img src="/img/Spring/Person1.png" height="500" width="500"><br><strong>在applicationContext.xml文件中配置如下：</strong><br><img src="/img/Spring/Person1Xml.png" height="600" width="450"><br><strong>测试方法：</strong><br><img src="/img/Spring/testPerson1.png" alt="testPerson1()"></p>
 <h2 id="五、Spring的Bean管理-注解"><a href="#五、Spring的Bean管理-注解" class="headerlink" title="五、Spring的Bean管理(注解)"></a>五、Spring的Bean管理(注解)</h2><h3 id="一-、Spring的注解开发准备"><a href="#一-、Spring的注解开发准备" class="headerlink" title="(一)、Spring的注解开发准备"></a>(一)、Spring的注解开发准备</h3><p><strong>第一步 导入jar包：</strong><br>除了Spring的4个核心jar包和日志输出jar包外，还要导入一个aop的jar包：spring-aop-4.2.4.RELEASE.jar<br><strong>第二步 创建类(User)：</strong><br><img src="/img/Spring/User.png" height="150" width="400"><br><strong>第三步 创建Spring核心配置文件，配置创建类：</strong><br>1.引入约束：<br><img src="/img/Spring/schema约束2.png" alt="schema约束2"><br>2.开启注解扫描：<br>&lt;context:component-scan base-package=”com.tongx”&gt;&lt;/context:component-scan&gt;</p>
 <h3 id="二-、注解创建对象"><a href="#二-、注解创建对象" class="headerlink" title="(二)、注解创建对象"></a>(二)、注解创建对象</h3><p>1.在要创建对象的类上面使用注解即可实现：<br><strong>@Component(value=”user”)</strong> -&gt; 相当于xml方式中的：&lt;bean id=”user” class=””&gt;&lt;/bean&gt;<br>2.创建对象有4个注解：<br><strong>@Component</strong><br><strong>@Controller：Web层</strong><br><strong>@Service：业务层</strong><br><strong>@Repository：持久层</strong><br>目前4个注解的功能是一致的，用来创建对象；后三个注解为了让标注类本身的用途清晰，在Spring的后续版本中会对其增强。</p>
 <h3 id="三-、注解注入属性"><a href="#三-、注解注入属性" class="headerlink" title="(三)、注解注入属性"></a>(三)、注解注入属性</h3><p>创建UserService类和UserDao类，在UserService类中定义UserDao类型属性，使用注解注入属性：<br><img src="/img/Spring/UserDao.png" height="250" width="300"><img src="/img/Spring/UserService.png" height="250" width="600"><br>测试方法：<br><img src="/img/Spring/testUserDao2.png" alt="testUserDao()"></p>
 <h2 id="五、AOP相关术语："><a href="#五、AOP相关术语：" class="headerlink" title="五、AOP相关术语："></a>五、AOP相关术语：</h2><p><strong>连接点：</strong> 类里面可以被增强的方法称为连接点<br><strong>切入点：</strong> 类里面实际被增强的方法称为切入点<br><strong>通知/增强：</strong> 增强的逻辑，扩展的功能称为增强<br>&nbsp; &nbsp; &nbsp; 前置通知：在方法之前执行<br>&nbsp; &nbsp; &nbsp; 后置通知：在方法之后执行<br>&nbsp; &nbsp; &nbsp; 异常通知：方法出现异常<br>&nbsp; &nbsp; &nbsp; 最终通知：在后置之后执行<br>&nbsp; &nbsp; &nbsp; 环绕通知：在方法之前和之后执行<br><strong>切面：</strong> 把增强应用到具体方法上面，过程称为切面。把增强用到切入点的过程</p>
 <h2 id="六、Spring的AOP操作"><a href="#六、Spring的AOP操作" class="headerlink" title="六、Spring的AOP操作"></a>六、Spring的AOP操作</h2><p><strong>1.在Spring里面进行aop操作，是通过aspectj实现的</strong><br>aspectj不是Spring的一部分，和Spring一起进行aop操作<br>Spring2.0以后新增了对aspectj支持<br><strong>2.使用aspectj实现aop操作有两种方式：</strong><br>基于aspectj的xml配置<br>基于aspectj的注解方式  </p>
-<h3 id="一-、AOP操作准备"><a href="#一-、AOP操作准备" class="headerlink" title="(一)、AOP操作准备"></a>(一)、AOP操作准备</h3><p><strong>1.导入jar包：</strong><a href="http://maven.ibiblio.org/maven2/" target="_blank" rel="external">jar包下载</a><br>除了基本jar包外，还需要导入aop相关jar包：<br><img src="/img/Spring/aop.png" alt="AOP"><br><strong>2.创建Spring核心文件，引入aop约束：</strong><br><img src="/img/Spring/schema约束3.png" alt="schema约束3"></p>
+<h3 id="一-、AOP操作准备"><a href="#一-、AOP操作准备" class="headerlink" title="(一)、AOP操作准备"></a>(一)、AOP操作准备</h3><p><strong>1.导入jar包：</strong><a href="http://maven.ibiblio.org/maven2/" target="_blank" rel="external">jar包下载</a><br>除了基本jar包外，还需要导入aop相关jar包：<br><img src="/img/Spring/aop.png" height="120" width="400"><br><strong>2.创建Spring核心文件，引入aop约束：</strong><br><img src="/img/Spring/schema约束3.png" alt="schema约束3"></p>
 <h3 id="二-、使用表达式配置切入点"><a href="#二-、使用表达式配置切入点" class="headerlink" title="(二)、使用表达式配置切入点"></a>(二)、使用表达式配置切入点</h3><p><strong>execution(&lt;访问修饰符&gt;?&lt;返回类型&gt;&lt;方法名&gt;(&lt;参数&gt;)&lt;异常&gt;)</strong><br>execution(* com.tongx.aop.Book.add(..))<br>execution(* com.tongx.aop.Book.*(..))<br>execution(* *.*(..))<br>匹配所有save开头的方法:execution(* *.save*(..))</p>
 <h3 id="三-、aspectj的aop实现"><a href="#三-、aspectj的aop实现" class="headerlink" title="(三)、aspectj的aop实现"></a>(三)、aspectj的aop实现</h3><p><strong>创建Book类和MyBook类:</strong><br><img src="/img/Spring/Book(aop).png" height="200" width="310"><img src="/img/Spring/MyBook.png" height="200" width="360"><br><strong>在配置文件中配置如下：</strong><br><img src="/img/Spring/aopXml.png" alt="aop"><br><strong>测试方法：</strong><br><img src="/img/Spring/testBook(aop).png" height="140" width="1276"></p>
 <h2 id="七、Spring的JdbcTemplate"><a href="#七、Spring的JdbcTemplate" class="headerlink" title="七、Spring的JdbcTemplate"></a>七、Spring的JdbcTemplate</h2><h3 id="一-、创建工具类方法，返回JdbcTemplate对象"><a href="#一-、创建工具类方法，返回JdbcTemplate对象" class="headerlink" title="(一)、创建工具类方法，返回JdbcTemplate对象"></a>(一)、创建工具类方法，返回JdbcTemplate对象</h3><p><img src="/img/Spring/JdbcTemplate.png" height="300" width="700"></p>
 <h3 id="二-、添加，修改，删除都是通过JdbcTemplate对象调用update方法实现"><a href="#二-、添加，修改，删除都是通过JdbcTemplate对象调用update方法实现" class="headerlink" title="(二)、添加，修改，删除都是通过JdbcTemplate对象调用update方法实现"></a>(二)、添加，修改，删除都是通过JdbcTemplate对象调用update方法实现</h3><p><img src="/img/Spring/add.png" height="240" width="600"></p>
 <h3 id="三-、查询返回单个值"><a href="#三-、查询返回单个值" class="headerlink" title="(三)、查询返回单个值"></a>(三)、查询返回单个值</h3><p><img src="/img/Spring/testCount.png" height="240" width="700"></p>
 <h3 id="四-、查询返回对象"><a href="#四-、查询返回对象" class="headerlink" title="(四)、查询返回对象"></a>(四)、查询返回对象</h3><p><strong>1.创建User类</strong><br><img src="/img/Spring/User1.png" height="500" width="800"><br><strong>2.创建MyRowMapper类实现RowMapper接口</strong><br><img src="/img/Spring/MyRowMapper.png" height="340" width="600"><br><strong>3.调用方法实现：</strong><br><img src="/img/Spring/testObject.png" height="200" width="800"></p>
-<h3 id="五-、查询返回List"><a href="#五-、查询返回List" class="headerlink" title="(五)、查询返回List"></a>(五)、查询返回List</h3><p><img src="/img/Spring/testList.png" height="200" width="700"><br>(未完。。。)</p>
+<h3 id="五-、查询返回List"><a href="#五-、查询返回List" class="headerlink" title="(五)、查询返回List"></a>(五)、查询返回List</h3><p><img src="/img/Spring/testList.png" height="200" width="700"></p>
+<h2 id="八、c3p0连接池"><a href="#八、c3p0连接池" class="headerlink" title="八、c3p0连接池"></a>八、c3p0连接池</h2><p><strong>1.导入jar包：</strong><br>c3p0所需jar包以及Spring依赖jar包<br><img src="/img/Spring/jar2.png" height="60" width="400"><br><strong>2.创建UserService类和UserDao类</strong><br><img src="/img/Spring/UserService1.png" height="200" width="400"><img src="/img/Spring/UserDao1.png" height="200" width="450"><br><strong>3.配置c3p0资源池，创建对象并注入对象属性</strong><br><img src="/img/Spring/c3p0Xml.png" height="550" width="500"><br><strong>4.测试方法</strong><br><img src="/img/Spring/testService.png" alt="testService()"></p>
+<p>(未完。。。)</p>
 
       
 
@@ -417,10 +424,11 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Tongx
+      <!-- <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten -->
+    		
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      		&copy; 2017 Tongx
       	</div>
     </div>
   </div>
@@ -507,15 +515,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">notes</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JavaSE</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">notes</a>
               </li>
             
             <div class="clearfix"></div>
