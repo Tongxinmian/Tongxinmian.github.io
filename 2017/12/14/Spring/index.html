@@ -59,7 +59,13 @@
 <meta property="og:image" content="https://tongxinmian.github.io/img/Spring/UserDao1.png">
 <meta property="og:image" content="https://tongxinmian.github.io/img/Spring/c3p0Xml.png">
 <meta property="og:image" content="https://tongxinmian.github.io/img/Spring/testService.png">
-<meta property="og:updated_time" content="2017-12-29T10:14:10.000Z">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/ordersDao.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/ordersService.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/account.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/testAccount.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/accountXml.png">
+<meta property="og:image" content="https://tongxinmian.github.io/img/Spring/accountanno.png">
+<meta property="og:updated_time" content="2018-01-02T09:22:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring">
 <meta name="twitter:description" content="一、Spring概念1.spring是一个开源的轻量级框架2.spring核心主要两部分：&amp;nbsp; &amp;nbsp; &amp;nbsp;AOP: 面向切面编程，扩展功能不是修改源代码实现&amp;nbsp; &amp;nbsp; &amp;nbsp;IOC: 控制反转，对象的创建不是通过new，而是交给spring配置来创建">
@@ -260,6 +266,10 @@
 <h3 id="四-、查询返回对象"><a href="#四-、查询返回对象" class="headerlink" title="(四)、查询返回对象"></a>(四)、查询返回对象</h3><p><strong>1.创建User类</strong><br><img src="/img/Spring/User1.png" height="500" width="800"><br><strong>2.创建MyRowMapper类实现RowMapper接口</strong><br><img src="/img/Spring/MyRowMapper.png" height="340" width="600"><br><strong>3.调用方法实现：</strong><br><img src="/img/Spring/testObject.png" height="200" width="800"></p>
 <h3 id="五-、查询返回List"><a href="#五-、查询返回List" class="headerlink" title="(五)、查询返回List"></a>(五)、查询返回List</h3><p><img src="/img/Spring/testList.png" height="200" width="700"></p>
 <h2 id="八、c3p0连接池"><a href="#八、c3p0连接池" class="headerlink" title="八、c3p0连接池"></a>八、c3p0连接池</h2><p><strong>1.导入jar包：</strong><br>c3p0所需jar包以及Spring依赖jar包<br><img src="/img/Spring/jar2.png" height="60" width="400"><br><strong>2.创建UserService类和UserDao类</strong><br><img src="/img/Spring/UserService1.png" height="200" width="400"><img src="/img/Spring/UserDao1.png" height="200" width="450"><br><strong>3.配置c3p0资源池，创建对象并注入对象属性</strong><br><img src="/img/Spring/c3p0Xml.png" height="550" width="500"><br><strong>4.测试方法</strong><br><img src="/img/Spring/testService.png" alt="testService()"></p>
+<h2 id="九、Spring事务管理"><a href="#九、Spring事务管理" class="headerlink" title="九、Spring事务管理"></a>九、Spring事务管理</h2><h3 id="事务概念"><a href="#事务概念" class="headerlink" title="事务概念"></a>事务概念</h3><p><strong>1.什么是事务：</strong><br>事务是操作数据库的一个程序执行单元<br><strong>2.特征(ACID)</strong><br><strong>原子性(atomicity)：</strong>一个事务是一个不可分割的工作单位，事务中包括的诸操作要么都做，要么都不做。<br><strong>一致性(consistency)：</strong>事务必须是使数据库从一个一致性状态变到另一个一致性状态。一致性与原子性是密切相关的。<br><strong>隔离性(isolation)：</strong>一个事务的执行不能被其他事务干扰。即一个事务内部的操作及使用的数据对并发的其他事务是隔离的，并发执行的各个事务之间不能互相干扰。<br><strong>持久性(durability)：</strong>持久性也称永久性（permanence），指一个事务一旦提交，它对数据库中数据的改变就应该是永久性的。接下来的其他操作或故障不应该对其有任何影响。</p>
+<h3 id="转账环境搭建"><a href="#转账环境搭建" class="headerlink" title="转账环境搭建"></a>转账环境搭建</h3><p><strong>1.创建OrdersDao类和OrdersService类</strong><br><img src="/img/Spring/ordersDao.png" height="200" width="400"><img src="/img/Spring/ordersService.png" height="200" width="450"><br><strong>2.配置JdbcTemplate，创建对象并注入属性对象</strong><br><img src="/img/Spring/account.png" height="400" width="500"><br><strong>3.测试方法</strong><br><img src="/img/Spring/testAccount.png" alt=""></p>
+<h3 id="配置文件实现"><a href="#配置文件实现" class="headerlink" title="配置文件实现"></a>配置文件实现</h3><p><img src="/img/Spring/accountXml.png" height="500" width="600"></p>
+<h3 id="注解实现"><a href="#注解实现" class="headerlink" title="注解实现"></a>注解实现</h3><p><img src="/img/Spring/accountanno.png" height="150" width="500"><br>最后在增强类上面加上<strong>@Transactional</strong>注解即可</p>
 <p>(未完。。。)</p>
 
       
@@ -428,7 +438,7 @@
     		
     	</div>
       	<div class="footer-right">
-      		&copy; 2017 Tongx
+      		&copy; 2018 Tongx
       	</div>
     </div>
   </div>
@@ -511,15 +521,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JavaSE</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
