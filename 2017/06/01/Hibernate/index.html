@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://tongxinmian.github.io/2017/06/01/Hibernate/index.html">
 <meta property="og:site_name" content="Tongx">
 <meta property="og:description" content="Hibernate简介&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Hibernate是一个基于java的对象/关系数据库映射工具，它将对象模型表示的数据映射到SQL表示的关系模型上去。Hibernate管理java到数据库的映射，提供给了数据查询和存取的方法，减少了程序员对数据持久化层相关的编程任务。">
-<meta property="og:updated_time" content="2017-12-21T02:19:42.000Z">
+<meta property="og:updated_time" content="2018-01-03T01:21:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hibernate">
 <meta name="twitter:description" content="Hibernate简介&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Hibernate是一个基于java的对象/关系数据库映射工具，它将对象模型表示的数据映射到SQL表示的关系模型上去。Hibernate管理java到数据库的映射，提供给了数据查询和存取的方法，减少了程序员对数据持久化层相关的编程任务。">
@@ -270,7 +270,7 @@
 <h3 id="六、HQL多表查询"><a href="#六、HQL多表查询" class="headerlink" title="六、HQL多表查询"></a>六、HQL多表查询</h3><p><strong>HQL内连接：以客户联系人为例</strong><br>&nbsp; &nbsp; from Customer inner join Customer.setLinkMan<br>&nbsp; &nbsp; 返回的list里面每部分都是数组形式<br><strong>HQL迫切内连接：</strong><br>&nbsp; &nbsp; from Customer c inner join fetch c.setLinkMan<br><strong>HQL左外连接(右外连接类似)：</strong><br>&nbsp; &nbsp; from Customer c left outer join c setLinkMan<br><strong>HQL迫切做外连接(五迫切右外连接)：</strong><br>&nbsp; &nbsp; from Customer c left outer join fetch c.setLinkMan</p>
 <h2 id="Hibernate检索策略-查看"><a href="#Hibernate检索策略-查看" class="headerlink" title="Hibernate检索策略 (查看)"></a>Hibernate检索策略 <a href="https://github.com/Tongxinmian/Code/blob/master/HibernateDemo/src/just/For/you/hibernate/HQLManyTable.java" target="_blank" rel="external">(查看)</a></h2><p><strong>一、 Hibernate检索策略分为两类</strong><br>1.立即查询：根据主键查询，调用get方法，一调用马上发送语句查询数据库：<br>&nbsp; &nbsp;Custoemr customer = session.get(Customer.class,1);<br>2.延迟查询：根据主键查询，有load方法，调用load方法不会马上发送语句查询数据库，只有得到对象里的值是菜发送语句查询数据库<br>&nbsp; &nbsp;Customer customer = session.load(Customer.class,2);<br>&nbsp; &nbsp;System.out.println(customer.getCid());<br><strong>二、 延迟查询分两类</strong><br>1.类级别延迟：根据主键查询，返回实体类对象，调用load方法不会马上发送语句<br>2.关联级别延迟：根据某个客户，在查询该客户的多有联系人，查询客户的所有联系人的过程是否需要延迟<br><strong>三、 关联级别延迟操作</strong><br>1.在映射文件中进行配置实现<br>&nbsp; &nbsp;根据客户得到所有的联系人，在客户映射文件中配置<br>2.在set标签上使用属性<br>&nbsp; &nbsp;fetch: select(默认)<br>&nbsp; &nbsp;lazy: true 延迟(默认)<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;false 不延迟 调用方法后发两条sql语句<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;extra 极其延迟 要什么值给什么值<br><strong>四、 批量抓取</strong><br>查询所有客户，返回list集合，遍历list集合，得到每个客户，然后得到每个客户的联系人<br>在客户的映射配置文件中，set标签配置<br>    batch-size值：值越大发送的语句越少</p>
 <blockquote>
-<p><a href="https://github.com/Tongxinmian/Code" target="_blank" rel="external">源代码</a></p>
+<p><a href="https://github.com/Tongxinmian/Code/tree/master/HibernateDemo" target="_blank" rel="external">源代码</a><br><a href="https://pan.baidu.com/s/1qYebxzm" target="_blank" rel="external">jar包整合</a></p>
 </blockquote>
 
       
@@ -527,7 +527,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,11 +535,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color2">JavaSE</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JavaSE</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hibernate</a>
               </li>
              
               <li class="article-tag-list-item">
